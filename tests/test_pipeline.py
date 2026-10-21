@@ -10,7 +10,7 @@ from datetime import UTC, date, datetime
 import polars as pl
 import pytest
 
-from sga import bronze, gold, silver
+from sga import bronze, gold, silver, suggest
 from sga.season import ReportRef, Season
 
 BOSS = 100
@@ -188,3 +188,37 @@ def test_avoidable_counts_melee_only_for_non_tanks(season, merged):
 def test_cockroach_skips_holy_priests(season, merged):
     out = gold.cockroach(gold.make_ctx(season, merged))["cockroach"]
     assert dict(out.select("player", "survived").iter_rows()) == {"Tank": 1, "Dps": 0}
+
+
+def test_one_reports_fights_are_never_one_pull():
+    # An accidental pull reset and re-pulled 18 s later, seen by A and by B
+    fights = pl.DataFrame(
+        {
+            "report": ["A", "B", "A", "B"],
+            "fight_id": [1, 1, 2, 2],
+            "encounter_id": [BOSS] * 4,
+            "difficulty": [4] * 4,
+            "start": [0, 2_000, 18_000, 21_000],
+        }
+    )
+    pulls = silver._assign_pulls(fights).sort("report", "fight_id")
+    assert pulls["pull_id"].to_list() == [1, 2, 1, 2]
+
+
+def test_wipe_call_is_on_the_pulls_timeline(season):
+    c = silver.parse_copies(season)
+    # Only Bob logged the call, 30 s in by his clock: before the Dps death at 31 s
+    c["copy_fights"] = c["copy_fights"].with_columns(
+        wipe_called=pl.when((pl.col("report") == "B") & (pl.col("fight_id") == 1))
+        .then(START + 3_000 + 30_000)
+        .otherwise(pl.col("wipe_called"))
+    )
+    deaths = silver.merge(season, c)["deaths"].sort("ts")
+    assert deaths["post_call"].to_list() == [True, True]
+
+
+def test_hit_share_leaves_tanks_out(merged):
+    out = suggest.avoidable_candidates(merged, min_pulls=1)
+    puddle = out.filter(pl.col("ability_id") == PUDDLE).row(0, named=True)
+    # Only the Dps is hit, of the two non-tanks
+    assert puddle["hit_share"] == 0.5

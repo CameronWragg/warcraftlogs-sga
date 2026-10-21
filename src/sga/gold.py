@@ -18,6 +18,8 @@ TOP = 10
 MELEE = 1  # Generic boss melee: not a mechanic, so left out of killing-blow stats
 # Deaths this soon after the pull started were already happening before it
 PRE_PULL_DEATH_MS = 1_000
+# Best night DPS counts only nights a player was in for at least this share of the combat time
+MIN_NIGHT_SHARE = 0.5
 
 
 @dataclass
@@ -240,7 +242,7 @@ def kill_cleanliness(c: Ctx):
 
 def floor_awards(c: Ctx):
     firsts = (
-        c.deaths.filter(~pl.col("post_call"))
+        c.deaths.filter(~pl.col("post_call") & (pl.col("since_pull_ms") >= PRE_PULL_DEATH_MS))
         .pipe(ordered, "ts")
         .group_by("pull_id", maintain_order=True)
         .first()
@@ -290,10 +292,15 @@ def damage_and_healing(c: Ctx):
         .agg(pl.col("damage_done", "healing", "damage_taken").sum())
         .pipe(ordered, "damage_done", descending=True)
     )
+    night_seconds = c.pulls.group_by("night").agg(night_seconds=pl.col("duration_ms").sum() / 1000)
     night_dps = (
         pp.filter(c.is_regular())
         .group_by("player", "night")
         .agg(damage=pl.col("damage_done").sum(), seconds=pl.col("duration_ms").sum() / 1000)
+        # A short cameo is mostly opener burst, so only nights with most of the combat count
+        .join(night_seconds, on="night")
+        .filter(pl.col("seconds") >= MIN_NIGHT_SHARE * pl.col("night_seconds"))
+        .drop("night_seconds")
         .with_columns(dps=(pl.col("damage") / pl.col("seconds")).round(0))
         .pipe(ordered, "dps", descending=True)
         .head(TOP)

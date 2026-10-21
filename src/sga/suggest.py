@@ -87,8 +87,12 @@ def avoidable_candidates(silver: dict[str, pl.DataFrame], min_pulls: int = 3) ->
     people could have avoided; a person must approve each one.
     """
     pulls = silver["pulls"].select("pull_id", "encounter_id", "encounter")
+    # Tanks' hits are left out below, so they're left out of the roster too
     present = silver["player_pulls"].join(
-        silver["player_pulls"].group_by("pull_id").agg(roster=pl.len()), on="pull_id"
+        silver["player_pulls"]
+        .group_by("pull_id")
+        .agg(roster=pl.col("role").ne_missing("tank").sum()),
+        on="pull_id",
     )
     tanks = present.filter(pl.col("role") == "tank").select("pull_id", "character")
     hits = (

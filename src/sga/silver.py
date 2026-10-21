@@ -221,21 +221,20 @@ def parse_copies(season: Season) -> dict[str, pl.DataFrame]:
 
 
 def _assign_pulls(copy_fights: pl.DataFrame) -> pl.DataFrame:
-    """Copies of the same encounter and difficulty starting within SAME_PULL_MS are one pull."""
+    """Copies of the same encounter and difficulty starting within SAME_PULL_MS of the pull's
+    first copy are one pull. Two fights from the same report are never the same pull."""
+    ordered = copy_fights.sort("encounter_id", "difficulty", "start")
+    keys, key, group, first_start, reports = [], 0, None, 0, set()
+    for enc, diff, report, start in ordered.select(
+        "encounter_id", "difficulty", "report", "start"
+    ).iter_rows():
+        if (enc, diff) != group or start - first_start > SAME_PULL_MS or report in reports:
+            key += 1
+            group, first_start, reports = (enc, diff), start, set()
+        reports.add(report)
+        keys.append(key)
     return (
-        copy_fights.sort("encounter_id", "difficulty", "start")
-        .with_columns(
-            new_pull=(
-                (
-                    pl.col("start")
-                    .diff()
-                    .over("encounter_id", "difficulty")
-                    .fill_null(SAME_PULL_MS + 1)
-                )
-                > SAME_PULL_MS
-            )
-        )
-        .with_columns(pull_key=pl.col("new_pull").cum_sum())
+        ordered.with_columns(pull_key=pl.Series(keys, dtype=pl.Int64))
         # Number pulls chronologically
         .with_columns(first_start=pl.col("start").min().over("pull_key"))
         .with_columns(pull_id=pl.col("first_start").rank("dense").cast(pl.Int64))
@@ -262,7 +261,15 @@ def _night(ts_col: str, season: Season) -> pl.Expr:
 
 def merge(season: Season, c: dict[str, pl.DataFrame]) -> dict[str, pl.DataFrame]:
     copies = _assign_pulls(c["copy_fights"])
-    cf = c["copy_fights"].join(copies, on=["report", "fight_id"])
+    # Uploaders' clocks drift by several seconds, so shift each copy's times onto the pull's
+    # timeline (its earliest copy's clock, relative to the copy's own fight start) before
+    # comparing or matching them
+    cf = (
+        c["copy_fights"]
+        .join(copies, on=["report", "fight_id"])
+        .with_columns(offset=pl.col("start").min().over("pull_id") - pl.col("start"))
+        .with_columns(pl.col("start", "end", "wipe_called") + pl.col("offset"))
+    )
 
     pulls = (
         cf.group_by("pull_id")
@@ -296,11 +303,7 @@ def merge(season: Season, c: dict[str, pl.DataFrame]) -> dict[str, pl.DataFrame]
     def with_pull(df: pl.DataFrame) -> pl.DataFrame:
         return df.join(copies, on=["report", "fight_id"])
 
-    # Uploaders' clocks drift by several seconds, so shift each copy's event times onto the
-    # pull's timeline (relative to the copy's own fight start) before matching events
-    copy_offset = cf.select(
-        "report", "fight_id", offset=pl.col("start").min().over("pull_id") - pl.col("start")
-    )
+    copy_offset = cf.select("report", "fight_id", "offset")
 
     def aligned(df: pl.DataFrame) -> pl.DataFrame:
         return (

@@ -39,7 +39,7 @@ Notes from the live API:
 Polars tables stored as Parquet under `.cache/silver/<slug>/` (git-ignored), rebuilt on every `build`. Per-copy tables (`copy_fights`, `copy_player_fights`, `copy_deaths`, `copy_casts`, `copy_damage_taken`, `copy_trash`) and merged ones (`copies`, `pulls`, `player_pulls`, `deaths`, `casts`, `damage_taken`, `trash_nights`).
 
 1. A pull is a boss fight from a listed report whose encounter belongs to the season's zone, at any difficulty.
-2. Copies are the same pull when encounter and difficulty match and their absolute starts are within 20 s.
+2. Copies are the same pull when encounter and difficulty match and they start within 20 s of the pull's first copy. Two fights from the same report are always separate pulls.
 3. Pull merge: killed if any copy killed; lowest boss health %; earliest start to latest end.
 4. Wipe call: Warcraft Logs' `wipeCalledTime`, else 10 s before the end.
 5. Per-player merge: the max of each metric separately, never the sum; DPS and HPS recomputed from the merged amount and duration. Characters are matched by name and server; only player actors count.
@@ -69,7 +69,7 @@ Each stat is a small Polars function over silver tables, registered in `STATS`. 
 | Kill cleanliness | Deaths on each kill: the messiest and the deathless ones |
 | Floor awards | First to die (pre-call), in total and per pull; deaths per pull |
 | Attendance | Pulls attended out of all pulls |
-| Damage and healing | Season totals; best whole-night DPS; most damage taken by a non-tank |
+| Damage and healing | Season totals; best whole-night DPS (only nights the player was in for at least half the combat time); most damage taken by a non-tank |
 | Interrupts, dispels | Most of each |
 | Battle rezzes | Most given and received; a Soulstone counts for the player rezzed |
 | Consumables | Potions and healthstones used; who never used either |
