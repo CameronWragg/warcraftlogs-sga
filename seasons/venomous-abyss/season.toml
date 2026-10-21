@@ -1,0 +1,74 @@
+name = "The Venomous Abyss"
+zone_id = 53
+timezone = "Europe/London"
+night_cutoff_hour = 6
+regular_threshold = 0.10
+# Players allowed to be regulars (and so win awards), by name as shown in the deck, after
+# aliases. Empty: anyone over the threshold. Season totals always include everyone.
+roster = []
+# Guild searched by `sga suggest-reports` for candidate reports
+guild = { name = "Luckydo", server = "silvermoon", region = "EU" }
+# Uploaders whose personal (non-guild) logs `sga suggest-reports` also searches
+uploaders = ["Arjunis", "PhuzzyWoW", "Durs", "CMRN"]
+# Avoidable abilities that count only for players not tanking the pull, on any boss
+avoidable_non_tank = [1, 1298418]  # Melee; Ula'tek's Stone Venom (a tank hit)
+
+# Only listed reports count, each with the raid night it covers. Several reports of the
+# same night are merged into one set of pulls (docs/design.md).
+reports = [
+  { code = "BpP9dVY7rLgtyq3n", date = 2026-08-19 },
+  { code = "Ddh9NV1qXabKRHx6", date = 2026-08-19 },
+  { code = "gQvF3HJd6C1ymKR2", date = 2026-08-23 },
+  { code = "jZMtC93QFqhkbpWR", date = 2026-08-23 },
+  { code = "rbVaAX2cn8FWQRq1", date = 2026-08-26 },
+  { code = "3BFZJXQGbat8v74H", date = 2026-08-30 },
+  { code = "gFhJ3Q7MB42VbryY", date = 2026-09-02 },
+  { code = "JvM8my41fjn9tGCT", date = 2026-09-06 },
+  { code = "kbAX4yNGwfv69QF7", date = 2026-09-06 },
+  { code = "3nXycLxzBDvjfhJC", date = 2026-09-06 },
+  { code = "VnbPwfykpCGJMLQF", date = 2026-09-09 },
+  { code = "4dQcb1hD8YTPzpXn", date = 2026-09-09 },
+  { code = "ktXvrBG6zV7mAaJn", date = 2026-09-13 },
+  { code = "TZxwMByKQNzc7dqY", date = 2026-09-13 },
+  { code = "ZCRkKhAxpjawLMv3", date = 2026-09-16 },
+  { code = "MYqt43ahpzxn9R6d", date = 2026-09-16 },
+  { code = "4dRHvtXVwLGFjNpY", date = 2026-09-16 },
+  { code = "QYmFCnJrcpNhz9kP", date = 2026-09-20 },
+  { code = "GAJmvyQBMDYVp7nx", date = 2026-09-20 },
+  { code = "pFJYnhCgK4mQDP2y", date = 2026-09-20 },
+  { code = "qMDLCd3QGvyagp4B", date = 2026-09-23 },
+  { code = "92qaKQ8YhXCPrmLV", date = 2026-09-23 },
+  { code = "H6Dbthgj8NQMC9Wn", date = 2026-09-27 },
+  { code = "rk2XLZC64cvAWJQY", date = 2026-09-27 },
+  { code = "WzfPaTjDYRgVBt3d", date = 2026-09-27 },
+  { code = "n8VvcyhqPrDLBdbX", date = 2026-09-27 },
+  { code = "dCPt6ARKyn1pwvTb", date = 2026-09-30 },
+  { code = "ZVbThRWmJ12t8NHx", date = 2026-09-30 },
+  { code = "8CXGakKLVB47crZT", date = 2026-09-30 },
+  { code = "8qRLtcXV1AydK4bW", date = 2026-10-04 },
+  { code = "TxdLmByQYZc2XPRf", date = 2026-10-07 },
+  { code = "m7FJpja3Cf82hVAQ", date = 2026-10-07 },
+  { code = "MTB9rzJ3FGfNcnVq", date = 2026-10-07 },
+  { code = "mnkAzPcvQNFW8yHh", date = 2026-10-07 },
+  { code = "rqvWXVzCJTtf7QRY", date = 2026-10-14 },
+  { code = "XMHQ28qdxL7aPgvN", date = 2026-10-14 },
+  { code = "xGTkVtRbqWFMXKJQ", date = 2026-10-14 },
+  { code = "Y92GdNZX1AD8K4hr", date = 2026-10-18 },
+  { code = "QYXdt4ZbKfAg6myw", date = 2026-10-18 },
+]
+
+# Several characters → one player: player = ["Character-Server", ...]
+[aliases]
+
+[exclude]
+characters = []
+
+# Approved avoidable abilities per encounter ID: "3492" = [ability IDs].
+# Initial assumption (2026-10-20), to be reviewed.
+[avoidable]
+3429 = [1299296, 1283290]  # The Coiled Altar: Grim Guillotine, Noxious Ground
+3492 = [1314563]           # Ula'tek: Toxin Cloud
+3379 = [1257654]           # Nymrissa Wavecaller: Lingering Frost
+3455 = [1295173]           # Vashnik the Malignant: Exploding Infection
+3497 = [1305844]           # The Lost Explorers: Blast Wave
+3470 = [1289855]           # Nek'zali the Soulcoiler: Hungering Pyre

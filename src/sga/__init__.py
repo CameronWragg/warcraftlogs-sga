@@ -1,0 +1,1 @@
+"""Seasonal Guild Aggregator."""

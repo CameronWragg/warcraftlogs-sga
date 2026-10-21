@@ -1,0 +1,3797 @@
+{
+ "season_totals": [
+  {
+   "nights": 17,
+   "pulls": 331,
+   "kills": 68,
+   "wipes": 263,
+   "combat_hours": 23.93,
+   "wipe_hours": 17.35,
+   "deaths": 4353,
+   "players": 57,
+   "regulars": 24,
+   "first_night": "2026-08-19",
+   "last_night": "2026-10-18"
+  }
+ ],
+ "progression_all": [
+  {
+   "encounter_id": 3379,
+   "encounter": "Nymrissa Wavecaller",
+   "difficulty": 3,
+   "boss": "Nymrissa Wavecaller Normal",
+   "pulls": 3,
+   "kills": 2,
+   "first_kill_night": "2026-08-23",
+   "pulls_to_first_kill": 1,
+   "best_boss_pct": 0.01,
+   "combat_hours": 0.16,
+   "first_pull_night": "2026-08-23"
+  },
+  {
+   "encounter_id": 3379,
+   "encounter": "Nymrissa Wavecaller",
+   "difficulty": 4,
+   "boss": "Nymrissa Wavecaller Heroic",
+   "pulls": 4,
+   "kills": 1,
+   "first_kill_night": "2026-08-26",
+   "pulls_to_first_kill": 4,
+   "best_boss_pct": 0.01,
+   "combat_hours": 0.46,
+   "first_pull_night": "2026-08-23"
+  },
+  {
+   "encounter_id": 3420,
+   "encounter": "Sszorak",
+   "difficulty": 3,
+   "boss": "Sszorak Normal",
+   "pulls": 7,
+   "kills": 3,
+   "first_kill_night": "2026-08-19",
+   "pulls_to_first_kill": 2,
+   "best_boss_pct": 0.01,
+   "combat_hours": 0.41000000000000003,
+   "first_pull_night": "2026-08-19"
+  },
+  {
+   "encounter_id": 3420,
+   "encounter": "Sszorak",
+   "difficulty": 4,
+   "boss": "Sszorak Heroic",
+   "pulls": 27,
+   "kills": 4,
+   "first_kill_night": "2026-09-02",
+   "pulls_to_first_kill": 19,
+   "best_boss_pct": 0.01,
+   "combat_hours": 1.25,
+   "first_pull_night": "2026-08-30"
+  },
+  {
+   "encounter_id": 3421,
+   "encounter": "The Twin Fangs",
+   "difficulty": 3,
+   "boss": "The Twin Fangs Normal",
+   "pulls": 6,
+   "kills": 3,
+   "first_kill_night": "2026-08-19",
+   "pulls_to_first_kill": 4,
+   "best_boss_pct": 0.01,
+   "combat_hours": 0.54,
+   "first_pull_night": "2026-08-19"
+  },
+  {
+   "encounter_id": 3421,
+   "encounter": "The Twin Fangs",
+   "difficulty": 4,
+   "boss": "The Twin Fangs Heroic",
+   "pulls": 20,
+   "kills": 4,
+   "first_kill_night": "2026-09-06",
+   "pulls_to_first_kill": 11,
+   "best_boss_pct": 0.01,
+   "combat_hours": 1.82,
+   "first_pull_night": "2026-09-02"
+  },
+  {
+   "encounter_id": 3429,
+   "encounter": "The Coiled Altar",
+   "difficulty": 3,
+   "boss": "The Coiled Altar Normal",
+   "pulls": 20,
+   "kills": 4,
+   "first_kill_night": "2026-08-23",
+   "pulls_to_first_kill": 7,
+   "best_boss_pct": 0.01,
+   "combat_hours": 1.3599999999999999,
+   "first_pull_night": "2026-08-19"
+  },
+  {
+   "encounter_id": 3429,
+   "encounter": "The Coiled Altar",
+   "difficulty": 4,
+   "boss": "The Coiled Altar Heroic",
+   "pulls": 61,
+   "kills": 6,
+   "first_kill_night": "2026-09-13",
+   "pulls_to_first_kill": 49,
+   "best_boss_pct": 0.01,
+   "combat_hours": 4.15,
+   "first_pull_night": "2026-09-06"
+  },
+  {
+   "encounter_id": 3445,
+   "encounter": "Entombed Sentinels",
+   "difficulty": 3,
+   "boss": "Entombed Sentinels Normal",
+   "pulls": 4,
+   "kills": 3,
+   "first_kill_night": "2026-08-19",
+   "pulls_to_first_kill": 2,
+   "best_boss_pct": 0.01,
+   "combat_hours": 0.37,
+   "first_pull_night": "2026-08-19"
+  },
+  {
+   "encounter_id": 3445,
+   "encounter": "Entombed Sentinels",
+   "difficulty": 4,
+   "boss": "Entombed Sentinels Heroic",
+   "pulls": 9,
+   "kills": 5,
+   "first_kill_night": "2026-08-30",
+   "pulls_to_first_kill": 4,
+   "best_boss_pct": 0.01,
+   "combat_hours": 0.76,
+   "first_pull_night": "2026-08-26"
+  },
+  {
+   "encounter_id": 3455,
+   "encounter": "Vashnik the Malignant",
+   "difficulty": 3,
+   "boss": "Vashnik the Malignant Normal",
+   "pulls": 4,
+   "kills": 3,
+   "first_kill_night": "2026-08-19",
+   "pulls_to_first_kill": 1,
+   "best_boss_pct": 0.01,
+   "combat_hours": 0.29000000000000004,
+   "first_pull_night": "2026-08-19"
+  },
+  {
+   "encounter_id": 3455,
+   "encounter": "Vashnik the Malignant",
+   "difficulty": 4,
+   "boss": "Vashnik the Malignant Heroic",
+   "pulls": 5,
+   "kills": 5,
+   "first_kill_night": "2026-08-30",
+   "pulls_to_first_kill": 1,
+   "best_boss_pct": 0.01,
+   "combat_hours": 0.5,
+   "first_pull_night": "2026-08-30"
+  },
+  {
+   "encounter_id": 3470,
+   "encounter": "Nek'zali the Soulcoiler",
+   "difficulty": 3,
+   "boss": "Nek'zali the Soulcoiler Normal",
+   "pulls": 4,
+   "kills": 4,
+   "first_kill_night": "2026-08-19",
+   "pulls_to_first_kill": 1,
+   "best_boss_pct": 0.01,
+   "combat_hours": 0.29000000000000004,
+   "first_pull_night": "2026-08-19"
+  },
+  {
+   "encounter_id": 3470,
+   "encounter": "Nek'zali the Soulcoiler",
+   "difficulty": 4,
+   "boss": "Nek'zali the Soulcoiler Heroic",
+   "pulls": 11,
+   "kills": 8,
+   "first_kill_night": "2026-08-26",
+   "pulls_to_first_kill": 3,
+   "best_boss_pct": 0.01,
+   "combat_hours": 0.99,
+   "first_pull_night": "2026-08-26"
+  },
+  {
+   "encounter_id": 3492,
+   "encounter": "Ula'tek",
+   "difficulty": 3,
+   "boss": "Ula'tek Normal",
+   "pulls": 17,
+   "kills": 2,
+   "first_kill_night": "2026-08-26",
+   "pulls_to_first_kill": 13,
+   "best_boss_pct": 0.01,
+   "combat_hours": 0.76,
+   "first_pull_night": "2026-08-23"
+  },
+  {
+   "encounter_id": 3492,
+   "encounter": "Ula'tek",
+   "difficulty": 4,
+   "boss": "Ula'tek Heroic",
+   "pulls": 107,
+   "kills": 2,
+   "first_kill_night": "2026-09-27",
+   "pulls_to_first_kill": 69,
+   "best_boss_pct": 0.01,
+   "combat_hours": 8.51,
+   "first_pull_night": "2026-09-13"
+  },
+  {
+   "encounter_id": 3497,
+   "encounter": "The Lost Explorers",
+   "difficulty": 3,
+   "boss": "The Lost Explorers Normal",
+   "pulls": 3,
+   "kills": 3,
+   "first_kill_night": "2026-08-19",
+   "pulls_to_first_kill": 1,
+   "best_boss_pct": 0.01,
+   "combat_hours": 0.19,
+   "first_pull_night": "2026-08-19"
+  },
+  {
+   "encounter_id": 3497,
+   "encounter": "The Lost Explorers",
+   "difficulty": 4,
+   "boss": "The Lost Explorers Heroic",
+   "pulls": 9,
+   "kills": 5,
+   "first_kill_night": "2026-08-30",
+   "pulls_to_first_kill": 3,
+   "best_boss_pct": 0.01,
+   "combat_hours": 0.65,
+   "first_pull_night": "2026-08-30"
+  },
+  {
+   "encounter_id": 3513,
+   "encounter": "Kith'ix",
+   "difficulty": 4,
+   "boss": "Kith'ix Heroic",
+   "pulls": 10,
+   "kills": 1,
+   "first_kill_night": "2026-10-14",
+   "pulls_to_first_kill": 10,
+   "best_boss_pct": 0.01,
+   "combat_hours": 0.55,
+   "first_pull_night": "2026-10-14"
+  }
+ ],
+ "progression": [
+  {
+   "encounter_id": 3379,
+   "encounter": "Nymrissa Wavecaller",
+   "difficulty": 4,
+   "boss": "Nymrissa Wavecaller Heroic",
+   "pulls": 4,
+   "kills": 1,
+   "first_kill_night": "2026-08-26",
+   "pulls_to_first_kill": 4,
+   "best_boss_pct": 0.01,
+   "combat_hours": 0.46,
+   "first_pull_night": "2026-08-23"
+  },
+  {
+   "encounter_id": 3445,
+   "encounter": "Entombed Sentinels",
+   "difficulty": 4,
+   "boss": "Entombed Sentinels Heroic",
+   "pulls": 9,
+   "kills": 5,
+   "first_kill_night": "2026-08-30",
+   "pulls_to_first_kill": 4,
+   "best_boss_pct": 0.01,
+   "combat_hours": 0.76,
+   "first_pull_night": "2026-08-26"
+  },
+  {
+   "encounter_id": 3470,
+   "encounter": "Nek'zali the Soulcoiler",
+   "difficulty": 4,
+   "boss": "Nek'zali the Soulcoiler Heroic",
+   "pulls": 11,
+   "kills": 8,
+   "first_kill_night": "2026-08-26",
+   "pulls_to_first_kill": 3,
+   "best_boss_pct": 0.01,
+   "combat_hours": 0.99,
+   "first_pull_night": "2026-08-26"
+  },
+  {
+   "encounter_id": 3420,
+   "encounter": "Sszorak",
+   "difficulty": 4,
+   "boss": "Sszorak Heroic",
+   "pulls": 27,
+   "kills": 4,
+   "first_kill_night": "2026-09-02",
+   "pulls_to_first_kill": 19,
+   "best_boss_pct": 0.01,
+   "combat_hours": 1.25,
+   "first_pull_night": "2026-08-30"
+  },
+  {
+   "encounter_id": 3497,
+   "encounter": "The Lost Explorers",
+   "difficulty": 4,
+   "boss": "The Lost Explorers Heroic",
+   "pulls": 9,
+   "kills": 5,
+   "first_kill_night": "2026-08-30",
+   "pulls_to_first_kill": 3,
+   "best_boss_pct": 0.01,
+   "combat_hours": 0.65,
+   "first_pull_night": "2026-08-30"
+  },
+  {
+   "encounter_id": 3455,
+   "encounter": "Vashnik the Malignant",
+   "difficulty": 4,
+   "boss": "Vashnik the Malignant Heroic",
+   "pulls": 5,
+   "kills": 5,
+   "first_kill_night": "2026-08-30",
+   "pulls_to_first_kill": 1,
+   "best_boss_pct": 0.01,
+   "combat_hours": 0.5,
+   "first_pull_night": "2026-08-30"
+  },
+  {
+   "encounter_id": 3421,
+   "encounter": "The Twin Fangs",
+   "difficulty": 4,
+   "boss": "The Twin Fangs Heroic",
+   "pulls": 20,
+   "kills": 4,
+   "first_kill_night": "2026-09-06",
+   "pulls_to_first_kill": 11,
+   "best_boss_pct": 0.01,
+   "combat_hours": 1.82,
+   "first_pull_night": "2026-09-02"
+  },
+  {
+   "encounter_id": 3429,
+   "encounter": "The Coiled Altar",
+   "difficulty": 4,
+   "boss": "The Coiled Altar Heroic",
+   "pulls": 61,
+   "kills": 6,
+   "first_kill_night": "2026-09-13",
+   "pulls_to_first_kill": 49,
+   "best_boss_pct": 0.01,
+   "combat_hours": 4.15,
+   "first_pull_night": "2026-09-06"
+  },
+  {
+   "encounter_id": 3492,
+   "encounter": "Ula'tek",
+   "difficulty": 4,
+   "boss": "Ula'tek Heroic",
+   "pulls": 107,
+   "kills": 2,
+   "first_kill_night": "2026-09-27",
+   "pulls_to_first_kill": 69,
+   "best_boss_pct": 0.01,
+   "combat_hours": 8.51,
+   "first_pull_night": "2026-09-13"
+  },
+  {
+   "encounter_id": 3513,
+   "encounter": "Kith'ix",
+   "difficulty": 4,
+   "boss": "Kith'ix Heroic",
+   "pulls": 10,
+   "kills": 1,
+   "first_kill_night": "2026-10-14",
+   "pulls_to_first_kill": 10,
+   "best_boss_pct": 0.01,
+   "combat_hours": 0.55,
+   "first_pull_night": "2026-10-14"
+  }
+ ],
+ "nemesis_boss": [
+  {
+   "boss": "Ula'tek Heroic",
+   "pulls": 107,
+   "combat_hours": 8.51
+  }
+ ],
+ "nemesis_by_night": [
+  {
+   "night": "2026-09-13",
+   "pulls": 8,
+   "best_boss_pct": 69.39,
+   "killed": false
+  },
+  {
+   "night": "2026-09-16",
+   "pulls": 8,
+   "best_boss_pct": 61.4,
+   "killed": false
+  },
+  {
+   "night": "2026-09-20",
+   "pulls": 28,
+   "best_boss_pct": 35.6,
+   "killed": false
+  },
+  {
+   "night": "2026-09-23",
+   "pulls": 11,
+   "best_boss_pct": 21.08,
+   "killed": false
+  },
+  {
+   "night": "2026-09-27",
+   "pulls": 14,
+   "best_boss_pct": 0.03,
+   "killed": true
+  },
+  {
+   "night": "2026-09-30",
+   "pulls": 6,
+   "best_boss_pct": 6.76,
+   "killed": false
+  },
+  {
+   "night": "2026-10-07",
+   "pulls": 4,
+   "best_boss_pct": 0.01,
+   "killed": true
+  },
+  {
+   "night": "2026-10-14",
+   "pulls": 9,
+   "best_boss_pct": 8.99,
+   "killed": false
+  },
+  {
+   "night": "2026-10-18",
+   "pulls": 19,
+   "best_boss_pct": 1.78,
+   "killed": false
+  }
+ ],
+ "so_close": [
+  {
+   "pull_id": 251,
+   "night": "2026-09-30",
+   "boss": "The Coiled Altar Heroic",
+   "boss_pct": 0.32,
+   "duration_ms": 459216
+  },
+  {
+   "pull_id": 130,
+   "night": "2026-09-09",
+   "boss": "The Twin Fangs Heroic",
+   "boss_pct": 0.39,
+   "duration_ms": 483088
+  },
+  {
+   "pull_id": 103,
+   "night": "2026-09-06",
+   "boss": "The Coiled Altar Heroic",
+   "boss_pct": 0.67,
+   "duration_ms": 156948
+  },
+  {
+   "pull_id": 329,
+   "night": "2026-10-18",
+   "boss": "Ula'tek Heroic",
+   "boss_pct": 1.78,
+   "duration_ms": 620907
+  },
+  {
+   "pull_id": 135,
+   "night": "2026-09-09",
+   "boss": "The Coiled Altar Heroic",
+   "boss_pct": 2.75,
+   "duration_ms": 159812
+  },
+  {
+   "pull_id": 98,
+   "night": "2026-09-06",
+   "boss": "The Coiled Altar Heroic",
+   "boss_pct": 3.3,
+   "duration_ms": 149937
+  },
+  {
+   "pull_id": 290,
+   "night": "2026-10-07",
+   "boss": "The Coiled Altar Normal",
+   "boss_pct": 3.66,
+   "duration_ms": 411294
+  },
+  {
+   "pull_id": 131,
+   "night": "2026-09-09",
+   "boss": "The Twin Fangs Heroic",
+   "boss_pct": 4.37,
+   "duration_ms": 479480
+  },
+  {
+   "pull_id": 107,
+   "night": "2026-09-06",
+   "boss": "The Coiled Altar Heroic",
+   "boss_pct": 4.69,
+   "duration_ms": 142394
+  },
+  {
+   "pull_id": 150,
+   "night": "2026-09-13",
+   "boss": "The Coiled Altar Heroic",
+   "boss_pct": 4.89,
+   "duration_ms": 539836
+  }
+ ],
+ "shortest_wipes": [
+  {
+   "pull_id": 174,
+   "night": "2026-09-16",
+   "boss": "Ula'tek Heroic",
+   "duration_ms": 16601
+  },
+  {
+   "pull_id": 127,
+   "night": "2026-09-09",
+   "boss": "Sszorak Heroic",
+   "duration_ms": 17364
+  },
+  {
+   "pull_id": 15,
+   "night": "2026-08-23",
+   "boss": "The Coiled Altar Normal",
+   "duration_ms": 20280
+  },
+  {
+   "pull_id": 192,
+   "night": "2026-09-20",
+   "boss": "Ula'tek Heroic",
+   "duration_ms": 20936
+  },
+  {
+   "pull_id": 21,
+   "night": "2026-08-23",
+   "boss": "Ula'tek Normal",
+   "duration_ms": 21277
+  },
+  {
+   "pull_id": 153,
+   "night": "2026-09-13",
+   "boss": "Ula'tek Heroic",
+   "duration_ms": 21303
+  },
+  {
+   "pull_id": 321,
+   "night": "2026-10-18",
+   "boss": "Ula'tek Heroic",
+   "duration_ms": 23197
+  },
+  {
+   "pull_id": 269,
+   "night": "2026-10-04",
+   "boss": "The Coiled Altar Normal",
+   "duration_ms": 23428
+  },
+  {
+   "pull_id": 167,
+   "night": "2026-09-16",
+   "boss": "Sszorak Heroic",
+   "duration_ms": 26111
+  },
+  {
+   "pull_id": 55,
+   "night": "2026-08-30",
+   "boss": "The Lost Explorers Heroic",
+   "duration_ms": 27099
+  }
+ ],
+ "fastest_deaths": [
+  {
+   "pull_id": 55,
+   "night": "2026-08-30",
+   "boss": "The Lost Explorers Heroic",
+   "player": "Larryw",
+   "since_pull_ms": 1229,
+   "ability": "Melee"
+  },
+  {
+   "pull_id": 247,
+   "night": "2026-09-30",
+   "boss": "The Twin Fangs Heroic",
+   "player": "Parasite",
+   "since_pull_ms": 1449,
+   "ability": "Flames of Ula'tek"
+  },
+  {
+   "pull_id": 247,
+   "night": "2026-09-30",
+   "boss": "The Twin Fangs Heroic",
+   "player": "Yax",
+   "since_pull_ms": 1511,
+   "ability": "Melee"
+  },
+  {
+   "pull_id": 90,
+   "night": "2026-09-06",
+   "boss": "The Twin Fangs Heroic",
+   "player": "Parasite",
+   "since_pull_ms": 1521,
+   "ability": "Melee"
+  },
+  {
+   "pull_id": 10,
+   "night": "2026-08-19",
+   "boss": "The Twin Fangs Normal",
+   "player": "Gyutaro",
+   "since_pull_ms": 1549,
+   "ability": "Melee"
+  },
+  {
+   "pull_id": 330,
+   "night": "2026-10-18",
+   "boss": "Ula'tek Heroic",
+   "player": "Gyutaro",
+   "since_pull_ms": 2029,
+   "ability": "Melee"
+  },
+  {
+   "pull_id": 174,
+   "night": "2026-09-16",
+   "boss": "Ula'tek Heroic",
+   "player": "Parasite",
+   "since_pull_ms": 2031,
+   "ability": "Toxin Cloud"
+  },
+  {
+   "pull_id": 174,
+   "night": "2026-09-16",
+   "boss": "Ula'tek Heroic",
+   "player": "Frostedtips",
+   "since_pull_ms": 2056,
+   "ability": "Toxin Cloud"
+  },
+  {
+   "pull_id": 153,
+   "night": "2026-09-13",
+   "boss": "Ula'tek Heroic",
+   "player": "B\u00e5z",
+   "since_pull_ms": 2082,
+   "ability": "Toxin Cloud"
+  },
+  {
+   "pull_id": 174,
+   "night": "2026-09-16",
+   "boss": "Ula'tek Heroic",
+   "player": "Larryw",
+   "since_pull_ms": 3058,
+   "ability": "Toxin Cloud"
+  }
+ ],
+ "top_killing_blows": [
+  {
+   "ability": "Mother's Wrath",
+   "ability_id": 1301122,
+   "deaths": 251,
+   "bosses": "Ula'tek Heroic, Ula'tek Normal"
+  },
+  {
+   "ability": "Necrotic Vapors",
+   "ability_id": 1286835,
+   "deaths": 191,
+   "bosses": "Ula'tek Heroic, Ula'tek Normal"
+  },
+  {
+   "ability": "Blight Vein",
+   "ability_id": 1317955,
+   "deaths": 178,
+   "bosses": "Ula'tek Heroic"
+  },
+  {
+   "ability": "Dread Roar",
+   "ability_id": 1305775,
+   "deaths": 151,
+   "bosses": "Ula'tek Heroic, Ula'tek Normal"
+  },
+  {
+   "ability": "Calcified Corpse",
+   "ability_id": 1318329,
+   "deaths": 146,
+   "bosses": "Ula'tek Heroic"
+  },
+  {
+   "ability": "Putrid Membrane",
+   "ability_id": 1308275,
+   "deaths": 132,
+   "bosses": "Ula'tek Heroic, Ula'tek Normal"
+  },
+  {
+   "ability": "Unchecked Rage",
+   "ability_id": 1301007,
+   "deaths": 128,
+   "bosses": "Ula'tek Heroic, Ula'tek Normal"
+  },
+  {
+   "ability": "Venom Rupture",
+   "ability_id": 1299838,
+   "deaths": 126,
+   "bosses": "The Coiled Altar Heroic, The Coiled Altar Normal"
+  },
+  {
+   "ability": "Eternal Nightfall",
+   "ability_id": 1286918,
+   "deaths": 106,
+   "bosses": "The Coiled Altar Heroic, The Coiled Altar Normal"
+  },
+  {
+   "ability": "Spectral Coils",
+   "ability_id": 1287265,
+   "deaths": 88,
+   "bosses": "Ula'tek Heroic, Ula'tek Normal"
+  }
+ ],
+ "personal_nemesis": [
+  {
+   "player": "Birgit",
+   "ability": "Mother's Wrath",
+   "deaths": 18
+  },
+  {
+   "player": "D\u00fars",
+   "ability": "Mother's Wrath",
+   "deaths": 18
+  },
+  {
+   "player": "Parasite",
+   "ability": "Mother's Wrath",
+   "deaths": 18
+  },
+  {
+   "player": "Phuzzy",
+   "ability": "Mother's Wrath",
+   "deaths": 18
+  },
+  {
+   "player": "Larryw",
+   "ability": "Mother's Wrath",
+   "deaths": 17
+  },
+  {
+   "player": "Minyoongi",
+   "ability": "Mother's Wrath",
+   "deaths": 17
+  },
+  {
+   "player": "Yax",
+   "ability": "Blight Vein",
+   "deaths": 17
+  },
+  {
+   "player": "B\u00e5z",
+   "ability": "Unchecked Rage",
+   "deaths": 16
+  },
+  {
+   "player": "Krogars",
+   "ability": "Gravebound",
+   "deaths": 15
+  },
+  {
+   "player": "Cmrn",
+   "ability": "Stone Venom",
+   "deaths": 14
+  },
+  {
+   "player": "Gyutaro",
+   "ability": "Mother's Wrath",
+   "deaths": 14
+  },
+  {
+   "player": "Kalvaswis",
+   "ability": "Mother's Wrath",
+   "deaths": 14
+  },
+  {
+   "player": "Aceo",
+   "ability": "Mother's Wrath",
+   "deaths": 13
+  },
+  {
+   "player": "Athynna",
+   "ability": "Mother's Wrath",
+   "deaths": 13
+  },
+  {
+   "player": "Tusgra",
+   "ability": "Mother's Wrath",
+   "deaths": 13
+  },
+  {
+   "player": "Frostedtips",
+   "ability": "Venom Rupture",
+   "deaths": 9
+  },
+  {
+   "player": "Ham\u00eatre",
+   "ability": "Spectral Coils",
+   "deaths": 9
+  },
+  {
+   "player": "Arjunis",
+   "ability": "Eternal Venom",
+   "deaths": 8
+  },
+  {
+   "player": "Tavriel",
+   "ability": "Blight Vein",
+   "deaths": 8
+  },
+  {
+   "player": "Senjumaris",
+   "ability": "Coalesced Venom",
+   "deaths": 7
+  },
+  {
+   "player": "Yawningpanda",
+   "ability": "Calcified Corpse",
+   "deaths": 7
+  },
+  {
+   "player": "\u00cdzanam\u00ec",
+   "ability": "Calcified Corpse",
+   "deaths": 6
+  },
+  {
+   "player": "Kalvasxenflm",
+   "ability": "Raging Crosswinds",
+   "deaths": 5
+  },
+  {
+   "player": "Ynuuri",
+   "ability": "Necrotic Vapors",
+   "deaths": 5
+  }
+ ],
+ "nights": [
+  {
+   "night": "2026-08-19",
+   "pulls": 14,
+   "kills": 6,
+   "deaths": 140
+  },
+  {
+   "night": "2026-08-23",
+   "pulls": 20,
+   "kills": 2,
+   "deaths": 279
+  },
+  {
+   "night": "2026-08-26",
+   "pulls": 16,
+   "kills": 11,
+   "deaths": 83
+  },
+  {
+   "night": "2026-08-30",
+   "pulls": 24,
+   "kills": 3,
+   "deaths": 330
+  },
+  {
+   "night": "2026-09-02",
+   "pulls": 13,
+   "kills": 5,
+   "deaths": 147
+  },
+  {
+   "night": "2026-09-06",
+   "pulls": 32,
+   "kills": 1,
+   "deaths": 454
+  },
+  {
+   "night": "2026-09-09",
+   "pulls": 20,
+   "kills": 6,
+   "deaths": 209
+  },
+  {
+   "night": "2026-09-13",
+   "pulls": 21,
+   "kills": 1,
+   "deaths": 308
+  },
+  {
+   "night": "2026-09-16",
+   "pulls": 21,
+   "kills": 7,
+   "deaths": 266
+  },
+  {
+   "night": "2026-09-20",
+   "pulls": 28,
+   "kills": 0,
+   "deaths": 469
+  },
+  {
+   "night": "2026-09-23",
+   "pulls": 18,
+   "kills": 2,
+   "deaths": 289
+  },
+  {
+   "night": "2026-09-27",
+   "pulls": 14,
+   "kills": 1,
+   "deaths": 290
+  },
+  {
+   "night": "2026-09-30",
+   "pulls": 17,
+   "kills": 7,
+   "deaths": 176
+  },
+  {
+   "night": "2026-10-04",
+   "pulls": 21,
+   "kills": 8,
+   "deaths": 248
+  },
+  {
+   "night": "2026-10-07",
+   "pulls": 12,
+   "kills": 5,
+   "deaths": 97
+  },
+  {
+   "night": "2026-10-14",
+   "pulls": 21,
+   "kills": 3,
+   "deaths": 284
+  },
+  {
+   "night": "2026-10-18",
+   "pulls": 19,
+   "kills": 0,
+   "deaths": 284
+  }
+ ],
+ "kills_by_deaths": [
+  {
+   "pull_id": 241,
+   "night": "2026-09-27",
+   "boss": "Ula'tek Heroic",
+   "deaths": 15
+  },
+  {
+   "pull_id": 78,
+   "night": "2026-09-02",
+   "boss": "The Lost Explorers Heroic",
+   "deaths": 11
+  },
+  {
+   "pull_id": 172,
+   "night": "2026-09-16",
+   "boss": "The Twin Fangs Heroic",
+   "deaths": 11
+  },
+  {
+   "pull_id": 249,
+   "night": "2026-09-30",
+   "boss": "The Twin Fangs Heroic",
+   "deaths": 11
+  },
+  {
+   "pull_id": 53,
+   "night": "2026-08-30",
+   "boss": "Vashnik the Malignant Heroic",
+   "deaths": 10
+  },
+  {
+   "pull_id": 173,
+   "night": "2026-09-16",
+   "boss": "The Coiled Altar Heroic",
+   "deaths": 9
+  },
+  {
+   "pull_id": 56,
+   "night": "2026-08-30",
+   "boss": "The Lost Explorers Heroic",
+   "deaths": 8
+  },
+  {
+   "pull_id": 18,
+   "night": "2026-08-23",
+   "boss": "The Coiled Altar Normal",
+   "deaths": 7
+  },
+  {
+   "pull_id": 90,
+   "night": "2026-09-06",
+   "boss": "The Twin Fangs Heroic",
+   "deaths": 7
+  },
+  {
+   "pull_id": 122,
+   "night": "2026-09-09",
+   "boss": "Entombed Sentinels Heroic",
+   "deaths": 6
+  },
+  {
+   "pull_id": 152,
+   "night": "2026-09-13",
+   "boss": "The Coiled Altar Heroic",
+   "deaths": 6
+  },
+  {
+   "pull_id": 41,
+   "night": "2026-08-26",
+   "boss": "The Coiled Altar Normal",
+   "deaths": 5
+  },
+  {
+   "pull_id": 170,
+   "night": "2026-09-16",
+   "boss": "Sszorak Heroic",
+   "deaths": 5
+  },
+  {
+   "pull_id": 301,
+   "night": "2026-10-14",
+   "boss": "Kith'ix Heroic",
+   "deaths": 5
+  },
+  {
+   "pull_id": 7,
+   "night": "2026-08-19",
+   "boss": "Sszorak Normal",
+   "deaths": 4
+  },
+  {
+   "pull_id": 163,
+   "night": "2026-09-16",
+   "boss": "Entombed Sentinels Heroic",
+   "deaths": 4
+  },
+  {
+   "pull_id": 166,
+   "night": "2026-09-16",
+   "boss": "The Lost Explorers Heroic",
+   "deaths": 4
+  },
+  {
+   "pull_id": 268,
+   "night": "2026-10-04",
+   "boss": "The Twin Fangs Normal",
+   "deaths": 4
+  },
+  {
+   "pull_id": 303,
+   "night": "2026-10-14",
+   "boss": "The Coiled Altar Heroic",
+   "deaths": 4
+  },
+  {
+   "pull_id": 79,
+   "night": "2026-09-02",
+   "boss": "Sszorak Heroic",
+   "deaths": 3
+  },
+  {
+   "pull_id": 5,
+   "night": "2026-08-19",
+   "boss": "The Lost Explorers Normal",
+   "deaths": 2
+  },
+  {
+   "pull_id": 76,
+   "night": "2026-09-02",
+   "boss": "Entombed Sentinels Heroic",
+   "deaths": 2
+  },
+  {
+   "pull_id": 77,
+   "night": "2026-09-02",
+   "boss": "Vashnik the Malignant Heroic",
+   "deaths": 2
+  },
+  {
+   "pull_id": 128,
+   "night": "2026-09-09",
+   "boss": "Sszorak Heroic",
+   "deaths": 2
+  },
+  {
+   "pull_id": 242,
+   "night": "2026-09-30",
+   "boss": "Nek'zali the Soulcoiler Heroic",
+   "deaths": 2
+  },
+  {
+   "pull_id": 260,
+   "night": "2026-10-04",
+   "boss": "Entombed Sentinels Normal",
+   "deaths": 2
+  },
+  {
+   "pull_id": 262,
+   "night": "2026-10-04",
+   "boss": "Vashnik the Malignant Normal",
+   "deaths": 2
+  },
+  {
+   "pull_id": 281,
+   "night": "2026-10-07",
+   "boss": "The Coiled Altar Heroic",
+   "deaths": 2
+  },
+  {
+   "pull_id": 1,
+   "night": "2026-08-19",
+   "boss": "Nek'zali the Soulcoiler Normal",
+   "deaths": 1
+  },
+  {
+   "pull_id": 11,
+   "night": "2026-08-19",
+   "boss": "The Twin Fangs Normal",
+   "deaths": 1
+  },
+  {
+   "pull_id": 36,
+   "night": "2026-08-26",
+   "boss": "Entombed Sentinels Normal",
+   "deaths": 1
+  },
+  {
+   "pull_id": 48,
+   "night": "2026-08-26",
+   "boss": "Nek'zali the Soulcoiler Heroic",
+   "deaths": 1
+  },
+  {
+   "pull_id": 35,
+   "night": "2026-08-26",
+   "boss": "Nek'zali the Soulcoiler Normal",
+   "deaths": 1
+  },
+  {
+   "pull_id": 45,
+   "night": "2026-08-26",
+   "boss": "Nymrissa Wavecaller Heroic",
+   "deaths": 1
+  },
+  {
+   "pull_id": 40,
+   "night": "2026-08-26",
+   "boss": "The Twin Fangs Normal",
+   "deaths": 1
+  },
+  {
+   "pull_id": 42,
+   "night": "2026-08-26",
+   "boss": "Ula'tek Normal",
+   "deaths": 1
+  },
+  {
+   "pull_id": 121,
+   "night": "2026-09-09",
+   "boss": "Nek'zali the Soulcoiler Heroic",
+   "deaths": 1
+  },
+  {
+   "pull_id": 125,
+   "night": "2026-09-09",
+   "boss": "The Lost Explorers Heroic",
+   "deaths": 1
+  },
+  {
+   "pull_id": 132,
+   "night": "2026-09-09",
+   "boss": "The Twin Fangs Heroic",
+   "deaths": 1
+  },
+  {
+   "pull_id": 123,
+   "night": "2026-09-09",
+   "boss": "Vashnik the Malignant Heroic",
+   "deaths": 1
+  },
+  {
+   "pull_id": 161,
+   "night": "2026-09-16",
+   "boss": "Nek'zali the Soulcoiler Heroic",
+   "deaths": 1
+  },
+  {
+   "pull_id": 216,
+   "night": "2026-09-23",
+   "boss": "The Coiled Altar Heroic",
+   "deaths": 1
+  },
+  {
+   "pull_id": 243,
+   "night": "2026-09-30",
+   "boss": "Entombed Sentinels Heroic",
+   "deaths": 1
+  },
+  {
+   "pull_id": 245,
+   "night": "2026-09-30",
+   "boss": "The Lost Explorers Heroic",
+   "deaths": 1
+  },
+  {
+   "pull_id": 275,
+   "night": "2026-10-04",
+   "boss": "The Coiled Altar Normal",
+   "deaths": 1
+  },
+  {
+   "pull_id": 285,
+   "night": "2026-10-07",
+   "boss": "Ula'tek Heroic",
+   "deaths": 1
+  },
+  {
+   "pull_id": 302,
+   "night": "2026-10-14",
+   "boss": "Nek'zali the Soulcoiler Heroic",
+   "deaths": 1
+  },
+  {
+   "pull_id": 3,
+   "night": "2026-08-19",
+   "boss": "Entombed Sentinels Normal",
+   "deaths": 0
+  },
+  {
+   "pull_id": 4,
+   "night": "2026-08-19",
+   "boss": "Vashnik the Malignant Normal",
+   "deaths": 0
+  },
+  {
+   "pull_id": 31,
+   "night": "2026-08-23",
+   "boss": "Nymrissa Wavecaller Normal",
+   "deaths": 0
+  },
+  {
+   "pull_id": 44,
+   "night": "2026-08-26",
+   "boss": "Nymrissa Wavecaller Normal",
+   "deaths": 0
+  },
+  {
+   "pull_id": 39,
+   "night": "2026-08-26",
+   "boss": "Sszorak Normal",
+   "deaths": 0
+  },
+  {
+   "pull_id": 38,
+   "night": "2026-08-26",
+   "boss": "The Lost Explorers Normal",
+   "deaths": 0
+  },
+  {
+   "pull_id": 37,
+   "night": "2026-08-26",
+   "boss": "Vashnik the Malignant Normal",
+   "deaths": 0
+  },
+  {
+   "pull_id": 52,
+   "night": "2026-08-30",
+   "boss": "Entombed Sentinels Heroic",
+   "deaths": 0
+  },
+  {
+   "pull_id": 75,
+   "night": "2026-09-02",
+   "boss": "Nek'zali the Soulcoiler Heroic",
+   "deaths": 0
+  },
+  {
+   "pull_id": 164,
+   "night": "2026-09-16",
+   "boss": "Vashnik the Malignant Heroic",
+   "deaths": 0
+  },
+  {
+   "pull_id": 210,
+   "night": "2026-09-23",
+   "boss": "Nek'zali the Soulcoiler Heroic",
+   "deaths": 0
+  },
+  {
+   "pull_id": 246,
+   "night": "2026-09-30",
+   "boss": "Sszorak Heroic",
+   "deaths": 0
+  },
+  {
+   "pull_id": 252,
+   "night": "2026-09-30",
+   "boss": "The Coiled Altar Heroic",
+   "deaths": 0
+  },
+  {
+   "pull_id": 244,
+   "night": "2026-09-30",
+   "boss": "Vashnik the Malignant Heroic",
+   "deaths": 0
+  },
+  {
+   "pull_id": 259,
+   "night": "2026-10-04",
+   "boss": "Nek'zali the Soulcoiler Normal",
+   "deaths": 0
+  },
+  {
+   "pull_id": 267,
+   "night": "2026-10-04",
+   "boss": "Sszorak Normal",
+   "deaths": 0
+  },
+  {
+   "pull_id": 263,
+   "night": "2026-10-04",
+   "boss": "The Lost Explorers Normal",
+   "deaths": 0
+  },
+  {
+   "pull_id": 279,
+   "night": "2026-10-04",
+   "boss": "Ula'tek Normal",
+   "deaths": 0
+  },
+  {
+   "pull_id": 280,
+   "night": "2026-10-07",
+   "boss": "Nek'zali the Soulcoiler Heroic",
+   "deaths": 0
+  },
+  {
+   "pull_id": 286,
+   "night": "2026-10-07",
+   "boss": "Nek'zali the Soulcoiler Normal",
+   "deaths": 0
+  },
+  {
+   "pull_id": 291,
+   "night": "2026-10-07",
+   "boss": "The Coiled Altar Normal",
+   "deaths": 0
+  }
+ ],
+ "floor_awards": [
+  {
+   "player": "Parasite",
+   "pulls_attended": 312,
+   "first_deaths": 34,
+   "deaths": 274,
+   "first_death_rate": 0.109,
+   "deaths_per_pull": 0.878
+  },
+  {
+   "player": "B\u00e5z",
+   "pulls_attended": 240,
+   "first_deaths": 26,
+   "deaths": 218,
+   "first_death_rate": 0.108,
+   "deaths_per_pull": 0.908
+  },
+  {
+   "player": "Phuzzy",
+   "pulls_attended": 331,
+   "first_deaths": 26,
+   "deaths": 311,
+   "first_death_rate": 0.079,
+   "deaths_per_pull": 0.94
+  },
+  {
+   "player": "D\u00fars",
+   "pulls_attended": 330,
+   "first_deaths": 23,
+   "deaths": 299,
+   "first_death_rate": 0.07,
+   "deaths_per_pull": 0.906
+  },
+  {
+   "player": "Ham\u00eatre",
+   "pulls_attended": 190,
+   "first_deaths": 19,
+   "deaths": 149,
+   "first_death_rate": 0.1,
+   "deaths_per_pull": 0.784
+  },
+  {
+   "player": "Gyutaro",
+   "pulls_attended": 330,
+   "first_deaths": 16,
+   "deaths": 280,
+   "first_death_rate": 0.048,
+   "deaths_per_pull": 0.848
+  },
+  {
+   "player": "Frostedtips",
+   "pulls_attended": 224,
+   "first_deaths": 15,
+   "deaths": 185,
+   "first_death_rate": 0.067,
+   "deaths_per_pull": 0.826
+  },
+  {
+   "player": "Yax",
+   "pulls_attended": 288,
+   "first_deaths": 15,
+   "deaths": 235,
+   "first_death_rate": 0.052,
+   "deaths_per_pull": 0.816
+  },
+  {
+   "player": "Kalvasxenflm",
+   "pulls_attended": 87,
+   "first_deaths": 14,
+   "deaths": 75,
+   "first_death_rate": 0.161,
+   "deaths_per_pull": 0.862
+  },
+  {
+   "player": "Larryw",
+   "pulls_attended": 297,
+   "first_deaths": 12,
+   "deaths": 248,
+   "first_death_rate": 0.04,
+   "deaths_per_pull": 0.835
+  },
+  {
+   "player": "Senjumaris",
+   "pulls_attended": 119,
+   "first_deaths": 11,
+   "deaths": 94,
+   "first_death_rate": 0.092,
+   "deaths_per_pull": 0.79
+  },
+  {
+   "player": "Tusgra",
+   "pulls_attended": 257,
+   "first_deaths": 11,
+   "deaths": 226,
+   "first_death_rate": 0.043,
+   "deaths_per_pull": 0.879
+  },
+  {
+   "player": "Krogars",
+   "pulls_attended": 125,
+   "first_deaths": 9,
+   "deaths": 120,
+   "first_death_rate": 0.072,
+   "deaths_per_pull": 0.96
+  },
+  {
+   "player": "Minyoongi",
+   "pulls_attended": 330,
+   "first_deaths": 9,
+   "deaths": 275,
+   "first_death_rate": 0.027,
+   "deaths_per_pull": 0.833
+  },
+  {
+   "player": "Cmrn",
+   "pulls_attended": 200,
+   "first_deaths": 8,
+   "deaths": 178,
+   "first_death_rate": 0.04,
+   "deaths_per_pull": 0.89
+  },
+  {
+   "player": "Athynna",
+   "pulls_attended": 173,
+   "first_deaths": 7,
+   "deaths": 144,
+   "first_death_rate": 0.04,
+   "deaths_per_pull": 0.832
+  },
+  {
+   "player": "Aceo",
+   "pulls_attended": 122,
+   "first_deaths": 6,
+   "deaths": 99,
+   "first_death_rate": 0.049,
+   "deaths_per_pull": 0.811
+  },
+  {
+   "player": "Birgit",
+   "pulls_attended": 294,
+   "first_deaths": 5,
+   "deaths": 235,
+   "first_death_rate": 0.017,
+   "deaths_per_pull": 0.799
+  },
+  {
+   "player": "Kalvaswis",
+   "pulls_attended": 160,
+   "first_deaths": 4,
+   "deaths": 132,
+   "first_death_rate": 0.025,
+   "deaths_per_pull": 0.825
+  },
+  {
+   "player": "Ynuuri",
+   "pulls_attended": 81,
+   "first_deaths": 4,
+   "deaths": 51,
+   "first_death_rate": 0.049,
+   "deaths_per_pull": 0.63
+  },
+  {
+   "player": "\u00cdzanam\u00ec",
+   "pulls_attended": 65,
+   "first_deaths": 3,
+   "deaths": 55,
+   "first_death_rate": 0.046,
+   "deaths_per_pull": 0.846
+  },
+  {
+   "player": "Tavriel",
+   "pulls_attended": 100,
+   "first_deaths": 2,
+   "deaths": 85,
+   "first_death_rate": 0.02,
+   "deaths_per_pull": 0.85
+  },
+  {
+   "player": "Arjunis",
+   "pulls_attended": 298,
+   "first_deaths": 1,
+   "deaths": 69,
+   "first_death_rate": 0.003,
+   "deaths_per_pull": 0.232
+  },
+  {
+   "player": "Yawningpanda",
+   "pulls_attended": 59,
+   "first_deaths": 0,
+   "deaths": 52,
+   "first_death_rate": 0.0,
+   "deaths_per_pull": 0.881
+  }
+ ],
+ "attendance": [
+  {
+   "player": "Phuzzy",
+   "pulls_attended": 331,
+   "of_pulls": 331,
+   "share": 1.0,
+   "regular": true
+  },
+  {
+   "player": "D\u00fars",
+   "pulls_attended": 330,
+   "of_pulls": 331,
+   "share": 0.997,
+   "regular": true
+  },
+  {
+   "player": "Gyutaro",
+   "pulls_attended": 330,
+   "of_pulls": 331,
+   "share": 0.997,
+   "regular": true
+  },
+  {
+   "player": "Minyoongi",
+   "pulls_attended": 330,
+   "of_pulls": 331,
+   "share": 0.997,
+   "regular": true
+  },
+  {
+   "player": "Parasite",
+   "pulls_attended": 312,
+   "of_pulls": 331,
+   "share": 0.943,
+   "regular": true
+  },
+  {
+   "player": "Arjunis",
+   "pulls_attended": 298,
+   "of_pulls": 331,
+   "share": 0.9,
+   "regular": true
+  },
+  {
+   "player": "Larryw",
+   "pulls_attended": 297,
+   "of_pulls": 331,
+   "share": 0.897,
+   "regular": true
+  },
+  {
+   "player": "Birgit",
+   "pulls_attended": 294,
+   "of_pulls": 331,
+   "share": 0.888,
+   "regular": true
+  },
+  {
+   "player": "Yax",
+   "pulls_attended": 288,
+   "of_pulls": 331,
+   "share": 0.87,
+   "regular": true
+  },
+  {
+   "player": "Tusgra",
+   "pulls_attended": 257,
+   "of_pulls": 331,
+   "share": 0.776,
+   "regular": true
+  },
+  {
+   "player": "B\u00e5z",
+   "pulls_attended": 240,
+   "of_pulls": 331,
+   "share": 0.725,
+   "regular": true
+  },
+  {
+   "player": "Frostedtips",
+   "pulls_attended": 224,
+   "of_pulls": 331,
+   "share": 0.677,
+   "regular": true
+  },
+  {
+   "player": "Cmrn",
+   "pulls_attended": 200,
+   "of_pulls": 331,
+   "share": 0.604,
+   "regular": true
+  },
+  {
+   "player": "Ham\u00eatre",
+   "pulls_attended": 190,
+   "of_pulls": 331,
+   "share": 0.574,
+   "regular": true
+  },
+  {
+   "player": "Athynna",
+   "pulls_attended": 173,
+   "of_pulls": 331,
+   "share": 0.523,
+   "regular": true
+  },
+  {
+   "player": "Kalvaswis",
+   "pulls_attended": 160,
+   "of_pulls": 331,
+   "share": 0.483,
+   "regular": true
+  },
+  {
+   "player": "Krogars",
+   "pulls_attended": 125,
+   "of_pulls": 331,
+   "share": 0.378,
+   "regular": true
+  },
+  {
+   "player": "Aceo",
+   "pulls_attended": 122,
+   "of_pulls": 331,
+   "share": 0.369,
+   "regular": true
+  },
+  {
+   "player": "Senjumaris",
+   "pulls_attended": 119,
+   "of_pulls": 331,
+   "share": 0.36,
+   "regular": true
+  },
+  {
+   "player": "Tavriel",
+   "pulls_attended": 100,
+   "of_pulls": 331,
+   "share": 0.302,
+   "regular": true
+  },
+  {
+   "player": "Kalvasxenflm",
+   "pulls_attended": 87,
+   "of_pulls": 331,
+   "share": 0.263,
+   "regular": true
+  },
+  {
+   "player": "Ynuuri",
+   "pulls_attended": 81,
+   "of_pulls": 331,
+   "share": 0.245,
+   "regular": true
+  },
+  {
+   "player": "\u00cdzanam\u00ec",
+   "pulls_attended": 65,
+   "of_pulls": 331,
+   "share": 0.196,
+   "regular": true
+  },
+  {
+   "player": "Yawningpanda",
+   "pulls_attended": 59,
+   "of_pulls": 331,
+   "share": 0.178,
+   "regular": true
+  },
+  {
+   "player": "Arjuno",
+   "pulls_attended": 25,
+   "of_pulls": 331,
+   "share": 0.076,
+   "regular": false
+  },
+  {
+   "player": "Felbaz",
+   "pulls_attended": 25,
+   "of_pulls": 331,
+   "share": 0.076,
+   "regular": false
+  },
+  {
+   "player": "Breakan",
+   "pulls_attended": 21,
+   "of_pulls": 331,
+   "share": 0.063,
+   "regular": false
+  },
+  {
+   "player": "Inglorien",
+   "pulls_attended": 21,
+   "of_pulls": 331,
+   "share": 0.063,
+   "regular": false
+  },
+  {
+   "player": "Kurobara",
+   "pulls_attended": 21,
+   "of_pulls": 331,
+   "share": 0.063,
+   "regular": false
+  },
+  {
+   "player": "Halythra",
+   "pulls_attended": 19,
+   "of_pulls": 331,
+   "share": 0.057,
+   "regular": false
+  },
+  {
+   "player": "Larrys",
+   "pulls_attended": 19,
+   "of_pulls": 331,
+   "share": 0.057,
+   "regular": false
+  },
+  {
+   "player": "Bradbit",
+   "pulls_attended": 16,
+   "of_pulls": 331,
+   "share": 0.048,
+   "regular": false
+  },
+  {
+   "player": "Abracabaz",
+   "pulls_attended": 14,
+   "of_pulls": 331,
+   "share": 0.042,
+   "regular": false
+  },
+  {
+   "player": "Skypala",
+   "pulls_attended": 14,
+   "of_pulls": 331,
+   "share": 0.042,
+   "regular": false
+  },
+  {
+   "player": "\u0421\u0438\u043d\u044c\u043a\u0430\u0437",
+   "pulls_attended": 11,
+   "of_pulls": 331,
+   "share": 0.033,
+   "regular": false
+  },
+  {
+   "player": "Gorefried",
+   "pulls_attended": 9,
+   "of_pulls": 331,
+   "share": 0.027,
+   "regular": false
+  },
+  {
+   "player": "Arjune",
+   "pulls_attended": 8,
+   "of_pulls": 331,
+   "share": 0.024,
+   "regular": false
+  },
+  {
+   "player": "Uwumentalist",
+   "pulls_attended": 5,
+   "of_pulls": 331,
+   "share": 0.015,
+   "regular": false
+  },
+  {
+   "player": "Alastronz",
+   "pulls_attended": 4,
+   "of_pulls": 331,
+   "share": 0.012,
+   "regular": false
+  },
+  {
+   "player": "Bubbula",
+   "pulls_attended": 4,
+   "of_pulls": 331,
+   "share": 0.012,
+   "regular": false
+  },
+  {
+   "player": "D\u00ebkap\u00eftador",
+   "pulls_attended": 4,
+   "of_pulls": 331,
+   "share": 0.012,
+   "regular": false
+  },
+  {
+   "player": "Ghiaccialo",
+   "pulls_attended": 4,
+   "of_pulls": 331,
+   "share": 0.012,
+   "regular": false
+  },
+  {
+   "player": "Guacamol\u00ea",
+   "pulls_attended": 4,
+   "of_pulls": 331,
+   "share": 0.012,
+   "regular": false
+  },
+  {
+   "player": "Icantsee",
+   "pulls_attended": 4,
+   "of_pulls": 331,
+   "share": 0.012,
+   "regular": false
+  },
+  {
+   "player": "Irrung",
+   "pulls_attended": 4,
+   "of_pulls": 331,
+   "share": 0.012,
+   "regular": false
+  },
+  {
+   "player": "Issoper",
+   "pulls_attended": 4,
+   "of_pulls": 331,
+   "share": 0.012,
+   "regular": false
+  },
+  {
+   "player": "K\u00earos",
+   "pulls_attended": 4,
+   "of_pulls": 331,
+   "share": 0.012,
+   "regular": false
+  },
+  {
+   "player": "K\u00ffr\u00e3",
+   "pulls_attended": 4,
+   "of_pulls": 331,
+   "share": 0.012,
+   "regular": false
+  },
+  {
+   "player": "Leftball",
+   "pulls_attended": 4,
+   "of_pulls": 331,
+   "share": 0.012,
+   "regular": false
+  },
+  {
+   "player": "Mawiyel",
+   "pulls_attended": 4,
+   "of_pulls": 331,
+   "share": 0.012,
+   "regular": false
+  },
+  {
+   "player": "Naxatras",
+   "pulls_attended": 4,
+   "of_pulls": 331,
+   "share": 0.012,
+   "regular": false
+  },
+  {
+   "player": "Necherninja",
+   "pulls_attended": 4,
+   "of_pulls": 331,
+   "share": 0.012,
+   "regular": false
+  },
+  {
+   "player": "Nyxandriel",
+   "pulls_attended": 4,
+   "of_pulls": 331,
+   "share": 0.012,
+   "regular": false
+  },
+  {
+   "player": "Whitebutugly",
+   "pulls_attended": 4,
+   "of_pulls": 331,
+   "share": 0.012,
+   "regular": false
+  },
+  {
+   "player": "Goonerlord",
+   "pulls_attended": 3,
+   "of_pulls": 331,
+   "share": 0.009,
+   "regular": false
+  },
+  {
+   "player": "Faint",
+   "pulls_attended": 2,
+   "of_pulls": 331,
+   "share": 0.006,
+   "regular": false
+  },
+  {
+   "player": "Plagueborne",
+   "pulls_attended": 2,
+   "of_pulls": 331,
+   "share": 0.006,
+   "regular": false
+  }
+ ],
+ "damage_healing_totals": [
+  {
+   "damage_done": 149828706779,
+   "healing": 86198262996,
+   "damage_taken": 91596340901
+  }
+ ],
+ "damage_healing_by_player": [
+  {
+   "player": "Gyutaro",
+   "damage_done": 13211400354,
+   "healing": 1589108293,
+   "damage_taken": 4237956040
+  },
+  {
+   "player": "Larryw",
+   "damage_done": 13202374631,
+   "healing": 1381463991,
+   "damage_taken": 4425852929
+  },
+  {
+   "player": "Parasite",
+   "damage_done": 11906650026,
+   "healing": 1184169571,
+   "damage_taken": 4624929712
+  },
+  {
+   "player": "Minyoongi",
+   "damage_done": 11839245056,
+   "healing": 1388189058,
+   "damage_taken": 4770728294
+  },
+  {
+   "player": "Yax",
+   "damage_done": 11496008475,
+   "healing": 1506736749,
+   "damage_taken": 4144943606
+  },
+  {
+   "player": "Birgit",
+   "damage_done": 10143608656,
+   "healing": 1174538716,
+   "damage_taken": 4703399504
+  },
+  {
+   "player": "Tusgra",
+   "damage_done": 9448684353,
+   "healing": 500564570,
+   "damage_taken": 3923148699
+  },
+  {
+   "player": "B\u00e5z",
+   "damage_done": 8315333977,
+   "healing": 1559910930,
+   "damage_taken": 3584829789
+  },
+  {
+   "player": "Athynna",
+   "damage_done": 8057425827,
+   "healing": 861031311,
+   "damage_taken": 3011197753
+  },
+  {
+   "player": "Frostedtips",
+   "damage_done": 7956279136,
+   "healing": 517972815,
+   "damage_taken": 2822545058
+  },
+  {
+   "player": "Ham\u00eatre",
+   "damage_done": 7070176244,
+   "healing": 2744622268,
+   "damage_taken": 3319029598
+  },
+  {
+   "player": "Aceo",
+   "damage_done": 5202021768,
+   "healing": 249312450,
+   "damage_taken": 1879391283
+  },
+  {
+   "player": "Phuzzy",
+   "damage_done": 3486727404,
+   "healing": 11700054899,
+   "damage_taken": 6726484772
+  },
+  {
+   "player": "\u00cdzanam\u00ec",
+   "damage_done": 3459677876,
+   "healing": 310921885,
+   "damage_taken": 1309437066
+  },
+  {
+   "player": "Cmrn",
+   "damage_done": 3291342842,
+   "healing": 3956021676,
+   "damage_taken": 6723630178
+  },
+  {
+   "player": "Senjumaris",
+   "damage_done": 3180504586,
+   "healing": 220732474,
+   "damage_taken": 1105223159
+  },
+  {
+   "player": "Kalvaswis",
+   "damage_done": 2978444176,
+   "healing": 3345667452,
+   "damage_taken": 5721697422
+  },
+  {
+   "player": "Tavriel",
+   "damage_done": 2718532179,
+   "healing": 350575093,
+   "damage_taken": 1537499838
+  },
+  {
+   "player": "Krogars",
+   "damage_done": 1359755792,
+   "healing": 2298352908,
+   "damage_taken": 4668046653
+  },
+  {
+   "player": "Abracabaz",
+   "damage_done": 1238703610,
+   "healing": 46433067,
+   "damage_taken": 359218819
+  },
+  {
+   "player": "Arjuno",
+   "damage_done": 841470383,
+   "healing": 46869291,
+   "damage_taken": 341778411
+  },
+  {
+   "player": "Felbaz",
+   "damage_done": 776771446,
+   "healing": 62991143,
+   "damage_taken": 276113647
+  },
+  {
+   "player": "Halythra",
+   "damage_done": 671599607,
+   "healing": 54511980,
+   "damage_taken": 264145247
+  },
+  {
+   "player": "Kurobara",
+   "damage_done": 654072998,
+   "healing": 82871704,
+   "damage_taken": 287445461
+  },
+  {
+   "player": "Arjunis",
+   "damage_done": 584793055,
+   "healing": 19328398874,
+   "damage_taken": 4764239682
+  },
+  {
+   "player": "Breakan",
+   "damage_done": 493525483,
+   "healing": 10540404,
+   "damage_taken": 204636581
+  },
+  {
+   "player": "Ynuuri",
+   "damage_done": 383395218,
+   "healing": 2701081572,
+   "damage_taken": 1125589270
+  },
+  {
+   "player": "Mawiyel",
+   "damage_done": 366371393,
+   "healing": 46295472,
+   "damage_taken": 118845201
+  },
+  {
+   "player": "Inglorien",
+   "damage_done": 348991094,
+   "healing": 27350955,
+   "damage_taken": 199704827
+  },
+  {
+   "player": "Ghiaccialo",
+   "damage_done": 341076654,
+   "healing": 19547956,
+   "damage_taken": 102695896
+  },
+  {
+   "player": "D\u00fars",
+   "damage_done": 335667692,
+   "healing": 17735554647,
+   "damage_taken": 5497977590
+  },
+  {
+   "player": "\u0421\u0438\u043d\u044c\u043a\u0430\u0437",
+   "damage_done": 326503955,
+   "healing": 17331511,
+   "damage_taken": 155943322
+  },
+  {
+   "player": "Bradbit",
+   "damage_done": 321949383,
+   "healing": 28223872,
+   "damage_taken": 157365821
+  },
+  {
+   "player": "Leftball",
+   "damage_done": 319470858,
+   "healing": 16924972,
+   "damage_taken": 103733276
+  },
+  {
+   "player": "Issoper",
+   "damage_done": 286913090,
+   "healing": 34694569,
+   "damage_taken": 112450816
+  },
+  {
+   "player": "Gorefried",
+   "damage_done": 267576918,
+   "healing": 15222442,
+   "damage_taken": 61098709
+  },
+  {
+   "player": "K\u00ffr\u00e3",
+   "damage_done": 263551671,
+   "healing": 8703613,
+   "damage_taken": 102302633
+  },
+  {
+   "player": "K\u00earos",
+   "damage_done": 260386665,
+   "healing": 20675172,
+   "damage_taken": 96714840
+  },
+  {
+   "player": "Nyxandriel",
+   "damage_done": 251543498,
+   "healing": 16174255,
+   "damage_taken": 86663886
+  },
+  {
+   "player": "Uwumentalist",
+   "damage_done": 217352041,
+   "healing": 9183546,
+   "damage_taken": 57613985
+  },
+  {
+   "player": "Alastronz",
+   "damage_done": 203946926,
+   "healing": 5646208,
+   "damage_taken": 98778097
+  },
+  {
+   "player": "Arjune",
+   "damage_done": 194574164,
+   "healing": 287207774,
+   "damage_taken": 434153368
+  },
+  {
+   "player": "Bubbula",
+   "damage_done": 179170147,
+   "healing": 16162798,
+   "damage_taken": 75999806
+  },
+  {
+   "player": "D\u00ebkap\u00eftador",
+   "damage_done": 166010680,
+   "healing": 17833319,
+   "damage_taken": 57899546
+  },
+  {
+   "player": "Skypala",
+   "damage_done": 159483828,
+   "healing": 149957060,
+   "damage_taken": 280846225
+  },
+  {
+   "player": "Icantsee",
+   "damage_done": 132203296,
+   "healing": 10303071,
+   "damage_taken": 45474677
+  },
+  {
+   "player": "Kalvasxenflm",
+   "damage_done": 127917389,
+   "healing": 2343673639,
+   "damage_taken": 940493907
+  },
+  {
+   "player": "Goonerlord",
+   "damage_done": 125780048,
+   "healing": 16139721,
+   "damage_taken": 39862775
+  },
+  {
+   "player": "Naxatras",
+   "damage_done": 120972723,
+   "healing": 15875255,
+   "damage_taken": 48018174
+  },
+  {
+   "player": "Guacamol\u00ea",
+   "damage_done": 116549054,
+   "healing": 6015824,
+   "damage_taken": 41177939
+  },
+  {
+   "player": "Necherninja",
+   "damage_done": 112883592,
+   "healing": 4861040,
+   "damage_taken": 35827420
+  },
+  {
+   "player": "Plagueborne",
+   "damage_done": 104893830,
+   "healing": 12470930,
+   "damage_taken": 46997843
+  },
+  {
+   "player": "Yawningpanda",
+   "damage_done": 83030983,
+   "healing": 4281034916,
+   "damage_taken": 1172812099
+  },
+  {
+   "player": "Larrys",
+   "damage_done": 75548308,
+   "healing": 963562597,
+   "damage_taken": 324991954
+  },
+  {
+   "player": "Faint",
+   "damage_done": 45410323,
+   "healing": 2028500,
+   "damage_taken": 25514144
+  },
+  {
+   "player": "Irrung",
+   "damage_done": 2432514,
+   "healing": 379091431,
+   "damage_taken": 97584894
+  },
+  {
+   "player": "Whitebutugly",
+   "damage_done": 2018904,
+   "healing": 516870787,
+   "damage_taken": 113658760
+  }
+ ],
+ "best_night_dps": [
+  {
+   "player": "Larryw",
+   "night": "2026-09-27",
+   "damage": 1353766253,
+   "seconds": 5912.397,
+   "dps": 228971.0
+  },
+  {
+   "player": "Larryw",
+   "night": "2026-09-23",
+   "damage": 1357952483,
+   "seconds": 6093.747,
+   "dps": 222844.0
+  },
+  {
+   "player": "Larryw",
+   "night": "2026-09-30",
+   "damage": 117470168,
+   "seconds": 575.623,
+   "dps": 204075.0
+  },
+  {
+   "player": "Larryw",
+   "night": "2026-09-20",
+   "damage": 1306843700,
+   "seconds": 6405.642,
+   "dps": 204014.0
+  },
+  {
+   "player": "Parasite",
+   "night": "2026-09-30",
+   "damage": 1333978941,
+   "seconds": 6555.426,
+   "dps": 203492.0
+  },
+  {
+   "player": "Ham\u00eatre",
+   "night": "2026-10-07",
+   "damage": 357925582,
+   "seconds": 1780.953,
+   "dps": 200974.0
+  },
+  {
+   "player": "Frostedtips",
+   "night": "2026-09-27",
+   "damage": 1173923709,
+   "seconds": 5912.397,
+   "dps": 198553.0
+  },
+  {
+   "player": "Ham\u00eatre",
+   "night": "2026-09-27",
+   "damage": 1161120835,
+   "seconds": 5912.397,
+   "dps": 196387.0
+  },
+  {
+   "player": "Larryw",
+   "night": "2026-09-16",
+   "damage": 961159249,
+   "seconds": 4894.545,
+   "dps": 196374.0
+  },
+  {
+   "player": "Ham\u00eatre",
+   "night": "2026-09-30",
+   "damage": 1279230114,
+   "seconds": 6555.426,
+   "dps": 195141.0
+  }
+ ],
+ "most_damage_taken_non_tank": [
+  {
+   "player": "D\u00fars",
+   "damage_taken": 5497977590
+  },
+  {
+   "player": "Minyoongi",
+   "damage_taken": 4770728294
+  },
+  {
+   "player": "Arjunis",
+   "damage_taken": 4764239682
+  },
+  {
+   "player": "Parasite",
+   "damage_taken": 4624929712
+  },
+  {
+   "player": "Larryw",
+   "damage_taken": 4425852929
+  },
+  {
+   "player": "Birgit",
+   "damage_taken": 4305736215
+  },
+  {
+   "player": "Gyutaro",
+   "damage_taken": 4237956040
+  },
+  {
+   "player": "Yax",
+   "damage_taken": 4144943606
+  },
+  {
+   "player": "Tusgra",
+   "damage_taken": 3923148699
+  },
+  {
+   "player": "B\u00e5z",
+   "damage_taken": 3584829789
+  }
+ ],
+ "interrupts": [
+  {
+   "player": "Gyutaro",
+   "interrupts": 252
+  },
+  {
+   "player": "Cmrn",
+   "interrupts": 103
+  },
+  {
+   "player": "Kalvaswis",
+   "interrupts": 81
+  },
+  {
+   "player": "Birgit",
+   "interrupts": 72
+  },
+  {
+   "player": "Phuzzy",
+   "interrupts": 66
+  },
+  {
+   "player": "Krogars",
+   "interrupts": 56
+  },
+  {
+   "player": "Minyoongi",
+   "interrupts": 56
+  },
+  {
+   "player": "B\u00e5z",
+   "interrupts": 39
+  },
+  {
+   "player": "Tavriel",
+   "interrupts": 39
+  },
+  {
+   "player": "Athynna",
+   "interrupts": 36
+  },
+  {
+   "player": "Yax",
+   "interrupts": 35
+  },
+  {
+   "player": "Parasite",
+   "interrupts": 32
+  },
+  {
+   "player": "Frostedtips",
+   "interrupts": 21
+  },
+  {
+   "player": "\u00cdzanam\u00ec",
+   "interrupts": 17
+  },
+  {
+   "player": "Larryw",
+   "interrupts": 14
+  },
+  {
+   "player": "Tusgra",
+   "interrupts": 13
+  },
+  {
+   "player": "Aceo",
+   "interrupts": 3
+  },
+  {
+   "player": "Senjumaris",
+   "interrupts": 1
+  },
+  {
+   "player": "Yawningpanda",
+   "interrupts": 1
+  }
+ ],
+ "dispels": [
+  {
+   "player": "Phuzzy",
+   "dispels": 953
+  },
+  {
+   "player": "D\u00fars",
+   "dispels": 821
+  },
+  {
+   "player": "Arjunis",
+   "dispels": 400
+  },
+  {
+   "player": "Kalvaswis",
+   "dispels": 180
+  },
+  {
+   "player": "Tusgra",
+   "dispels": 131
+  },
+  {
+   "player": "Yawningpanda",
+   "dispels": 59
+  },
+  {
+   "player": "Larryw",
+   "dispels": 27
+  },
+  {
+   "player": "Kalvasxenflm",
+   "dispels": 25
+  },
+  {
+   "player": "Minyoongi",
+   "dispels": 17
+  },
+  {
+   "player": "Ynuuri",
+   "dispels": 17
+  },
+  {
+   "player": "B\u00e5z",
+   "dispels": 10
+  },
+  {
+   "player": "Frostedtips",
+   "dispels": 8
+  },
+  {
+   "player": "Parasite",
+   "dispels": 8
+  },
+  {
+   "player": "Ham\u00eatre",
+   "dispels": 5
+  },
+  {
+   "player": "Yax",
+   "dispels": 5
+  },
+  {
+   "player": "Aceo",
+   "dispels": 4
+  },
+  {
+   "player": "Senjumaris",
+   "dispels": 2
+  }
+ ],
+ "rezzes_given": [
+  {
+   "player": "D\u00fars",
+   "rezzes_given": 207
+  },
+  {
+   "player": "Birgit",
+   "rezzes_given": 30
+  },
+  {
+   "player": "Cmrn",
+   "rezzes_given": 13
+  },
+  {
+   "player": "Krogars",
+   "rezzes_given": 11
+  },
+  {
+   "player": "Kalvaswis",
+   "rezzes_given": 10
+  },
+  {
+   "player": "Minyoongi",
+   "rezzes_given": 1
+  }
+ ],
+ "rezzes_received": [
+  {
+   "player": "Phuzzy",
+   "rezzes_received": 45
+  },
+  {
+   "player": "Parasite",
+   "rezzes_received": 27
+  },
+  {
+   "player": "D\u00fars",
+   "rezzes_received": 17
+  },
+  {
+   "player": "B\u00e5z",
+   "rezzes_received": 16
+  },
+  {
+   "player": "Gyutaro",
+   "rezzes_received": 16
+  },
+  {
+   "player": "Cmrn",
+   "rezzes_received": 14
+  },
+  {
+   "player": "Larryw",
+   "rezzes_received": 14
+  },
+  {
+   "player": "Krogars",
+   "rezzes_received": 12
+  },
+  {
+   "player": "Kalvasxenflm",
+   "rezzes_received": 11
+  },
+  {
+   "player": "Ham\u00eatre",
+   "rezzes_received": 10
+  },
+  {
+   "player": "Minyoongi",
+   "rezzes_received": 10
+  },
+  {
+   "player": "Yax",
+   "rezzes_received": 8
+  },
+  {
+   "player": "Frostedtips",
+   "rezzes_received": 7
+  },
+  {
+   "player": "Tusgra",
+   "rezzes_received": 7
+  },
+  {
+   "player": "Athynna",
+   "rezzes_received": 5
+  },
+  {
+   "player": "Ynuuri",
+   "rezzes_received": 5
+  },
+  {
+   "player": "Birgit",
+   "rezzes_received": 4
+  },
+  {
+   "player": "Kalvaswis",
+   "rezzes_received": 4
+  },
+  {
+   "player": "Senjumaris",
+   "rezzes_received": 4
+  },
+  {
+   "player": "Aceo",
+   "rezzes_received": 3
+  },
+  {
+   "player": "Arjunis",
+   "rezzes_received": 3
+  },
+  {
+   "player": "Yawningpanda",
+   "rezzes_received": 2
+  },
+  {
+   "player": "\u00cdzanam\u00ec",
+   "rezzes_received": 2
+  }
+ ],
+ "consumables": [
+  {
+   "player": "Gyutaro",
+   "potions": 504,
+   "healthstones": 149,
+   "pulls": 330
+  },
+  {
+   "player": "B\u00e5z",
+   "potions": 350,
+   "healthstones": 81,
+   "pulls": 240
+  },
+  {
+   "player": "Parasite",
+   "potions": 333,
+   "healthstones": 57,
+   "pulls": 312
+  },
+  {
+   "player": "Yax",
+   "potions": 268,
+   "healthstones": 75,
+   "pulls": 288
+  },
+  {
+   "player": "Birgit",
+   "potions": 253,
+   "healthstones": 72,
+   "pulls": 294
+  },
+  {
+   "player": "Ham\u00eatre",
+   "potions": 130,
+   "healthstones": 64,
+   "pulls": 190
+  },
+  {
+   "player": "Minyoongi",
+   "potions": 116,
+   "healthstones": 124,
+   "pulls": 330
+  },
+  {
+   "player": "Kalvaswis",
+   "potions": 106,
+   "healthstones": 24,
+   "pulls": 160
+  },
+  {
+   "player": "Larryw",
+   "potions": 92,
+   "healthstones": 357,
+   "pulls": 297
+  },
+  {
+   "player": "D\u00fars",
+   "potions": 89,
+   "healthstones": 34,
+   "pulls": 330
+  },
+  {
+   "player": "Phuzzy",
+   "potions": 79,
+   "healthstones": 13,
+   "pulls": 331
+  },
+  {
+   "player": "Yawningpanda",
+   "potions": 44,
+   "healthstones": 2,
+   "pulls": 59
+  },
+  {
+   "player": "Athynna",
+   "potions": 41,
+   "healthstones": 67,
+   "pulls": 173
+  },
+  {
+   "player": "Ynuuri",
+   "potions": 30,
+   "healthstones": 33,
+   "pulls": 81
+  },
+  {
+   "player": "Tavriel",
+   "potions": 29,
+   "healthstones": 26,
+   "pulls": 100
+  },
+  {
+   "player": "Frostedtips",
+   "potions": 25,
+   "healthstones": 71,
+   "pulls": 224
+  },
+  {
+   "player": "Krogars",
+   "potions": 14,
+   "healthstones": 28,
+   "pulls": 125
+  },
+  {
+   "player": "Tusgra",
+   "potions": 12,
+   "healthstones": 30,
+   "pulls": 257
+  },
+  {
+   "player": "Senjumaris",
+   "potions": 10,
+   "healthstones": 33,
+   "pulls": 119
+  },
+  {
+   "player": "Kalvasxenflm",
+   "potions": 4,
+   "healthstones": 9,
+   "pulls": 87
+  },
+  {
+   "player": "Aceo",
+   "potions": 3,
+   "healthstones": 31,
+   "pulls": 122
+  },
+  {
+   "player": "Cmrn",
+   "potions": 2,
+   "healthstones": 16,
+   "pulls": 200
+  },
+  {
+   "player": "Arjunis",
+   "potions": 1,
+   "healthstones": 57,
+   "pulls": 298
+  },
+  {
+   "player": "\u00cdzanam\u00ec",
+   "potions": 0,
+   "healthstones": 33,
+   "pulls": 65
+  }
+ ],
+ "lust_timing": [
+  {
+   "pulls_with_lust": 220,
+   "avg_seconds": 89.1,
+   "median_seconds": 115.7
+  }
+ ],
+ "lust_timing_by_boss": [
+  {
+   "boss": "Sszorak Normal",
+   "pulls": 4,
+   "avg_seconds": 0.5
+  },
+  {
+   "boss": "Nymrissa Wavecaller Normal",
+   "pulls": 2,
+   "avg_seconds": 0.6
+  },
+  {
+   "boss": "Entombed Sentinels Heroic",
+   "pulls": 6,
+   "avg_seconds": 0.8
+  },
+  {
+   "boss": "Vashnik the Malignant Heroic",
+   "pulls": 5,
+   "avg_seconds": 0.9
+  },
+  {
+   "boss": "Entombed Sentinels Normal",
+   "pulls": 4,
+   "avg_seconds": 1.2
+  },
+  {
+   "boss": "The Twin Fangs Normal",
+   "pulls": 3,
+   "avg_seconds": 1.4
+  },
+  {
+   "boss": "Nek'zali the Soulcoiler Heroic",
+   "pulls": 10,
+   "avg_seconds": 1.6
+  },
+  {
+   "boss": "The Lost Explorers Normal",
+   "pulls": 3,
+   "avg_seconds": 1.6
+  },
+  {
+   "boss": "The Lost Explorers Heroic",
+   "pulls": 7,
+   "avg_seconds": 1.8
+  },
+  {
+   "boss": "The Twin Fangs Heroic",
+   "pulls": 17,
+   "avg_seconds": 2.2
+  },
+  {
+   "boss": "Nek'zali the Soulcoiler Normal",
+   "pulls": 4,
+   "avg_seconds": 22.3
+  },
+  {
+   "boss": "Vashnik the Malignant Normal",
+   "pulls": 3,
+   "avg_seconds": 58.4
+  },
+  {
+   "boss": "Sszorak Heroic",
+   "pulls": 15,
+   "avg_seconds": 62.1
+  },
+  {
+   "boss": "Ula'tek Normal",
+   "pulls": 8,
+   "avg_seconds": 68.5
+  },
+  {
+   "boss": "Nymrissa Wavecaller Heroic",
+   "pulls": 4,
+   "avg_seconds": 111.0
+  },
+  {
+   "boss": "The Coiled Altar Normal",
+   "pulls": 12,
+   "avg_seconds": 112.8
+  },
+  {
+   "boss": "Ula'tek Heroic",
+   "pulls": 89,
+   "avg_seconds": 118.8
+  },
+  {
+   "boss": "The Coiled Altar Heroic",
+   "pulls": 23,
+   "avg_seconds": 223.4
+  },
+  {
+   "boss": "Kith'ix Heroic",
+   "pulls": 1,
+   "avg_seconds": 244.4
+  }
+ ],
+ "lust_casters": [
+  {
+   "player": "Tusgra",
+   "lusts": 121
+  },
+  {
+   "player": "Senjumaris",
+   "lusts": 53
+  },
+  {
+   "player": "Frostedtips",
+   "lusts": 34
+  },
+  {
+   "player": "Aceo",
+   "lusts": 12
+  }
+ ],
+ "avoidable_damage": [
+  {
+   "player": "\u00cdzanam\u00ec",
+   "main_role": "dps",
+   "avoidable_damage": 13556028,
+   "pulls_attended": 65,
+   "per_pull": 208554.0
+  },
+  {
+   "player": "Gyutaro",
+   "main_role": "dps",
+   "avoidable_damage": 60768296,
+   "pulls_attended": 330,
+   "per_pull": 184146.0
+  },
+  {
+   "player": "D\u00fars",
+   "main_role": "healer",
+   "avoidable_damage": 57977087,
+   "pulls_attended": 330,
+   "per_pull": 175688.0
+  },
+  {
+   "player": "Parasite",
+   "main_role": "dps",
+   "avoidable_damage": 44429964,
+   "pulls_attended": 312,
+   "per_pull": 142404.0
+  },
+  {
+   "player": "Arjunis",
+   "main_role": "healer",
+   "avoidable_damage": 38773682,
+   "pulls_attended": 298,
+   "per_pull": 130113.0
+  },
+  {
+   "player": "Kalvasxenflm",
+   "main_role": "healer",
+   "avoidable_damage": 8892429,
+   "pulls_attended": 87,
+   "per_pull": 102212.0
+  },
+  {
+   "player": "Yawningpanda",
+   "main_role": "healer",
+   "avoidable_damage": 5402413,
+   "pulls_attended": 59,
+   "per_pull": 91566.0
+  },
+  {
+   "player": "Birgit",
+   "main_role": "dps",
+   "avoidable_damage": 26569488,
+   "pulls_attended": 294,
+   "per_pull": 90372.0
+  },
+  {
+   "player": "Tusgra",
+   "main_role": "dps",
+   "avoidable_damage": 22483842,
+   "pulls_attended": 257,
+   "per_pull": 87486.0
+  },
+  {
+   "player": "Yax",
+   "main_role": "dps",
+   "avoidable_damage": 24510190,
+   "pulls_attended": 288,
+   "per_pull": 85105.0
+  },
+  {
+   "player": "Senjumaris",
+   "main_role": "dps",
+   "avoidable_damage": 9743951,
+   "pulls_attended": 119,
+   "per_pull": 81882.0
+  },
+  {
+   "player": "Minyoongi",
+   "main_role": "dps",
+   "avoidable_damage": 24225988,
+   "pulls_attended": 330,
+   "per_pull": 73412.0
+  },
+  {
+   "player": "B\u00e5z",
+   "main_role": "dps",
+   "avoidable_damage": 14817607,
+   "pulls_attended": 240,
+   "per_pull": 61740.0
+  },
+  {
+   "player": "Larryw",
+   "main_role": "dps",
+   "avoidable_damage": 15247630,
+   "pulls_attended": 297,
+   "per_pull": 51339.0
+  },
+  {
+   "player": "Frostedtips",
+   "main_role": "dps",
+   "avoidable_damage": 11346375,
+   "pulls_attended": 224,
+   "per_pull": 50653.0
+  },
+  {
+   "player": "Tavriel",
+   "main_role": "dps",
+   "avoidable_damage": 5010489,
+   "pulls_attended": 100,
+   "per_pull": 50105.0
+  },
+  {
+   "player": "Ham\u00eatre",
+   "main_role": "dps",
+   "avoidable_damage": 6628407,
+   "pulls_attended": 190,
+   "per_pull": 34886.0
+  },
+  {
+   "player": "Aceo",
+   "main_role": "dps",
+   "avoidable_damage": 4194102,
+   "pulls_attended": 122,
+   "per_pull": 34378.0
+  },
+  {
+   "player": "Phuzzy",
+   "main_role": "healer",
+   "avoidable_damage": 10943679,
+   "pulls_attended": 331,
+   "per_pull": 33062.0
+  },
+  {
+   "player": "Athynna",
+   "main_role": "dps",
+   "avoidable_damage": 5713051,
+   "pulls_attended": 173,
+   "per_pull": 33023.0
+  },
+  {
+   "player": "Ynuuri",
+   "main_role": "healer",
+   "avoidable_damage": 2270215,
+   "pulls_attended": 81,
+   "per_pull": 28027.0
+  },
+  {
+   "player": "Krogars",
+   "main_role": "tank",
+   "avoidable_damage": 2874866,
+   "pulls_attended": 125,
+   "per_pull": 22999.0
+  },
+  {
+   "player": "Cmrn",
+   "main_role": "tank",
+   "avoidable_damage": 635100,
+   "pulls_attended": 200,
+   "per_pull": 3176.0
+  },
+  {
+   "player": "Kalvaswis",
+   "main_role": "tank",
+   "avoidable_damage": 401383,
+   "pulls_attended": 160,
+   "per_pull": 2509.0
+  }
+ ],
+ "avoidable_by_ability": [
+  {
+   "boss": "Ula'tek Heroic",
+   "ability_id": 1,
+   "ability": "Melee",
+   "avoidable_damage": 123920360,
+   "players_hit": 17
+  },
+  {
+   "boss": "The Coiled Altar Heroic",
+   "ability_id": 1,
+   "ability": "Melee",
+   "avoidable_damage": 46581804,
+   "players_hit": 11
+  },
+  {
+   "boss": "The Coiled Altar Heroic",
+   "ability_id": 1283290,
+   "ability": "Noxious Ground",
+   "avoidable_damage": 33398139,
+   "players_hit": 11
+  },
+  {
+   "boss": "The Coiled Altar Normal",
+   "ability_id": 1,
+   "ability": "Melee",
+   "avoidable_damage": 22808158,
+   "players_hit": 14
+  },
+  {
+   "boss": "The Twin Fangs Heroic",
+   "ability_id": 1,
+   "ability": "Melee",
+   "avoidable_damage": 22484283,
+   "players_hit": 10
+  },
+  {
+   "boss": "The Coiled Altar Heroic",
+   "ability_id": 1299296,
+   "ability": "Grim Guillotine",
+   "avoidable_damage": 21221898,
+   "players_hit": 7
+  },
+  {
+   "boss": "Ula'tek Normal",
+   "ability_id": 1,
+   "ability": "Melee",
+   "avoidable_damage": 18978807,
+   "players_hit": 11
+  },
+  {
+   "boss": "The Lost Explorers Normal",
+   "ability_id": 1305844,
+   "ability": "Blast Wave",
+   "avoidable_damage": 16814687,
+   "players_hit": 12
+  },
+  {
+   "boss": "Ula'tek Normal",
+   "ability_id": 1298418,
+   "ability": "Stone Venom",
+   "avoidable_damage": 13621631,
+   "players_hit": 13
+  },
+  {
+   "boss": "Sszorak Heroic",
+   "ability_id": 1,
+   "ability": "Melee",
+   "avoidable_damage": 13162340,
+   "players_hit": 8
+  },
+  {
+   "boss": "Vashnik the Malignant Normal",
+   "ability_id": 1,
+   "ability": "Melee",
+   "avoidable_damage": 9778366,
+   "players_hit": 2
+  },
+  {
+   "boss": "The Lost Explorers Heroic",
+   "ability_id": 1,
+   "ability": "Melee",
+   "avoidable_damage": 9517839,
+   "players_hit": 9
+  },
+  {
+   "boss": "Nek'zali the Soulcoiler Heroic",
+   "ability_id": 1289855,
+   "ability": "Hungering Pyre",
+   "avoidable_damage": 9000859,
+   "players_hit": 3
+  },
+  {
+   "boss": "Ula'tek Heroic",
+   "ability_id": 1314563,
+   "ability": "Toxin Cloud",
+   "avoidable_damage": 7509424,
+   "players_hit": 8
+  },
+  {
+   "boss": "Nymrissa Wavecaller Heroic",
+   "ability_id": 1,
+   "ability": "Melee",
+   "avoidable_damage": 5401173,
+   "players_hit": 4
+  },
+  {
+   "boss": "The Coiled Altar Normal",
+   "ability_id": 1283290,
+   "ability": "Noxious Ground",
+   "avoidable_damage": 5068696,
+   "players_hit": 9
+  },
+  {
+   "boss": "Entombed Sentinels Heroic",
+   "ability_id": 1,
+   "ability": "Melee",
+   "avoidable_damage": 4744890,
+   "players_hit": 1
+  },
+  {
+   "boss": "Nek'zali the Soulcoiler Heroic",
+   "ability_id": 1,
+   "ability": "Melee",
+   "avoidable_damage": 4456111,
+   "players_hit": 1
+  },
+  {
+   "boss": "Nymrissa Wavecaller Heroic",
+   "ability_id": 1257654,
+   "ability": "Lingering Frost",
+   "avoidable_damage": 4166332,
+   "players_hit": 9
+  },
+  {
+   "boss": "Kith'ix Heroic",
+   "ability_id": 1,
+   "ability": "Melee",
+   "avoidable_damage": 4136936,
+   "players_hit": 3
+  },
+  {
+   "boss": "The Lost Explorers Heroic",
+   "ability_id": 1305844,
+   "ability": "Blast Wave",
+   "avoidable_damage": 3620995,
+   "players_hit": 3
+  },
+  {
+   "boss": "Vashnik the Malignant Normal",
+   "ability_id": 1295173,
+   "ability": "Exploding Infection",
+   "avoidable_damage": 3464378,
+   "players_hit": 5
+  },
+  {
+   "boss": "Nek'zali the Soulcoiler Normal",
+   "ability_id": 1289855,
+   "ability": "Hungering Pyre",
+   "avoidable_damage": 3295383,
+   "players_hit": 9
+  },
+  {
+   "boss": "Nymrissa Wavecaller Normal",
+   "ability_id": 1,
+   "ability": "Melee",
+   "avoidable_damage": 1952223,
+   "players_hit": 4
+  },
+  {
+   "boss": "Nymrissa Wavecaller Normal",
+   "ability_id": 1257654,
+   "ability": "Lingering Frost",
+   "avoidable_damage": 1669583,
+   "players_hit": 10
+  },
+  {
+   "boss": "Sszorak Normal",
+   "ability_id": 1,
+   "ability": "Melee",
+   "avoidable_damage": 1593389,
+   "players_hit": 2
+  },
+  {
+   "boss": "The Twin Fangs Normal",
+   "ability_id": 1,
+   "ability": "Melee",
+   "avoidable_damage": 1540464,
+   "players_hit": 1
+  },
+  {
+   "boss": "Vashnik the Malignant Heroic",
+   "ability_id": 1295173,
+   "ability": "Exploding Infection",
+   "avoidable_damage": 1253428,
+   "players_hit": 1
+  },
+  {
+   "boss": "Ula'tek Heroic",
+   "ability_id": 1298418,
+   "ability": "Stone Venom",
+   "avoidable_damage": 1166876,
+   "players_hit": 3
+  },
+  {
+   "boss": "Entombed Sentinels Normal",
+   "ability_id": 1,
+   "ability": "Melee",
+   "avoidable_damage": 1086810,
+   "players_hit": 2
+  }
+ ],
+ "janitor": [
+  {
+   "player": "Parasite",
+   "trash_damage": 1458344333,
+   "nights": 12
+  },
+  {
+   "player": "Minyoongi",
+   "trash_damage": 1367604146,
+   "nights": 12
+  },
+  {
+   "player": "Frostedtips",
+   "trash_damage": 1211128284,
+   "nights": 11
+  },
+  {
+   "player": "Gyutaro",
+   "trash_damage": 1170934965,
+   "nights": 14
+  },
+  {
+   "player": "Larryw",
+   "trash_damage": 1108040409,
+   "nights": 11
+  },
+  {
+   "player": "Tusgra",
+   "trash_damage": 1060126458,
+   "nights": 9
+  },
+  {
+   "player": "Birgit",
+   "trash_damage": 1018605330,
+   "nights": 12
+  },
+  {
+   "player": "Ham\u00eatre",
+   "trash_damage": 704663304,
+   "nights": 7
+  },
+  {
+   "player": "Athynna",
+   "trash_damage": 675844398,
+   "nights": 6
+  },
+  {
+   "player": "Aceo",
+   "trash_damage": 619323130,
+   "nights": 2
+  },
+  {
+   "player": "Yax",
+   "trash_damage": 610828949,
+   "nights": 12
+  },
+  {
+   "player": "Senjumaris",
+   "trash_damage": 539376552,
+   "nights": 5
+  },
+  {
+   "player": "Phuzzy",
+   "trash_damage": 524264432,
+   "nights": 12
+  },
+  {
+   "player": "Kalvaswis",
+   "trash_damage": 480871043,
+   "nights": 5
+  },
+  {
+   "player": "B\u00e5z",
+   "trash_damage": 292731085,
+   "nights": 8
+  },
+  {
+   "player": "\u00cdzanam\u00ec",
+   "trash_damage": 240951078,
+   "nights": 3
+  },
+  {
+   "player": "Cmrn",
+   "trash_damage": 204762764,
+   "nights": 6
+  },
+  {
+   "player": "Krogars",
+   "trash_damage": 135909926,
+   "nights": 5
+  },
+  {
+   "player": "Arjunis",
+   "trash_damage": 92096548,
+   "nights": 12
+  },
+  {
+   "player": "Kalvasxenflm",
+   "trash_damage": 51256579,
+   "nights": 4
+  },
+  {
+   "player": "Ynuuri",
+   "trash_damage": 41373697,
+   "nights": 4
+  },
+  {
+   "player": "D\u00fars",
+   "trash_damage": 40144305,
+   "nights": 12
+  },
+  {
+   "player": "Tavriel",
+   "trash_damage": 39441889,
+   "nights": 3
+  },
+  {
+   "player": "Yawningpanda",
+   "trash_damage": 8454437,
+   "nights": 3
+  }
+ ],
+ "trash_coverage": [
+  {
+   "nights_with_trash": 15,
+   "nights": 17
+  }
+ ],
+ "cockroach": [
+  {
+   "player": "Cmrn",
+   "wipes": 172,
+   "survived": 8,
+   "survival_rate": 0.047
+  },
+  {
+   "player": "Gyutaro",
+   "wipes": 263,
+   "survived": 7,
+   "survival_rate": 0.027
+  },
+  {
+   "player": "Birgit",
+   "wipes": 233,
+   "survived": 5,
+   "survival_rate": 0.021
+  },
+  {
+   "player": "Parasite",
+   "wipes": 244,
+   "survived": 5,
+   "survival_rate": 0.02
+  },
+  {
+   "player": "Aceo",
+   "wipes": 98,
+   "survived": 4,
+   "survival_rate": 0.041
+  },
+  {
+   "player": "Kalvaswis",
+   "wipes": 128,
+   "survived": 4,
+   "survival_rate": 0.031
+  },
+  {
+   "player": "Larryw",
+   "wipes": 234,
+   "survived": 4,
+   "survival_rate": 0.017
+  },
+  {
+   "player": "Athynna",
+   "wipes": 139,
+   "survived": 3,
+   "survival_rate": 0.022
+  },
+  {
+   "player": "B\u00e5z",
+   "wipes": 195,
+   "survived": 3,
+   "survival_rate": 0.015
+  },
+  {
+   "player": "Phuzzy",
+   "wipes": 263,
+   "survived": 3,
+   "survival_rate": 0.011
+  },
+  {
+   "player": "Senjumaris",
+   "wipes": 91,
+   "survived": 3,
+   "survival_rate": 0.033
+  },
+  {
+   "player": "Tusgra",
+   "wipes": 197,
+   "survived": 3,
+   "survival_rate": 0.015
+  },
+  {
+   "player": "Yawningpanda",
+   "wipes": 48,
+   "survived": 3,
+   "survival_rate": 0.062
+  },
+  {
+   "player": "Yax",
+   "wipes": 225,
+   "survived": 3,
+   "survival_rate": 0.013
+  },
+  {
+   "player": "\u00cdzanam\u00ec",
+   "wipes": 53,
+   "survived": 3,
+   "survival_rate": 0.057
+  },
+  {
+   "player": "D\u00fars",
+   "wipes": 262,
+   "survived": 2,
+   "survival_rate": 0.008
+  },
+  {
+   "player": "Frostedtips",
+   "wipes": 172,
+   "survived": 2,
+   "survival_rate": 0.012
+  },
+  {
+   "player": "Ham\u00eatre",
+   "wipes": 128,
+   "survived": 2,
+   "survival_rate": 0.016
+  },
+  {
+   "player": "Minyoongi",
+   "wipes": 263,
+   "survived": 2,
+   "survival_rate": 0.008
+  },
+  {
+   "player": "Tavriel",
+   "wipes": 86,
+   "survived": 2,
+   "survival_rate": 0.023
+  },
+  {
+   "player": "Krogars",
+   "wipes": 101,
+   "survived": 1,
+   "survival_rate": 0.01
+  },
+  {
+   "player": "Arjunis",
+   "wipes": 3,
+   "survived": 0,
+   "survival_rate": 0.0
+  },
+  {
+   "player": "Kalvasxenflm",
+   "wipes": 60,
+   "survived": 0,
+   "survival_rate": 0.0
+  },
+  {
+   "player": "Ynuuri",
+   "wipes": 18,
+   "survived": 0,
+   "survival_rate": 0.0
+  }
+ ],
+ "jack_of_all_trades": [
+  {
+   "player": "Phuzzy",
+   "specs": 3,
+   "roles": 3,
+   "classes": 1,
+   "spec_list": "Brewmaster Monk, Mistweaver Monk, Windwalker Monk"
+  },
+  {
+   "player": "Arjunis",
+   "specs": 3,
+   "roles": 2,
+   "classes": 1,
+   "spec_list": "Discipline Priest, Holy Priest, Shadow Priest"
+  },
+  {
+   "player": "Birgit",
+   "specs": 3,
+   "roles": 2,
+   "classes": 1,
+   "spec_list": "Blood DeathKnight, Frost DeathKnight, Unholy DeathKnight"
+  },
+  {
+   "player": "Larryw",
+   "specs": 3,
+   "roles": 1,
+   "classes": 1,
+   "spec_list": "Affliction Warlock, Demonology Warlock, Destruction Warlock"
+  },
+  {
+   "player": "Ham\u00eatre",
+   "specs": 2,
+   "roles": 2,
+   "classes": 1,
+   "spec_list": "Holy Priest, Shadow Priest"
+  },
+  {
+   "player": "Frostedtips",
+   "specs": 2,
+   "roles": 1,
+   "classes": 1,
+   "spec_list": "Arcane Mage, Frost Mage"
+  },
+  {
+   "player": "Ynuuri",
+   "specs": 2,
+   "roles": 1,
+   "classes": 1,
+   "spec_list": "Discipline Priest, Holy Priest"
+  },
+  {
+   "player": "Aceo",
+   "specs": 1,
+   "roles": 1,
+   "classes": 1,
+   "spec_list": "Arcane Mage"
+  },
+  {
+   "player": "Athynna",
+   "specs": 1,
+   "roles": 1,
+   "classes": 1,
+   "spec_list": "Assassination Rogue"
+  },
+  {
+   "player": "B\u00e5z",
+   "specs": 1,
+   "roles": 1,
+   "classes": 1,
+   "spec_list": "Shadow Priest"
+  },
+  {
+   "player": "Cmrn",
+   "specs": 1,
+   "roles": 1,
+   "classes": 1,
+   "spec_list": "Blood DeathKnight"
+  },
+  {
+   "player": "D\u00fars",
+   "specs": 1,
+   "roles": 1,
+   "classes": 1,
+   "spec_list": "Restoration Druid"
+  },
+  {
+   "player": "Gyutaro",
+   "specs": 1,
+   "roles": 1,
+   "classes": 1,
+   "spec_list": "Havoc DemonHunter"
+  },
+  {
+   "player": "Kalvaswis",
+   "specs": 1,
+   "roles": 1,
+   "classes": 1,
+   "spec_list": "Guardian Druid"
+  },
+  {
+   "player": "Kalvasxenflm",
+   "specs": 1,
+   "roles": 1,
+   "classes": 1,
+   "spec_list": "Preservation Evoker"
+  },
+  {
+   "player": "Krogars",
+   "specs": 1,
+   "roles": 1,
+   "classes": 1,
+   "spec_list": "Blood DeathKnight"
+  },
+  {
+   "player": "Minyoongi",
+   "specs": 1,
+   "roles": 1,
+   "classes": 1,
+   "spec_list": "Retribution Paladin"
+  },
+  {
+   "player": "Parasite",
+   "specs": 1,
+   "roles": 1,
+   "classes": 1,
+   "spec_list": "Arms Warrior"
+  },
+  {
+   "player": "Senjumaris",
+   "specs": 1,
+   "roles": 1,
+   "classes": 1,
+   "spec_list": "Arcane Mage"
+  },
+  {
+   "player": "Tavriel",
+   "specs": 1,
+   "roles": 1,
+   "classes": 1,
+   "spec_list": "Assassination Rogue"
+  },
+  {
+   "player": "Tusgra",
+   "specs": 1,
+   "roles": 1,
+   "classes": 1,
+   "spec_list": "Elemental Shaman"
+  },
+  {
+   "player": "Yawningpanda",
+   "specs": 1,
+   "roles": 1,
+   "classes": 1,
+   "spec_list": "Restoration Shaman"
+  },
+  {
+   "player": "Yax",
+   "specs": 1,
+   "roles": 1,
+   "classes": 1,
+   "spec_list": "Shadow Priest"
+  },
+  {
+   "player": "\u00cdzanam\u00ec",
+   "specs": 1,
+   "roles": 1,
+   "classes": 1,
+   "spec_list": "Assassination Rogue"
+  }
+ ]
+}
