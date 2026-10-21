@@ -21,28 +21,38 @@ text key may be a table keyed by case, e.g. punchline = { perfect = "...", top =
 Table rows work the same way with each row's own `case`.
 """
 
+import base64
 import html
 import tomllib
 from collections.abc import Callable
 from datetime import date
+from pathlib import Path
 
 import polars as pl
 
 from sga.season import Season
 
-# Theme: dark with venom green and amber accents
-BG = "#0f1511"
-SURFACE = "#18211b"
-INK = "#e8eee4"
-MUTED = "#9aa89d"
-GREEN = "#93d14f"
-AMBER = "#f2a93b"
-DISPLAY = "Oswald, 'Arial Narrow', sans-serif"
-BODY = "Rubik, Arial, sans-serif"
-FONTS = (
-    "https://fonts.googleapis.com/css2?family=Oswald:wght@400..700"
-    "&family=Rubik:ital,wght@0,300..700;1,300..700&display=swap"
-)
+# Theme: World of Warcraft. UI gold and parchment over a blurred background picture, all text in
+# Friz Quadrata. The font and the picture are supplied locally and git-ignored: drop them in
+# ASSETS (any of the suffixes in MIME) and the deck embeds them; without them it falls back to
+# a serif and a dark green gradient.
+ASSETS = Path("assets")
+FONT_FILE = "friz-quadrata"
+BACKGROUND_FILE = "bg"
+MIME = {
+    ".ttf": "font/ttf",
+    ".otf": "font/otf",
+    ".woff2": "font/woff2",
+    ".jpg": "image/jpeg",
+    ".jpeg": "image/jpeg",
+    ".png": "image/png",
+    ".webp": "image/webp",
+}
+INK = "#f5ecd7"
+MUTED = "#d3c6a6"
+GOLD = "#ffd100"
+ORANGE = "#ff8000"
+RULE = "rgba(255,255,255,.18)"
 
 Stats = dict[str, pl.DataFrame]
 Values = dict[str, object]
@@ -411,87 +421,74 @@ DATA: dict[str, Callable[[Stats, Season], Values]] = {
 # Each takes the slide id and its resolved config (all text already filled in).
 
 
-def _kicker(text: str, color: str, size: int = 40, spacing: int = 4) -> str:
-    return (
-        f'<h3 style="font-family:{DISPLAY};font-size:{size}px;font-weight:500;'
-        f'letter-spacing:{spacing}px;color:{color}">{esc(text).upper()}</h3>'
-    )
+def _kicker(text: str) -> str:
+    return f'<h3 class="kicker">{esc(text)}</h3>' if text else ""
 
 
-def _palette(statement: bool) -> tuple[str, str, str, str, str]:
-    """(background, ink, accent, muted, kicker) for a normal or full-colour statement slide."""
-    return (GREEN, BG, BG, "#24331f", BG) if statement else (BG, INK, GREEN, MUTED, AMBER)
+def _p(cls: str, text: str) -> str:
+    """A line of text, left out when empty so it takes no space."""
+    return f'<p class="{cls}">{esc(text)}</p>' if text else ""
+
+
+def _cls(c: dict) -> str:
+    """A statement slide only swaps its numbers to orange."""
+    return ' class="statement"' if c.get("statement", False) else ""
 
 
 def cover(sid: str, c: dict) -> str:
-    return f"""<section id="{sid}" style="background:{BG};color:{INK};font-family:{BODY};padding:128px;display:flex;flex-direction:column;justify-content:flex-end;gap:32px">
-{_kicker(c["kicker"], AMBER, 44, 6)}
-<h1 style="font-family:{DISPLAY};font-size:200px;font-weight:700;line-height:0.95;color:{GREEN}">{esc(c["title"])}</h1>
-<p style="font-size:44px;color:{MUTED}">{esc(c["subtitle"])}</p>
+    return f"""<section id="{sid}" class="cover">
+{_kicker(c["kicker"])}
+<h1>{esc(c["title"])}</h1>
+{_p("sub", c["subtitle"])}
 <aside>{esc(c["notes"])}</aside>
 </section>"""
 
 
 def big_number(sid: str, c: dict) -> str:
-    bg, ink, accent, muted, kicker = _palette(c.get("statement", False))
-    return f"""<section id="{sid}" data-transition="fade" style="background:{bg};color:{ink};font-family:{BODY};padding:128px;display:flex;flex-direction:column;justify-content:center;gap:24px">
-{_kicker(c["kicker"], kicker)}
-<h1 style="font-family:{DISPLAY};font-size:{c.get("number_size", 300)}px;font-weight:700;line-height:1;color:{accent}">{esc(c["number"])}</h1>
-<p style="font-size:52px;line-height:1.25;font-weight:500">{esc(c["title"])}</p>
-<p style="font-size:36px;line-height:1.3;font-style:italic;color:{muted}">{esc(c["punchline"])}</p>
+    return f"""<section id="{sid}"{_cls(c)}>
+{_kicker(c["kicker"])}
+<h1 class="number" style="font-size:{c.get("number_size", 300)}px">{esc(c["number"])}</h1>
+<p class="title">{esc(c["title"])}</p>
+{_p("punch", c["punchline"])}
 <aside>{esc(c["notes"])}</aside>
 </section>"""
 
 
 def stat_row(sid: str, c: dict) -> str:
     """Up to four big numbers side by side."""
-    bg, ink, accent, muted, kicker = _palette(c.get("statement", False))
     cells = "".join(
-        f'<div style="flex:1;display:flex;flex-direction:column;gap:8px">'
-        f'<p style="font-family:{DISPLAY};font-size:150px;font-weight:700;line-height:1;color:{accent}">{esc(i["value"])}</p>'
-        f'<p style="font-size:34px;color:{muted}">{esc(i["label"])}</p></div>'
+        f'<div><p class="number">{esc(i["value"])}</p><p class="label">{esc(i["label"])}</p></div>'
         for i in c["items"]
     )
-    return f"""<section id="{sid}" data-transition="fade" style="background:{bg};color:{ink};font-family:{BODY};padding:128px;display:flex;flex-direction:column;justify-content:center;gap:56px">
-{_kicker(c["kicker"], kicker)}
-<h2 style="font-family:{DISPLAY};font-size:96px;font-weight:600;line-height:1.05">{esc(c["title"])}</h2>
-<div style="display:flex;gap:48px">{cells}</div>
-<p style="font-size:36px;font-style:italic;color:{muted}">{esc(c["punchline"])}</p>
+    return f"""<section id="{sid}"{_cls(c)}>
+{_kicker(c["kicker"])}
+<h2>{esc(c["title"])}</h2>
+<div class="cells">{cells}</div>
+{_p("punch", c["punchline"])}
 <aside>{esc(c["notes"])}</aside>
 </section>"""
 
 
 def table(sid: str, c: dict) -> str:
-    th = "".join(
-        f'<th style="text-align:left;padding:12px 20px;font-size:28px;color:{MUTED};font-weight:500;border-bottom:2px solid {GREEN}">{esc(h)}</th>'
-        for h in c["header"]
-    )
+    th = "".join(f"<th>{esc(h)}</th>" for h in c["header"])
     trs = "".join(
-        "<tr>"
-        + "".join(
-            f'<td style="padding:12px 20px;font-size:32px;border-bottom:1px solid {SURFACE}">{esc(cell)}</td>'
-            for cell in r
-        )
-        + "</tr>"
-        for r in c["rows"]
+        "<tr>" + "".join(f"<td>{esc(cell)}</td>" for cell in r) + "</tr>" for r in c["rows"]
     )
-    return f"""<section id="{sid}" data-transition="fade" style="background:{BG};color:{INK};font-family:{BODY};padding:128px;display:flex;flex-direction:column;gap:32px">
-{_kicker(c["kicker"], AMBER)}
-<h2 style="font-family:{DISPLAY};font-size:80px;font-weight:600;line-height:1.05">{esc(c["title"])}</h2>
-<table style="width:1664px;border-collapse:collapse"><tr>{th}</tr>{trs}</table>
-<p style="font-size:32px;font-style:italic;color:{MUTED}">{esc(c["punchline"])}</p>
+    return f"""<section id="{sid}">
+{_kicker(c["kicker"])}
+<h2>{esc(c["title"])}</h2>
+<table><tr>{th}</tr>{trs}</table>
+{_p("punch", c["punchline"])}
 <aside>{esc(c["notes"])}</aside>
 </section>"""
 
 
 def bullets(sid: str, c: dict) -> str:
-    lines = "".join(
-        f'<p style="font-size:36px;line-height:1.35">• {esc(i)}</p>' for i in c["items"]
-    )
-    return f"""<section id="{sid}" style="background:{BG};color:{INK};font-family:{BODY};padding:128px;display:flex;flex-direction:column;gap:48px">
-{_kicker(c["kicker"], AMBER)}
-<h2 style="font-family:{DISPLAY};font-size:96px;font-weight:600">{esc(c["title"])}</h2>
-<div style="display:flex;flex-direction:column;gap:24px">{lines}</div>
+    lines = "".join(f"<li>{esc(i)}</li>" for i in c["items"])
+    return f"""<section id="{sid}">
+{_kicker(c["kicker"])}
+<h2>{esc(c["title"])}</h2>
+<ul>{lines}</ul>
 <aside>{esc(c["notes"])}</aside>
 </section>"""
 
@@ -632,34 +629,98 @@ def build(season: Season, log=print) -> list[str]:
         raise SlideConfigError("slides.toml:\n  " + "\n  ".join(errors))
 
     title = fill(config["title"], base, "deck `title`")
-    (season.gold_dir / "deck.html").write_text(local_deck(title, list(pages.values())))
+    deck = local_deck(title, list(pages.values()), theme_css(log))
+    (season.gold_dir / "deck.html").write_text(deck)
     return list(pages)
 
 
 # --- Local deck ------------------------------------------------------------------------
 
+
+def _asset(stem: str) -> str | None:
+    """A data: URI for ASSETS/<stem>.<suffix>, or None if there is none."""
+    for path in sorted(ASSETS.glob(f"{stem}.*")):
+        if path.suffix.lower() in MIME:
+            data = base64.b64encode(path.read_bytes()).decode()
+            return f"data:{MIME[path.suffix.lower()]};base64,{data}"
+    return None
+
+
+def theme_css(log=print) -> str:
+    """@font-face and slide background, embedding whichever theme assets are present."""
+    font, picture = _asset(FONT_FILE), _asset(BACKGROUND_FILE)
+    if font is None:
+        log(f"No {ASSETS / FONT_FILE}.ttf: using Friz only if installed, else Georgia")
+    if picture is None:
+        log(f"No {ASSETS / BACKGROUND_FILE}.png: using a plain gradient background")
+    src = "local('Friz Quadrata TT'), local('FrizQuadrataTT')"
+    if font:
+        src += f", url({font})"
+    ground = f"url({picture}) center / cover" if picture else "radial-gradient(#2d4a22, #0b0f08)"
+    return f"""
+:root {{ --ink: {INK}; --muted: {MUTED}; --gold: {GOLD}; --orange: {ORANGE}; --rule: {RULE}; }}
+@font-face {{ font-family: 'Friz Quadrata TT'; src: {src}; }}
+section::before {{ background: {ground}; }}
+"""
+
+
 LOCAL_CSS = """
-* { margin: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { height: 100%; background: #070a08; overflow: hidden; }
 section { position: absolute; left: 50%; top: 50%; width: 1920px; height: 1080px;
-  transform-origin: 0 0; overflow: hidden; }
-/* Slides set their own display inline, so hiding needs !important */
-section:not(.current) { display: none !important; }
+  transform-origin: 0 0; overflow: hidden; isolation: isolate; background: #0b0f08;
+  padding: 120px 160px; display: flex; flex-direction: column; justify-content: center;
+  color: var(--ink); font-family: 'Friz Quadrata TT', 'Friz Quadrata', Georgia, serif;
+  font-weight: normal; font-synthesis: none; font-variant-numeric: lining-nums;
+  text-shadow: 0 2px 6px #000, 0 0 2px #000; }
+section:not(.current) { display: none; }
 section aside { display: none; }
-ul, ol { padding-left: 1.2em; }
-table { border-collapse: collapse; }
+/* The picture, out of focus and bleeding past the edges so the blur has no fringe */
+section::before { content: ""; position: absolute; inset: -60px; z-index: -2;
+  filter: blur(14px) brightness(.8); }
+/* One dimming for every slide, a little darker at the edges */
+section::after { content: ""; position: absolute; inset: 0; z-index: -1;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,.45), rgba(0,0,0,.7)); }
+
+/* Type. Friz's digits drop below the baseline, so numbers get room underneath only. */
+h1, h2, h3, th { font-weight: normal; }
+.kicker { font-size: 36px; letter-spacing: 5px; text-transform: uppercase;
+  color: var(--orange); margin-bottom: 28px; }
+h1 { line-height: 1.1; color: var(--gold); }
+h2 { font-size: 80px; line-height: 1.15; color: var(--gold); margin-bottom: 48px; }
+.number { line-height: 1; padding-bottom: .15em; color: var(--gold); white-space: nowrap; }
+.statement .number { color: var(--orange); }
+.title { font-size: 52px; line-height: 1.3; }
+.punch { font-size: 34px; line-height: 1.4; color: var(--muted); margin-top: 24px; }
+
+.cover h1 { font-size: 180px; }
+.cover .sub { font-size: 44px; color: var(--muted); margin-top: 24px; }
+
+.cells { display: flex; gap: 120px; }
+.cells .number { font-size: 140px; }
+.cells .label { font-size: 34px; color: var(--muted); }
+
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 12px 20px; }
+th { font-size: 28px; color: var(--muted); border-bottom: 2px solid var(--gold); }
+td { font-size: 32px; border-bottom: 1px solid var(--rule); }
+
+ul { padding-left: 1.2em; max-width: 1500px; }
+li { font-size: 38px; line-height: 1.4; margin-bottom: 20px; }
+li::marker { color: var(--gold); }
+
 #notes { position: fixed; left: 0; right: 0; bottom: 0; max-height: 30vh; overflow: auto;
   padding: 16px 24px; background: rgba(0,0,0,.85); color: #e8eee4;
-  font: 18px/1.4 Rubik, Arial, sans-serif; display: none; }
+  font: 18px/1.4 Georgia, serif; display: none; }
 body.show-notes #notes { display: block; }
-#count { position: fixed; right: 16px; bottom: 12px; color: #9aa89d;
-  font: 14px Rubik, Arial, sans-serif; opacity: .6; }
+#count { position: fixed; right: 16px; bottom: 12px; color: #d3c6a6;
+  font: 14px Georgia, serif; opacity: .6; }
 @media print {
   @page { size: 1920px 1080px; margin: 0; }
   html, body { height: auto; overflow: visible; background: none; }
   section { position: relative; left: 0; top: 0; transform: none !important;
     break-after: page; }
-  section:not(.current) { display: flex !important; }
+  section:not(.current) { display: flex; }
   #notes, #count { display: none !important; }
 }
 """
@@ -697,7 +758,7 @@ fit(); show(i);
 """
 
 
-def local_deck(title: str, pages: list[str]) -> str:
+def local_deck(title: str, pages: list[str], theme: str = "") -> str:
     body = "\n".join(pages)
     return f"""<!doctype html>
 <html lang="en">
@@ -705,8 +766,7 @@ def local_deck(title: str, pages: list[str]) -> str:
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(title)}</title>
-<link rel="stylesheet" href="{FONTS}">
-<style>{LOCAL_CSS}</style>
+<style>{LOCAL_CSS}{theme}</style>
 </head>
 <body>
 {body}

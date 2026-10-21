@@ -26,9 +26,18 @@ Each season lives in `seasons/<slug>/`. Commands take the slug, e.g. `uv run sga
 
 During a season, add new reports to `season.toml` and repeat steps 3, 4 and 7.
 
+### Theme font and background
+
+The deck is themed after World of Warcraft. Two files make up the look. They aren't in the repo, so supply them in `assets/` (git-ignored):
+
+- `assets/friz-quadrata.ttf`: the Friz Quadrata TT font (`.otf` or `.woff2` also work).
+- `assets/bg.png`: the background picture, e.g. an in-game screenshot with the UI hidden (Alt+Z). Swap it for any picture to change the look; `.jpg` and `.webp` also work, and the deck blurs it, so use a sharp one.
+
+Without them `sga slides` says so and falls back to Georgia and a dark green gradient. The deck embeds both, so `deck.html` is git-ignored too.
+
 ### Starting a new season
 
-Copy the previous season's folder without its `gold/`, then update `season.toml` (name, zone ID, reports, aliases, avoidable abilities) and adjust `slides.toml`. Once the old season is finished, delete `.cache/` to clear its raw logs; the old season's `gold/` (stats, ledgers and deck) stays in git.
+Copy the previous season's folder without its `gold/`, then update `season.toml` (name, zone ID, reports, aliases, avoidable abilities) and adjust `slides.toml`. Once the old season is finished, delete `.cache/` to clear its raw logs; the old season's `gold/` (stats and ledgers) stays in git.
 
 ## Development
 

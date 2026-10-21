@@ -81,12 +81,12 @@ Each stat is a small Polars function over silver tables, registered in `STATS`. 
 
 ### Slides (`slides.py`)
 
-`sga slides` fills the slides declared in `slides.toml` from gold and writes one standalone `gold/deck.html`. Nothing is hosted.
+`sga slides` fills the slides declared in `slides.toml` from gold and writes one standalone `gold/deck.html`. Nothing is hosted. The deck is git-ignored because it embeds the theme assets; rebuild it with `sga slides`.
 
-- Each `[[slides]]` entry has an `id`, a `layout` (`cover`, `big_number`, `stat_row`, `table`, `bullets`), a `data` source, and that layout's text keys. `{placeholders}` come from the slide's data function plus season-wide values.
+- Each `[[slides]]` entry has an `id`, a `layout` (`cover`, `big_number`, `stat_row`, `table`, `bullets`), a `data` source, and that layout's text keys; an empty text line (`punchline = ""`, say) is left out. `{placeholders}` come from the slide's data function plus season-wide values.
 - Text that depends on the numbers is a table of variants keyed by the data's `case`, e.g. `number = { perfect = "...", top = "..." }`.
 - A missing or unknown key, an unknown placeholder or a missing variant fails the build with every problem listed. A slide whose stat is missing (no avoidable abilities approved yet, say) is skipped with a message.
-- Slides are 1920×1080, scaled to the window. Dark background, venom green and amber, Oswald and Rubik from Google Fonts (Arial offline). Speaker notes are hidden until N is pressed but are in the file, so they hold only definitions, exact numbers and sources.
+- Slides are 1920×1080, scaled to the window. World of Warcraft theme: UI gold and orange over an out-of-focus background picture, all text in Friz Quadrata. Both are supplied locally and git-ignored: `sga slides` embeds `assets/friz-quadrata.ttf` and `assets/bg.png` (other font and image suffixes work too) into the deck if present, and otherwise falls back to an installed Friz or Georgia and a dark green gradient, saying so. The blur is CSS, so any sharp screenshot works. Speaker notes are hidden until N is pressed but are in the file, so they hold only definitions, exact numbers and sources.
 - Printing gives one slide per page.
 
 ## Helpers (`suggest.py`)

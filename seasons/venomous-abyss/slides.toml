@@ -15,7 +15,7 @@ title = "{season}"
 id = "cover"
 layout = "cover"
 data = "none"
-kicker = "Season in numbers"
+kicker = "Luckydo's Season In Review"
 title = "{season}"
 subtitle = "{first_night} – {last_night} · {nights} nights · {pulls} pulls"
 notes = "Numbers as of {last_night}. Every pull merges all uploaded copies of it."
@@ -127,8 +127,8 @@ id = "cleanest-kills"
 layout = "big_number"
 data = "cleanest_kills"
 kicker = "Flawless"
-number = "{clean} / {kills}"
-title = "kills where nobody died"
+number = "{clean}"
+title = "of {kills} kills where nobody died"
 punchline = ""
 notes = "Kills with zero player deaths across all merged copies."
 
@@ -316,15 +316,15 @@ notes = "First Bloodlust/Heroism/Time Warp/Primal Rage/Fury of the Aspects cast 
 # --- Outro ------------------------------------------------------------------------------
 
 [[slides]]
-id = "how-counted"
-layout = "bullets"
+id = "closing"
+layout = "cover"
 data = "none"
-kicker = "The small print"
-title = "How this was counted"
-items = [
-  "Every boss pull in the raid at any difficulty; trash counts only for The Janitor; dungeons and Mythic+ left out.",
-  "Pulls logged by several people are merged: the highest value per player per metric, never added together.",
-  "Wipe call: Warcraft Logs' own call time, else 10 seconds before the wipe ended. Deaths after it don't count for first-to-die.",
-  "Awards go to regulars: anyone at {regular_threshold}+ of pulls.",
-]
-notes = "Source data: the season's gold ledgers (pulls.csv, player_pulls.csv) and stats.json."
+kicker = ""
+title = "See you next tier!"
+subtitle = ""
+notes = """How this was counted: every boss pull in the raid at any difficulty; trash counts only \
+for The Janitor; dungeons and Mythic+ left out. Pulls logged by several people are merged: the \
+highest value per player per metric, never added together. Wipe call: Warcraft Logs' own call \
+time, else 10 seconds before the wipe ended; deaths after it don't count for first-to-die. \
+Awards go to regulars: anyone at {regular_threshold}+ of pulls. Source data: the season's gold \
+ledgers (pulls.csv, player_pulls.csv) and stats.json."""
