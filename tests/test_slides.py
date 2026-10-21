@@ -1,5 +1,6 @@
 """slides.toml: the season's deck config is valid, and mistakes fail loudly."""
 
+import polars as pl
 import pytest
 
 from sga import season, slides
@@ -61,3 +62,29 @@ def test_local_deck_holds_every_slide_once():
     assert page.count("<section ") == 3
     assert page.startswith("<!doctype html>")
     assert "<title>T</title>" in page
+
+
+def test_awards_cards_are_checked():
+    card = {"data": "nope", "kicker": "k", "winner": "w", "stat": "s", "notes": "n"}
+    sl = big_number_slide(layout="awards", cards=[card], title="t")
+    del sl["number"]
+    errors = slides.validate(config(sl))
+    assert "slide x, cards 1: missing `punchline`" in errors
+    assert "slide x, cards 1: unknown data `nope`" in errors
+
+
+def test_every_tied_winner_is_named():
+    # 1,040 and 1,004 both show as "1.0 k", so they tie; the runner-up is the next shown value
+    df = pl.DataFrame({"player": ["A", "B", "C", "D"], "x": [1040, 1004, 900, 900]})
+    out = slides.award(df, "x", slides.big)
+    assert out == {"player": "A & B", "x": "1.0 k", "next": "C & D", "next_x": "900"}
+
+
+def test_a_card_without_data_is_dropped():
+    sl = {"id": "x", "layout": "awards", "cards": [{"data": "interrupts"}, {"data": "dispels"}]}
+    stats = {"interrupts": pl.DataFrame({"player": ["A"], "interrupts": [3]})}
+    logged = []
+    kept, values = slides.entries(sl, stats, SEASON, {}, logged.append)
+    assert kept == [{"data": "interrupts"}]
+    assert values[0]["player"] == "A"
+    assert logged[0].startswith("Skipping cards 2 of slide x: no data")

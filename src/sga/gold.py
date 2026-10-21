@@ -18,8 +18,10 @@ TOP = 10
 MELEE = 1  # Generic boss melee: not a mechanic, so left out of killing-blow stats
 # Deaths this soon after the pull started were already happening before it
 PRE_PULL_DEATH_MS = 1_000
-# Best night DPS counts only nights a player was in for at least this share of the combat time
-MIN_NIGHT_SHARE = 0.5
+# A wipe this short is most likely a reset: players who did nothing in it aren't logged
+RESET_MS = 30_000
+# The meters weigh each score as if the player had this many more kills at their role's average
+SHRINK_KILLS = 10
 
 
 @dataclass
@@ -151,26 +153,6 @@ def progression(c: Ctx):
     return {"progression_all": by_boss, "progression": highest}
 
 
-def nemesis_boss(c: Ctx):
-    per_boss = (
-        c.pulls.group_by("boss")
-        .agg(pulls=pl.len(), combat_hours=_ms_to_h("duration_ms").sum())
-        .pipe(ordered, "pulls", "combat_hours", descending=True)
-    )
-    nemesis = per_boss.row(0, named=True)["boss"]
-    nightly = (
-        c.pulls.filter(pl.col("boss") == nemesis)
-        .group_by("night")
-        .agg(
-            pulls=pl.len(),
-            best_boss_pct=pl.col("boss_pct").min(),
-            killed=pl.col("kill").any(),
-        )
-        .pipe(ordered, "night")
-    )
-    return {"nemesis_boss": per_boss.head(1), "nemesis_by_night": nightly}
-
-
 def so_close(c: Ctx):
     return {
         "so_close": c.pulls.filter(~pl.col("kill"))
@@ -264,12 +246,17 @@ def floor_awards(c: Ctx):
 
 
 def attendance(c: Ctx):
-    total = c.pulls.height
+    """Pulls attended, leaving out likely resets (see RESET_MS)."""
+    reset = ~pl.col("kill") & (pl.col("duration_ms") < RESET_MS)
+    counted = c.pulls.filter(~reset).select("pull_id")
+    total = counted.height
     table = (
-        c.player_pulls.group_by("player")
+        c.player_pulls.join(counted, on="pull_id")
+        .group_by("player")
         .agg(pulls_attended=pl.col("pull_id").n_unique())
         .with_columns(
             of_pulls=pl.lit(total),
+            resets=pl.lit(c.pulls.height - total),
             share=(pl.col("pulls_attended") / total).round(3),
             regular=c.is_regular(),
         )
@@ -292,19 +279,6 @@ def damage_and_healing(c: Ctx):
         .agg(pl.col("damage_done", "healing", "damage_taken").sum())
         .pipe(ordered, "damage_done", descending=True)
     )
-    night_seconds = c.pulls.group_by("night").agg(night_seconds=pl.col("duration_ms").sum() / 1000)
-    night_dps = (
-        pp.filter(c.is_regular())
-        .group_by("player", "night")
-        .agg(damage=pl.col("damage_done").sum(), seconds=pl.col("duration_ms").sum() / 1000)
-        # A short cameo is mostly opener burst, so only nights with most of the combat count
-        .join(night_seconds, on="night")
-        .filter(pl.col("seconds") >= MIN_NIGHT_SHARE * pl.col("night_seconds"))
-        .drop("night_seconds")
-        .with_columns(dps=(pl.col("damage") / pl.col("seconds")).round(0))
-        .pipe(ordered, "dps", descending=True)
-        .head(TOP)
-    )
     non_tank_taken = (
         pp.filter((pl.col("role") != "tank") & c.is_regular())
         .group_by("player")
@@ -315,8 +289,75 @@ def damage_and_healing(c: Ctx):
     return {
         "damage_healing_totals": totals,
         "damage_healing_by_player": per_player,
-        "best_night_dps": night_dps,
         "most_damage_taken_non_tank": non_tank_taken,
+    }
+
+
+def _meter(c: Ctx, metric: str, roles: list[str], ref_role: str, per_second: str) -> pl.DataFrame:
+    """Per regular and role: `metric` per second on each kill they played in that role, relative
+    to the median `ref_role` player on that same kill, averaged and weighted by sample size.
+
+    Comparing within a kill evens out bosses and gear growing over the season. Each score is
+    pulled towards its role's average as if the player had SHRINK_KILLS more average kills, so
+    a couple of good kills can't top the board. Wipes are left out: early deaths and the time
+    after the wipe call drag everyone down.
+    """
+    rates = (
+        c.player_pulls.filter(pl.col("kill"))
+        .join(c.pulls.select("pull_id", "duration_ms"), on="pull_id")
+        .with_columns(rate=pl.col(metric).fill_null(0) / pl.col("duration_ms") * 1000)
+    )
+    ref = (
+        rates.filter(pl.col("role") == ref_role)
+        .group_by("pull_id")
+        .agg(ref=pl.col("rate").median())
+        .filter(pl.col("ref") > 0)
+    )
+    kills = (
+        rates.filter(c.is_regular() & pl.col("role").is_in(roles))
+        .join(ref, on="pull_id")
+        .with_columns(relative=pl.col("rate") / pl.col("ref"))
+    )
+    # Labelled by the spec played most in the role
+    main_spec = (
+        kills.group_by("player", "role", "class", "spec")
+        .agg(pulls=pl.len())
+        .pipe(ordered, "pulls", "class", "spec", descending=[True, False, False])
+        .group_by("player", "role", maintain_order=True)
+        .first()
+        .drop("pulls")
+    )
+    role_avg = kills.group_by("role").agg(role_avg=pl.col("relative").mean())
+    return (
+        kills.group_by("player", "role")
+        .agg(
+            kills=pl.len(),
+            relative=pl.col("relative").mean(),
+            total=pl.col(metric).fill_null(0).sum(),
+            seconds=pl.col("duration_ms").sum() / 1000,
+        )
+        .join(main_spec, on=["player", "role"])
+        .join(role_avg, on="role")
+        .with_columns(
+            (pl.col("total") / pl.col("seconds")).round(0).alias(per_second),
+            score=(
+                (pl.col("kills") * pl.col("relative") + SHRINK_KILLS * pl.col("role_avg"))
+                / (pl.col("kills") + SHRINK_KILLS)
+            ).round(4),
+            relative=pl.col("relative").round(4),
+        )
+        .select("player", "role", "class", "spec", "kills", per_second, "relative", "score")
+        .pipe(ordered, "score", descending=True)
+        .head(TOP)
+    )
+
+
+def meters(c: Ctx):
+    return {
+        "dps_board": _meter(c, "damage_done", ["dps"], "dps", "dps"),
+        # Tanks heal too, so they can place on the healing board; everyone is measured
+        # against the healers
+        "hps_board": _meter(c, "healing", ["healer", "tank"], "healer", "hps"),
     }
 
 
@@ -420,7 +461,7 @@ def jack_of_all_trades(c: Ctx):
             classes=pl.col("class").n_unique(),
             spec_list=(pl.col("spec") + " " + pl.col("class")).unique().sort().str.join(", "),
         )
-        .pipe(ordered, "specs", "roles", descending=True)
+        .pipe(ordered, "roles", "specs", descending=True)
     )
     return {"jack_of_all_trades": table}
 
@@ -443,7 +484,10 @@ def bloodlust_timing(c: Ctx):
         .pipe(ordered, "avg_seconds")
     )
     by_caster = (
-        first_lust.group_by("player").agg(lusts=pl.len()).pipe(ordered, "lusts", descending=True)
+        first_lust.filter(c.is_regular())
+        .group_by("player")
+        .agg(lusts=pl.len())
+        .pipe(ordered, "lusts", descending=True)
     )
     return {"lust_timing": overall, "lust_timing_by_boss": by_boss, "lust_casters": by_caster}
 
@@ -496,7 +540,6 @@ def avoidable_damage(c: Ctx):
 STATS: list[Callable[[Ctx], dict[str, pl.DataFrame]]] = [
     season_totals,
     progression,
-    nemesis_boss,
     so_close,
     speedruns,
     killing_blows,
@@ -505,6 +548,7 @@ STATS: list[Callable[[Ctx], dict[str, pl.DataFrame]]] = [
     floor_awards,
     attendance,
     damage_and_healing,
+    meters,
     interrupts,
     dispels,
     battle_rezzes,

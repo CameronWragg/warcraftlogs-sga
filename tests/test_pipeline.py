@@ -185,6 +185,27 @@ def test_avoidable_counts_melee_only_for_non_tanks(season, merged):
     assert per_player == {"Dps": 1_000, "Tank": 0, "Heal": 0}
 
 
+def test_meters_count_only_kills_in_the_role(season, merged):
+    out = gold.meters(gold.make_ctx(season, merged))
+    # The one kill: 100 s, Dps 5,000 damage, Heal 800 healing; the tank heals too but did none
+    assert dict(out["dps_board"].select("player", "dps").iter_rows()) == {"Dps": 50}
+    assert dict(out["hps_board"].select("player", "hps").iter_rows()) == {"Heal": 8, "Tank": 0}
+    # Scores are against the median healer on the kill, here the only one
+    assert dict(out["hps_board"].select("player", "score").iter_rows()) == {"Heal": 1, "Tank": 0}
+
+
+def test_attendance_leaves_out_resets(season, merged):
+    short = pl.when(pl.col("kill")).then(pl.col("duration_ms")).otherwise(10_000)
+    reset = merged | {"pulls": merged["pulls"].with_columns(duration_ms=short)}
+    out = gold.attendance(gold.make_ctx(season, reset))["attendance"]
+    assert dict(out.select("player", "pulls_attended").iter_rows()) == {
+        "Tank": 1,
+        "Heal": 1,
+        "Dps": 1,
+    }
+    assert out["resets"][0] == 1
+
+
 def test_cockroach_skips_holy_priests(season, merged):
     out = gold.cockroach(gold.make_ctx(season, merged))["cockroach"]
     assert dict(out.select("player", "survived").iter_rows()) == {"Tank": 1, "Dps": 0}

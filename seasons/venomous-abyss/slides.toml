@@ -5,6 +5,9 @@
 #   combat_hours_exact wipe_hours_exact
 #   first_night last_night regular_threshold
 # Text that depends on the numbers is a table of variants keyed by the data's case.
+# stat_row items and awards cards may name their own `data`; one without data is dropped.
+# Player awards put the winner big (big_name, awards); guild and boss stats the number.
+# Every tied winner is shown; a punchline names the runner-up, a contrast or a joke.
 # Keep the teasing friendly: set enabled = false on any award that could sting.
 
 title = "{season}"
@@ -17,15 +20,15 @@ layout = "cover"
 data = "none"
 kicker = "Luckydo's Season In Review"
 title = "{season}"
-subtitle = "{first_night} – {last_night} · {nights} nights · {pulls} pulls"
+subtitle = "{first_night} – {last_night} · {nights} raid nights"
 notes = "Numbers as of {last_night}. Every pull merges all uploaded copies of it."
 
 [[slides]]
 id = "at-a-glance"
 layout = "stat_row"
 data = "none"
-kicker = "Season at a glance"
-title = "{nights} nights in {season}"
+kicker = "Season at a Glance"
+title = "{nights} raid nights in {season}"
 items = [
   { value = "{pulls}", label = "boss pulls" },
   { value = "{kills}", label = "kills" },
@@ -39,8 +42,7 @@ notes = "Pulls: boss encounters in {season}, any difficulty, after merging dupli
 id = "hours-lost"
 layout = "big_number"
 data = "none"
-statement = true
-kicker = "Time well spent"
+kicker = "Time Well Spent"
 number = "{wipe_hours} h"
 title = "of boss combat ended in a wipe"
 punchline = "That's {wipe_share} of all boss time."
@@ -54,264 +56,173 @@ layout = "table"
 data = "progression"
 kicker = "Progression"
 title = "How the bosses fell"
-header = ["Boss (highest difficulty)", "First kill", "Pulls to kill", "Total pulls"]
-row = { killed = ["{boss}", "{first_kill}", "{pulls_to_kill}", "{total_pulls}"], not_killed = ["{boss}", "Not yet", "–", "best {best_pct}"] }
+header = ["Boss", "Difficulty", "First kill", "Pulls to kill", "Total pulls"]
+row = { killed = ["{boss}", "{difficulty}", "{first_kill}", "{pulls_to_kill}", "{total_pulls}"], not_killed = ["{boss}", "{difficulty}", "Not yet", "–", "best {best_pct}"] }
 punchline = ""
 notes = "Each boss at the highest difficulty attempted. Pulls to kill counts pulls up to and including the first kill."
 
 [[slides]]
-id = "nemesis"
-layout = "big_number"
-data = "nemesis"
-kicker = "The nemesis"
-number = "{pulls}"
-title = "pulls on {boss}, {hours} hours of it"
-punchline = "UWUTEK."
-notes = "Most-pulled boss and difficulty. Nightly best boss %: {trail}."
-
-[[slides]]
-id = "so-close"
-layout = "big_number"
-data = "so_close"
-kicker = "So close"
-number = "{boss_pct}"
-title = "health left on {boss}, {night}"
+id = "hall-of-wipes"
+layout = "awards"
+data = "none"
+kicker = "Deaths"
+title = "Hall of Wipes"
 punchline = ""
-notes = "Lowest boss health on any wipe. Next closest: {next_closest}"
-
-# --- Deaths -----------------------------------------------------------------------------
-
-[[slides]]
-id = "speedrun"
-layout = "big_number"
-data = "speedrun"
-kicker = "Speedrun"
-number = "{duration}"
-title = "The shortest wipe: {boss}, {night}"
-punchline = ""
-notes = "Pull {pull_id}, duration {seconds} s."
-
-[[slides]]
-id = "fastest-death"
-layout = "big_number"
-data = "fastest_death"
-kicker = "Speedrun, personal edition"
-number = "{seconds} s"
-title = { ability = "{player} vs {ability} on {boss}", no_ability = "{player} vs the floor on {boss}" }
-punchline = ""
-notes = "Fastest death from pull start, excluding deaths after the wipe call. Pull {pull_id} on {night}."
+notes = ""
+cards = [
+  { data = "speedrun", kicker = "Speedrun", winner = "{duration}", stat = "until the wipe on {where}", punchline = "Next: {next_where}, {next_duration}", notes = "Shortest wipe: pull {pull_id}, {seconds} s." },
+  { data = "fastest_death", kicker = "Speedrun (New PB)", winner = "{player}", stat = "dead {seconds} s into the pull", punchline = "vs {how}", notes = "Fastest death from pull start, excluding deaths after the wipe call: {detail}. Next: {next}, {next_seconds} s." },
+  { data = "so_close", kicker = "So Close", winner = "{boss_pct}", stat = "health left on {where}", punchline = "Next: {next_where}, {next_boss_pct}", notes = "Lowest boss health on any wipe. Next closest: {next_closest}" },
+]
 
 [[slides]]
 id = "killing-blow"
 layout = "big_number"
 data = "killing_blow"
-kicker = "Top killer"
+kicker = "Top Killer"
 number = "{deaths}"
 title = "deaths to {ability}"
-punchline = "({bosses})"
-notes = "Abilities credited with the most killing blows. Next: {next}"
+punchline = "Tank issue."
+notes = "Abilities credited with the most killing blows, on {bosses}. Next: {next}"
 
 [[slides]]
 id = "toughest-night"
 layout = "big_number"
 data = "toughest_night"
-statement = true
-kicker = "The toughest night"
+kicker = "The Toughest Night"
 number = "{deaths}"
-title = "deaths on {night}: {pulls} pulls, {kills} kills"
+title = { one = "deaths on {night}: {pulls} pulls, {kills} kills", tied = "deaths on each of {night}" }
 punchline = "Nights with zero kills: {zero_kill_nights}."
 notes = "Deaths include those after the wipe call."
 
 [[slides]]
-id = "cleanest-kills"
-layout = "big_number"
-data = "cleanest_kills"
-kicker = "Flawless"
-number = "{clean}"
-title = "of {kills} kills where nobody died"
+id = "kills"
+layout = "stat_row"
+data = "none"
+kicker = "Kills"
+title = "Not all kills are equal"
 punchline = ""
-notes = "Kills with zero player deaths across all merged copies."
-
-[[slides]]
-id = "ugliest-kill"
-layout = "big_number"
-data = "ugliest_kill"
-kicker = "A kill is a kill"
-number = "{deaths}"
-title = "deaths on the {boss} kill, {night}"
-punchline = ""
-notes = "Most deaths on a successful kill (pull {pull_id})."
+notes = "Deaths on each kill across all merged copies, including after the boss died."
+items = [
+  { data = "cleanest_kills", kicker = "Flawless", value = "{clean}", label = "of {kills} kills where nobody died" },
+  { data = "ugliest_kill", kicker = "A Kill Is a Kill", value = "{deaths}", label = "deaths on the {where} kill" },
+]
 
 # --- Awards -----------------------------------------------------------------------------
 
 [[slides]]
-id = "floor-award"
-layout = "big_number"
-data = "floor_award"
-number_size = 220
-kicker = "Floor inspector"
-number = "{player}"
-title = "first to die on {first_deaths} pulls"
-punchline = "Highest rate: {rate_player}, first down on {rate} of pulls."
-notes = "First death of the pull, excluding deaths after the wipe call; regulars only."
-
-[[slides]]
-id = "attendance"
-layout = "big_number"
-data = "attendance"
-number_size = 200
-kicker = "Perfect attendance"
-number = { perfect = "{perfect_players}", top = "{player}" }
-title = { perfect = "present for all {total} pulls", top = "present for {attended} of {total} pulls" }
+id = "first-and-last"
+layout = "awards"
+data = "none"
+kicker = "Awards"
+title = "First Down, Last Standing"
 punchline = ""
-notes = "Pulls attended counts any merged copy showing the character in the pull."
-
-[[slides]]
-id = "interrupt-hero"
-layout = "big_number"
-data = "interrupts"
-number_size = 220
-kicker = "Interrupt hero"
-number = "{player}"
-title = "{interrupts} interrupts"
-punchline = ""
-notes = "Successful interrupts of enemy casts, summed over pulls; regulars only."
-
-[[slides]]
-id = "cleanser"
-layout = "big_number"
-data = "dispels"
-number_size = 220
-kicker = "The cleanser"
-number = "{player}"
-title = "{dispels} dispels"
-punchline = ""
-notes = "Dispels of harmful effects, summed over pulls; regulars only."
-
-[[slides]]
-id = "battle-rez"
-layout = "stat_row"
-data = "battle_rez"
-kicker = "Battle rezzes"
-title = "Back from the dead"
-items = [
-  { value = "{giver}", label = "rezzed the most ({given})" },
-  { value = "{receiver}", label = "got rezzed the most ({received})" },
+notes = "Regulars only."
+cards = [
+  { data = "floor_award", kicker = "Floor Inspector", winner = "{player}", stat = "first to die on {first_deaths} pulls", punchline = "Highest rate: {rate_player}, first down on {rate} of pulls.", notes = "First death of the pull, excluding deaths after the wipe call. Next: {next}, {next_first_deaths}." },
+  { data = "cockroach", kicker = "The Cockroach", winner = "{player}", stat = "still standing at the end of {survived} wipes", punchline = "Next: {next}, {next_survived}", notes = "Wipes where the player never died, not even after the wipe call; the winner survived {rate} of their {wipes} wipes. Pulls played as a Holy Priest are left out: Spirit of Redemption hides their deaths." },
 ]
+
+[[slides]]
+id = "support-crew"
+layout = "awards"
+data = "none"
+kicker = "Awards"
+title = "The Support Crew"
 punchline = ""
-notes = "Rebirth, Raise Ally, Intercession and Soulstone resurrections. A Soulstone resurrection counts for the player rezzed, not the warlock. Regulars only."
+notes = "Summed over boss pulls; regulars only."
+cards = [
+  { data = "interrupts", kicker = "Interrupt Hero", winner = "{player}", stat = "{interrupts} interrupts", punchline = "Next: {next}, {next_interrupts}", notes = "Successful interrupts of enemy casts." },
+  { data = "dispels", kicker = "The Cleanser", winner = "{player}", stat = "{dispels} dispels", punchline = "Next: {next}, {next_dispels}", notes = "Dispels of harmful effects." },
+  { data = "rezzes_given", kicker = "Combat Medic", winner = "{player}", stat = "{rezzes_given} battle rezzes cast", punchline = "Next: {next}, {next_rezzes_given}", notes = "Rebirth, Raise Ally and Intercession; a Soulstone resurrection counts for the player rezzed, not the warlock." },
+  { data = "rezzes_received", kicker = "The Zombie", winner = "{player}", stat = "brought back {rezzes_received} times", punchline = "Next: {next}, {next_rezzes_received}", notes = "Battle rezzes received, Soulstones included." },
+]
 
 [[slides]]
-id = "consumables"
-layout = "big_number"
+id = "wined-and-dined"
+layout = "awards"
 data = "consumables"
-kicker = "Press the button"
-number = "{potions}"
-title = "potions drunk by {player}"
-punchline = { some_never = "Never pressed a potion or healthstone: {never}", all_pressed = "Everyone pressed something." }
-notes = "Potion and healthstone casts during boss pulls; regulars only."
+kicker = "Awards"
+title = "Wined and Dined"
+punchline = "Potion Seller, I am going into battle and I want your strongest potions."
+notes = { some_never = "Potion and healthstone casts during boss pulls; regulars only. Never pressed a potion or healthstone: {never}.", all_pressed = "Potion and healthstone casts during boss pulls; regulars only. Everyone pressed something." }
+cards = [
+  { data = "consumables", kicker = "Drinking Problem", winner = "{player}", stat = "drank {potions} potions", punchline = "Next: {next}, {next_potions}", notes = "" },
+  { data = "cookie_monster", kicker = "Cookie Monster", winner = "{player}", stat = "ate {healthstones} healthstones", punchline = "Next: {next}, {next_healthstones}", notes = "{per_pull} healthstones per pull for the winner, across {pulls} pulls." },
+]
 
 [[slides]]
-id = "cookie-monster"
-layout = "big_number"
-data = "cookie_monster"
-number_size = 220
-kicker = "Cookie Monster"
-number = "{player}"
-title = "ate {healthstones} healthstones"
-punchline = "{per_pull} per pull, across {pulls} pulls."
-notes = "Healthstone uses during boss pulls, from cast events; regulars only."
+id = "damage-taken"
+layout = "stat_row"
+data = "none"
+kicker = "Awards"
+title = "Damage Taken"
+punchline = ""
+notes = "Regulars only. Avoidable: damage from abilities marked avoidable in season.toml, per pull attended; boss melee and tank hits count only for players not tanking that pull. Honorary Tank: most damage taken across the season on pulls where the player wasn't tanking."
+items = [
+  { data = "avoidable", kicker = "Puddle Parser", value = "{player}", label = "{per_pull} avoidable damage per pull" },
+  { data = "avoidable", kicker = "Agile Andy", value = "{clean_player}", label = "{clean_per_pull} avoidable damage per pull" },
+  { data = "damage_sponge", kicker = "Honorary Tank", value = "{player}", label = "took {damage_taken} damage without tanking" },
+]
 
 [[slides]]
-id = "cockroach"
-layout = "big_number"
-data = "cockroach"
-number_size = 220
-kicker = "The cockroach"
-number = "{player}"
-title = "still standing at the end of {survived} wipes"
-punchline = "That's {rate} of the wipes they were in."
-notes = "Wipes where the player never died, not even after the wipe call; regulars only. Pulls played as a Holy Priest are left out: Spirit of Redemption hides their deaths."
+id = "above-and-beyond"
+layout = "awards"
+data = "none"
+kicker = "Awards"
+title = "Above and Beyond"
+punchline = ""
+notes = "Regulars only."
+cards = [
+  { data = "attendance", kicker = "Perfect Attendance", winner = "{player}", stat = { perfect = "present for all {total} pulls", top = "present for {attended} of {total} pulls" }, punchline = "Next: {next}, {next_attended}", notes = "Pulls attended counts any merged copy showing the character in the pull. Left out: {resets} likely resets, wipes under 30 s, where players who did nothing aren't logged." },
+  { data = "janitor", kicker = "The Janitor", winner = "{player}", stat = "dealt {trash_damage} damage to trash", punchline = "Somebody has to clean up.", notes = "Damage done to raid trash, on the {nights_with_trash} of {nights} nights where someone logged trash; each night takes the fullest uploader's logs. Next: {next}, {next_trash_damage}." },
+  { data = "lustiest", kicker = "The Lustful Raider", winner = "{player}", stat = "{lusts} of the {pulls_with_lust} pulls with a lust", punchline = "Next: {next}, {next_lusts}", notes = "Who cast the first Bloodlust/Heroism/Time Warp/Primal Rage/Fury of the Aspects of each pull. Typical first lust: {median} s into the pull (average {mean} s)." },
+]
 
 [[slides]]
 id = "jack-of-all-trades"
-layout = "big_number"
+layout = "podium"
 data = "jack_of_all_trades"
-number_size = 220
-kicker = "Jack of all trades"
-number = "{player}"
-title = "played {specs} specs across {roles} roles"
-punchline = ""
-notes = "Specs seen on boss pulls: {spec_list}. Regulars only."
+kicker = "Awards"
+title = "Jack of All Trades"
+row = ["{player}", "{roles} roles, {specs} specs"]
+punchline = "Stuck to one spec all season: {one_spec} regulars."
+notes = "Ranked by roles played, then specs, on boss pulls; tied players share a place. {spec_list}. Regulars only."
 
-[[slides]]
-id = "janitor"
-layout = "big_number"
-data = "janitor"
-number_size = 220
-kicker = "The Janitor"
-number = "{player}"
-title = "dealt {trash_damage} damage to trash"
-punchline = "Somebody has to clean up."
-notes = "Damage done to raid trash, on the {nights_with_trash} of {nights} nights where someone logged trash; each night takes the fullest uploader's logs. Regulars only."
-
-[[slides]]
-id = "damage-sponge"
-layout = "big_number"
-data = "damage_sponge"
-number_size = 220
-kicker = "Honorary tank"
-number = "{player}"
-title = "took {damage_taken} damage without being a tank"
-punchline = ""
-notes = "Most damage taken across the season on pulls where the player wasn't tanking; regulars only."
-
-[[slides]]
-id = "avoidable"
-layout = "big_number"
-data = "avoidable"
-number_size = 220
-kicker = "Standing in it"
-number = "{player}"
-title = "took {per_pull} avoidable damage per pull"
-punchline = "Lightest on their feet: {clean_player}, {clean_per_pull} per pull."
-notes = "Damage taken from abilities marked avoidable in season.toml, per pull attended; boss melee and tank hits count only for players not tanking that pull; regulars only. Biggest sources: {sources}."
-
-# --- Totals -----------------------------------------------------------------------------
+# --- The Meters -------------------------------------------------------------------------
 
 [[slides]]
 id = "damage-healing"
 layout = "stat_row"
 data = "damage_healing"
-statement = true
-kicker = "Totals"
+kicker = "The Meters"
 title = "The guild's season output"
+punchline = ""
+notes = "Damage {damage_exact}; healing {healing_exact}. Per-player maxes across copies."
 items = [
   { value = "{damage}", label = "damage done" },
   { value = "{healing}", label = "healing done" },
 ]
-punchline = ""
-notes = "Damage {damage_exact}; healing {healing_exact}. Per-player maxes across copies."
 
 [[slides]]
-id = "best-night-dps"
-layout = "big_number"
-data = "best_night_dps"
-kicker = "Big pumper"
-number = "{dps}"
-title = "DPS over a whole night: {player}, {night}"
+id = "dps-board"
+layout = "leaderboard"
+data = "dps_board"
+kicker = "The Meters"
+title = "Top Relative DPS"
+row = ["{player}", "{spec}", "{value}"]
 punchline = ""
-notes = "A player's damage over all pulls they attended that night divided by those pulls' combined duration; regulars only."
+notes = "On each kill, a regular's DPS against the median DPS player on that same kill (100% = typical), averaged over the kills they played as DPS, then weighted as if they had 10 more kills at the DPS average. Labelled by the spec they played most. Average DPS, kills and unweighted score: {details}."
 
 [[slides]]
-id = "lust-timing"
-layout = "big_number"
-data = "lust_timing"
-kicker = "Bloodlust timing"
-number = "{median} s"
-title = "into the pull, on a typical pull"
-punchline = { mean_above_median = "Average {mean} s, dragged up by the late ones.", mean_below = "Average {mean} s, pulled down by the pre-pull lusts." }
-notes = "First Bloodlust/Heroism/Time Warp/Primal Rage/Fury of the Aspects cast per pull; {pulls_with_lust} pulls had one. Median {median_exact} s, mean {mean_exact} s."
+id = "hps-board"
+layout = "leaderboard"
+data = "hps_board"
+kicker = "The Meters"
+title = "Top Relative HPS"
+row = ["{player}", "{spec}", "{value}"]
+punchline = ""
+notes = "On each kill, a regular's HPS against the median healer on that same kill (100% = typical), averaged over the kills they played as a healer or tank (one row per role), then weighted as if they had 10 more kills at their role's average. Labelled by the spec they played most. Average HPS, kills and unweighted score: {details}."
 
 # --- Outro ------------------------------------------------------------------------------
 

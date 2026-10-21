@@ -61,32 +61,43 @@ Each stat is a small Polars function over silver tables, registered in `STATS`. 
 | --- | --- |
 | Season totals | Nights, pulls, kills, wipes, deaths, boss combat hours, hours on wipes |
 | Progression | Per boss and difficulty: first kill night, pulls up to and including it, best boss % |
-| Nemesis boss | Most-pulled boss and difficulty; best boss % on each night |
 | So close | Wipes with the least boss health left |
 | Speedruns | Shortest wipes; fastest pre-call death from pull start |
 | Killing blows | Abilities that killed the most players; each player's personal nemesis ability |
 | Toughest night | Deaths, pulls and kills per night |
 | Kill cleanliness | Deaths on each kill: the messiest and the deathless ones |
 | Floor awards | First to die (pre-call), in total and per pull; deaths per pull |
-| Attendance | Pulls attended out of all pulls |
-| Damage and healing | Season totals; best whole-night DPS (only nights the player was in for at least half the combat time); most damage taken by a non-tank |
+| Attendance | Pulls attended out of all pulls, leaving out likely resets (wipes under 30 s): Warcraft Logs leaves out players who did nothing in them |
+| Damage and healing | Season totals; most damage taken by a non-tank |
+| Meters | Relative DPS and HPS per regular and role on kills (wipes left out): each kill's DPS against the median DPS player on that kill, HPS against the median healer, averaged, then weighted towards the role's average as if the player had 10 more kills (`SHRINK_KILLS`). Evens out bosses, gear growth and small samples. DPS counts the DPS role, HPS the healer and tank roles; labelled by the spec played most |
 | Interrupts, dispels | Most of each |
 | Battle rezzes | Most given and received; a Soulstone counts for the player rezzed |
 | Consumables | Potions and healthstones used; who never used either |
-| Bloodlust timing | Median and mean time into the pull of the first lust |
+| Bloodlust | Median and mean time into the pull of the first lust; which regular cast it most |
 | Avoidable damage | Damage from approved abilities per pull attended; non-tank-only abilities skip pulls the player tanked. Main role recorded so non-tanks can be compared |
 | The Janitor | Damage to raid trash, on the nights someone logged trash |
 | Cockroach | Wipes still alive at the end; Holy Priest pulls left out (Spirit of Redemption hides their deaths) |
-| Jack of all trades | Specs, roles and classes played on boss pulls |
+| Jack of all trades | Specs, roles and classes played on boss pulls, ranked by roles then specs |
 
 ### Slides (`slides.py`)
 
 `sga slides` fills the slides declared in `slides.toml` from gold and writes one standalone `gold/deck.html`. Nothing is hosted. The deck is git-ignored because it embeds the theme assets; rebuild it with `sga slides`.
 
-- Each `[[slides]]` entry has an `id`, a `layout` (`cover`, `big_number`, `stat_row`, `table`, `bullets`), a `data` source, and that layout's text keys; an empty text line (`punchline = ""`, say) is left out. `{placeholders}` come from the slide's data function plus season-wide values.
+- Each `[[slides]]` entry has an `id`, a `layout`, a `data` source, and that layout's text keys; an empty text line (`punchline = ""`, say) is left out. `{placeholders}` come from the slide's data function plus season-wide values. The layouts:
+  - `cover`: a title page.
+  - `big_number`: a guild or boss stat, with the number as the headline.
+  - `big_name`: one player award, with the winner as the headline and the number in the title.
+  - `stat_row`: up to four values side by side on cards, each with an optional kicker.
+  - `awards`: up to four award cards (four go two by two), each with its own kicker, winner, stat, punchline and notes.
+  - `table`, `leaderboard`: one row per data row; a leaderboard row gets a bar in the player's class colour, scaled to first place.
+  - `podium`: the top three places, first in the middle; tied players share a place.
+  - `bullets`: a list.
+- `stat_row` items and `awards` cards may name their own `data`, so one slide holds several awards. An entry whose stat is missing is dropped with a message; the slide goes only when all of them are.
+- Consistency rules the deck follows: a player award puts the winner big, a guild or boss stat the number; the layout sets the type size, and a big value too wide for its line shrinks to fit, down to half size, then wraps. Kickers are award names in Title Case. An award's punchline names the runner-up, a contrast from the data or a joke.
+- Ties: every tied winner is named ("A, B & C"), and the runner-up is the next distinct value. Values tie when they look the same on the slide, e.g. two wipes that both show as 0:16.
 - Text that depends on the numbers is a table of variants keyed by the data's `case`, e.g. `number = { perfect = "...", top = "..." }`.
 - A missing or unknown key, an unknown placeholder or a missing variant fails the build with every problem listed. A slide whose stat is missing (no avoidable abilities approved yet, say) is skipped with a message.
-- Slides are 1920×1080, scaled to the window. World of Warcraft theme: UI gold and orange over an out-of-focus background picture, all text in Friz Quadrata. Both are supplied locally and git-ignored: `sga slides` embeds `assets/friz-quadrata.ttf` and `assets/bg.png` (other font and image suffixes work too) into the deck if present, and otherwise falls back to an installed Friz or Georgia and a dark green gradient, saying so. The blur is CSS, so any sharp screenshot works. Speaker notes are hidden until N is pressed but are in the file, so they hold only definitions, exact numbers and sources.
+- Slides are 1920×1080, scaled to the window. World of Warcraft theme: UI gold and orange (plus class colours on the leaderboards) over an out-of-focus background picture, all text in Friz Quadrata. Both are supplied locally and git-ignored: `sga slides` embeds `assets/friz-quadrata.ttf` and `assets/bg.png` (other font and image suffixes work too) into the deck if present, and otherwise falls back to an installed Friz or Georgia and a dark green gradient, saying so. The blur is CSS, so any sharp screenshot works. Speaker notes are hidden until N is pressed but are in the file, so they hold only definitions, exact numbers and sources.
 - Printing gives one slide per page.
 
 ## Helpers (`suggest.py`)
@@ -102,4 +113,4 @@ Each stat is a small Polars function over silver tables, registered in `STATS`. 
 
 ## Tests
 
-`uv run pytest`, needing no API or cache: merging and a few stat rules on a tiny fake bronze cache (`test_pipeline.py`), and `slides.toml` validation (`test_slides.py`).
+`uv run pytest`, needing no API or cache: merging and a few stat rules on a tiny fake bronze cache (`test_pipeline.py`), and `slides.toml` validation, tie handling and dropping entries without data (`test_slides.py`).

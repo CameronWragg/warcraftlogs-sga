@@ -60,6 +60,9 @@ A pull in which the boss died.
 **Wipe**:
 A pull that ended without killing the boss.
 
+**Reset**:
+A wipe under 30 seconds, most likely the raid resetting a bad pull. Left out of attendance, since Warcraft Logs only lists players who did something in a fight.
+
 **Wipe call**:
 The moment the raid gives up on a wipe. Warcraft Logs' recorded call time if it has one, otherwise 10 seconds before the wipe ends. Kills have no wipe call.
 _Avoid_: Reset (when you mean the call)
@@ -69,3 +72,13 @@ An enemy ability a person has judged players could have avoided. Damage from it 
 
 **Post-call death**:
 A death after the wipe call. Excluded from "first to die" and fastest-death stats, but still counted in death totals.
+
+### Deck
+
+**Tie**:
+Two or more players (or pulls) whose value looks the same on the slide. Every tied winner is named; the runner-up is the next distinct value.
+_Avoid_: Picking one winner of a tie
+
+**Meter**:
+A leaderboard slide of the top five regulars by relative DPS or HPS: on each kill, compared with the typical player of the role on that same kill, then weighted by how many kills they played. One row per player per role.
+_Avoid_: Parse (a parse is Warcraft Logs' own ranking against other guilds)
