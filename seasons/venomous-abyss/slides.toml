@@ -189,6 +189,19 @@ row = ["{player}", "{roles} roles, {specs} specs"]
 punchline = "Stuck to one spec all season: {one_spec} regulars."
 notes = "Ranked by roles played, then specs, on boss pulls; tied players share a place. {spec_list}. Regulars only."
 
+[[slides]]
+id = "gear-check"
+layout = "awards"
+data = "none"
+kicker = "Awards"
+title = "Gear Check"
+punchline = ""
+notes = "Regulars only. Each boss pull compares a player's equipped item level with the median of everyone in that pull, then averages over their pulls, so joining late in the season doesn't count as being geared."
+cards = [
+  { data = "least_geared", kicker = "Dead Weight", winner = "{player}", stat = "{vs_raid} item levels below the raid", punchline = "Next: {next}, {next_vs_raid} below", notes = "Average item level {item_level}." },
+  { data = "most_geared", kicker = "All The Gear, No Idea", winner = "{player}", stat = "{vs_raid} item levels above the raid", punchline = "Next: {next}, {next_vs_raid} above", notes = "Average item level {item_level}." },
+]
+
 # --- The Meters -------------------------------------------------------------------------
 
 [[slides]]
@@ -233,6 +246,7 @@ data = "none"
 kicker = ""
 title = "See you next tier!"
 subtitle = ""
+github = "https://github.com/CameronWragg/warcraftlogs-sga"
 notes = """How this was counted: every boss pull in the raid at any difficulty; trash counts only \
 for The Janitor; dungeons and Mythic+ left out. Pulls logged by several people are merged: the \
 highest value per player per metric, never added together. Wipe call: Warcraft Logs' own call \

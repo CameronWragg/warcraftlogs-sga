@@ -206,6 +206,28 @@ def test_attendance_leaves_out_resets(season, merged):
     assert out["resets"][0] == 1
 
 
+def test_item_level_is_against_the_pulls_median(season, merged):
+    levels = {
+        (1, "Tank-S"): 300,
+        (1, "Heal-S"): 310,
+        (1, "Dps-S"): 320,
+        (2, "Tank-S"): 320,
+        (2, "Dps-S"): 330,
+    }
+    pp = merged["player_pulls"]
+    ilvl = [levels.get(k) for k in pp.select("pull_id", "character").iter_rows()]
+    geared = merged | {
+        "player_pulls": pp.with_columns(item_level=pl.Series(ilvl, dtype=pl.Float64))
+    }
+    out = gold.item_level(gold.make_ctx(season, geared))["item_level"]
+    # Pull 1's median is 310 and pull 2's 325; the healer's missing level on pull 2 is left out
+    assert dict(out.select("player", "vs_raid").iter_rows()) == {
+        "Dps": 7.5,
+        "Heal": 0,
+        "Tank": -7.5,
+    }
+
+
 def test_cockroach_skips_holy_priests(season, merged):
     out = gold.cockroach(gold.make_ctx(season, merged))["cockroach"]
     assert dict(out.select("player", "survived").iter_rows()) == {"Tank": 1, "Dps": 0}

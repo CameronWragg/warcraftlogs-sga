@@ -109,6 +109,8 @@ def parse_copies(season: Season) -> dict[str, pl.DataFrame]:
                         "class": actors[actor_id]["subType"],
                         "spec": spec,
                         "role": role,
+                        # Equipped item level; WCL gives 0 when it wasn't logged
+                        "item_level": p.get("maxItemLevel") or None,
                         **{k: m.get(k, 0) for k in METRICS},
                     }
                 )
@@ -203,7 +205,7 @@ def parse_copies(season: Season) -> dict[str, pl.DataFrame]:
 
     return {
         "copy_fights": pl.DataFrame(fights, schema_overrides={"wipe_called": pl.Int64}),
-        "copy_player_fights": pl.DataFrame(players),
+        "copy_player_fights": pl.DataFrame(players, schema_overrides={"item_level": pl.Float64}),
         "copy_deaths": pl.DataFrame(deaths),
         "copy_casts": pl.DataFrame(casts, schema_overrides={"target": pl.String}),
         "copy_damage_taken": pl.DataFrame(taken),
@@ -320,6 +322,7 @@ def merge(season: Season, c: dict[str, pl.DataFrame]) -> dict[str, pl.DataFrame]
             pl.col("class").first(),
             pl.col("spec").drop_nulls().first(),
             pl.col("role").drop_nulls().first(),
+            pl.col("item_level").max(),
             *[pl.col(m).max() for m in METRICS],
         )
         .join(pulls.select("pull_id", "duration_ms"), on="pull_id")

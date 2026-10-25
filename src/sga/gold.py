@@ -466,6 +466,26 @@ def jack_of_all_trades(c: Ctx):
     return {"jack_of_all_trades": table}
 
 
+def item_level(c: Ctx):
+    """Per regular: equipped item level on each boss pull against the median of everyone in that
+    pull, averaged. Comparing within a pull evens out gear growing over the season, so joining
+    late doesn't make a player look geared. Pulls where it wasn't logged are left out."""
+    logged = c.player_pulls.filter(pl.col("item_level").is_not_null()).with_columns(
+        raid=pl.col("item_level").median().over("pull_id")
+    )
+    table = (
+        logged.filter(c.is_regular())
+        .group_by("player")
+        .agg(
+            vs_raid=(pl.col("item_level") - pl.col("raid")).mean().round(2),
+            item_level=pl.col("item_level").mean().round(1),
+            pulls=pl.len(),
+        )
+        .pipe(ordered, "vs_raid", descending=True)
+    )
+    return {"item_level": table}
+
+
 def bloodlust_timing(c: Ctx):
     first_lust = (
         c.casts.filter(pl.col("kind") == "lust")
@@ -558,6 +578,7 @@ STATS: list[Callable[[Ctx], dict[str, pl.DataFrame]]] = [
     janitor,
     cockroach,
     jack_of_all_trades,
+    item_level,
 ]
 
 

@@ -78,13 +78,14 @@ Each stat is a small Polars function over silver tables, registered in `STATS`. 
 | The Janitor | Damage to raid trash, on the nights someone logged trash |
 | Cockroach | Wipes still alive at the end; Holy Priest pulls left out (Spirit of Redemption hides their deaths) |
 | Jack of all trades | Specs, roles and classes played on boss pulls, ranked by roles then specs |
+| Item level | Per regular: equipped item level on each boss pull against the median of everyone in that pull, averaged; evens out gear growth, so a late joiner doesn't look geared. Plain average item level recorded too |
 
 ### Slides (`slides.py`)
 
 `sga slides` fills the slides declared in `slides.toml` from gold and writes one standalone `gold/deck.html`. Nothing is hosted. The deck is git-ignored because it embeds the theme assets; rebuild it with `sga slides`.
 
 - Each `[[slides]]` entry has an `id`, a `layout`, a `data` source, and that layout's text keys; an empty text line (`punchline = ""`, say) is left out. `{placeholders}` come from the slide's data function plus season-wide values. The layouts:
-  - `cover`: a title page.
+  - `cover`: a title page; an optional `github` URL puts a grey link with GitHub's mark at the bottom centre.
   - `big_number`: a guild or boss stat, with the number as the headline.
   - `big_name`: one player award, with the winner as the headline and the number in the title.
   - `stat_row`: up to four values side by side on cards, each with an optional kicker.

@@ -3919,5 +3919,151 @@
    "classes": 1,
    "spec_list": "Assassination Rogue"
   }
+ ],
+ "item_level": [
+  {
+   "player": "Parasite",
+   "vs_raid": 4.92,
+   "item_level": 320.2,
+   "pulls": 312
+  },
+  {
+   "player": "Gyutaro",
+   "vs_raid": 3.93,
+   "item_level": 319.8,
+   "pulls": 330
+  },
+  {
+   "player": "Senjumaris",
+   "vs_raid": 3.1,
+   "item_level": 310.1,
+   "pulls": 118
+  },
+  {
+   "player": "Yax",
+   "vs_raid": 2.95,
+   "item_level": 317.5,
+   "pulls": 287
+  },
+  {
+   "player": "Minyoongi",
+   "vs_raid": 2.85,
+   "item_level": 318.7,
+   "pulls": 330
+  },
+  {
+   "player": "Arjunis",
+   "vs_raid": 2.32,
+   "item_level": 317.2,
+   "pulls": 298
+  },
+  {
+   "player": "Frostedtips",
+   "vs_raid": 1.63,
+   "item_level": 315.2,
+   "pulls": 224
+  },
+  {
+   "player": "Kalvaswis",
+   "vs_raid": 1.09,
+   "item_level": 320.7,
+   "pulls": 160
+  },
+  {
+   "player": "Larryw",
+   "vs_raid": -0.17,
+   "item_level": 314.8,
+   "pulls": 297
+  },
+  {
+   "player": "Phuzzy",
+   "vs_raid": -0.2,
+   "item_level": 315.6,
+   "pulls": 330
+  },
+  {
+   "player": "Tusgra",
+   "vs_raid": -0.53,
+   "item_level": 315.4,
+   "pulls": 257
+  },
+  {
+   "player": "Aceo",
+   "vs_raid": -0.97,
+   "item_level": 318.9,
+   "pulls": 122
+  },
+  {
+   "player": "Kalvasxenflm",
+   "vs_raid": -1.44,
+   "item_level": 302.9,
+   "pulls": 87
+  },
+  {
+   "player": "Yawningpanda",
+   "vs_raid": -2.43,
+   "item_level": 321.3,
+   "pulls": 59
+  },
+  {
+   "player": "B\u00e5z",
+   "vs_raid": -2.66,
+   "item_level": 310.2,
+   "pulls": 240
+  },
+  {
+   "player": "Athynna",
+   "vs_raid": -2.71,
+   "item_level": 318.2,
+   "pulls": 173
+  },
+  {
+   "player": "Birgit",
+   "vs_raid": -2.99,
+   "item_level": 311.9,
+   "pulls": 294
+  },
+  {
+   "player": "Ham\u00eatre",
+   "vs_raid": -3.81,
+   "item_level": 313.9,
+   "pulls": 190
+  },
+  {
+   "player": "D\u00fars",
+   "vs_raid": -4.65,
+   "item_level": 311.2,
+   "pulls": 330
+  },
+  {
+   "player": "\u00cdzanam\u00ec",
+   "vs_raid": -5.77,
+   "item_level": 314.5,
+   "pulls": 64
+  },
+  {
+   "player": "Cmrn",
+   "vs_raid": -9.15,
+   "item_level": 307.4,
+   "pulls": 199
+  },
+  {
+   "player": "Tavriel",
+   "vs_raid": -9.88,
+   "item_level": 311.0,
+   "pulls": 100
+  },
+  {
+   "player": "Ynuuri",
+   "vs_raid": -10.19,
+   "item_level": 306.1,
+   "pulls": 80
+  },
+  {
+   "player": "Krogars",
+   "vs_raid": -13.04,
+   "item_level": 304.4,
+   "pulls": 125
+  }
  ]
 }
