@@ -20,6 +20,8 @@ MELEE = 1  # Generic boss melee: not a mechanic, so left out of killing-blow sta
 PRE_PULL_DEATH_MS = 1_000
 # A wipe this short is most likely a reset: players who did nothing in it aren't logged
 RESET_MS = 30_000
+# Item level: a pull counts when at least this share of its players had theirs logged
+ITEM_LEVEL_LOGGED_SHARE = 0.5
 # The meters weigh each score as if the player had this many more kills at their role's average
 SHRINK_KILLS = 10
 
@@ -42,8 +44,15 @@ class Ctx:
 def _player_expr(season: Season, col: str) -> pl.Expr:
     """Map a character column to its player (aliases), else the character's name."""
     mapping = {ch: player for player, chars in season.aliases.items() for ch in chars}
-    name_only = pl.col(col).str.replace(r"-[^-]+$", "")
+    # Character names have no hyphens, but server names can ("Azjol-Nerub")
+    name_only = pl.col(col).str.replace(r"-.*$", "")
     return pl.col(col).replace_strict(mapping, default=name_only, return_dtype=pl.String)
+
+
+def counted_pulls(pulls: pl.DataFrame) -> pl.DataFrame:
+    """Pulls that aren't likely resets (see RESET_MS), as pull_id."""
+    reset = ~pl.col("kill") & (pl.col("duration_ms") < RESET_MS)
+    return pulls.filter(~reset).select("pull_id")
 
 
 def make_ctx(season: Season, silver: dict[str, pl.DataFrame]) -> Ctx:
@@ -74,8 +83,16 @@ def make_ctx(season: Season, silver: dict[str, pl.DataFrame]) -> Ctx:
     damage_taken = tag(silver["damage_taken"], "character").join(boss, on="pull_id")
     trash_nights = tag(silver["trash_nights"], "character")
 
-    attended = player_pulls.group_by("player").agg(pulls_attended=pl.col("pull_id").n_unique())
-    regulars = attended.filter(pl.col("pulls_attended") >= season.regular_threshold * pulls.height)
+    # Counted the same way as the attendance stat
+    counted = counted_pulls(pulls)
+    attended = (
+        player_pulls.join(counted, on="pull_id")
+        .group_by("player")
+        .agg(pulls_attended=pl.col("pull_id").n_unique())
+    )
+    regulars = attended.filter(
+        pl.col("pulls_attended") >= season.regular_threshold * counted.height
+    )
     if season.roster:
         regulars = regulars.filter(pl.col("player").is_in(season.roster))
     return Ctx(season, pulls, player_pulls, deaths, casts, damage_taken, trash_nights, regulars)
@@ -247,8 +264,7 @@ def floor_awards(c: Ctx):
 
 def attendance(c: Ctx):
     """Pulls attended, leaving out likely resets (see RESET_MS)."""
-    reset = ~pl.col("kill") & (pl.col("duration_ms") < RESET_MS)
-    counted = c.pulls.filter(~reset).select("pull_id")
+    counted = counted_pulls(c.pulls)
     total = counted.height
     table = (
         c.player_pulls.join(counted, on="pull_id")
@@ -434,11 +450,13 @@ def cockroach(c: Ctx):
     """Wipes a regular was still alive at the end of (any death, even after the call, counts).
 
     Holy Priests are left out: Spirit of Redemption keeps them up past the wipe, so their
-    deaths often aren't logged.
+    deaths often aren't logged. So are likely resets, which everyone survives.
     """
     holy_priest = (pl.col("class") == "Priest") & (pl.col("spec") == "Holy")
-    wipes = c.player_pulls.filter(~pl.col("kill") & c.is_regular() & ~holy_priest).select(
-        "pull_id", "player"
+    wipes = (
+        c.player_pulls.join(counted_pulls(c.pulls), on="pull_id")
+        .filter(~pl.col("kill") & c.is_regular() & ~holy_priest)
+        .select("pull_id", "player")
     )
     died = c.deaths.select("pull_id", "player").unique()
     table = (
@@ -469,18 +487,27 @@ def jack_of_all_trades(c: Ctx):
 def item_level(c: Ctx):
     """Per regular: equipped item level on each boss pull against the median of everyone in that
     pull, averaged. Comparing within a pull evens out gear growing over the season, so joining
-    late doesn't make a player look geared. Pulls where it wasn't logged are left out."""
-    logged = c.player_pulls.filter(pl.col("item_level").is_not_null()).with_columns(
-        raid=pl.col("item_level").median().over("pull_id")
+    late doesn't make a player look geared. Levels that weren't logged are left out, and so
+    are pulls where fewer than ITEM_LEVEL_LOGGED_SHARE of the players had theirs logged, and
+    regulars with fewer such pulls than the regular threshold. vs_raid is rounded as the
+    slide shows it, so ties on the slide are ties here."""
+    logged = (
+        c.player_pulls.with_columns(
+            share=pl.col("item_level").is_not_null().mean().over("pull_id"),
+        )
+        .filter(pl.col("item_level").is_not_null() & (pl.col("share") >= ITEM_LEVEL_LOGGED_SHARE))
+        .with_columns(raid=pl.col("item_level").median().over("pull_id"))
     )
+    min_pulls = c.season.regular_threshold * logged["pull_id"].n_unique()
     table = (
         logged.filter(c.is_regular())
         .group_by("player")
         .agg(
-            vs_raid=(pl.col("item_level") - pl.col("raid")).mean().round(2),
+            vs_raid=(pl.col("item_level") - pl.col("raid")).mean().round(1),
             item_level=pl.col("item_level").mean().round(1),
             pulls=pl.len(),
         )
+        .filter(pl.col("pulls") >= min_pulls)
         .pipe(ordered, "vs_raid", descending=True)
     )
     return {"item_level": table}

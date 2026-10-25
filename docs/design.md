@@ -76,9 +76,9 @@ Each stat is a small Polars function over silver tables, registered in `STATS`. 
 | Bloodlust | Median and mean time into the pull of the first lust; which regular cast it most |
 | Avoidable damage | Damage from approved abilities per pull attended; non-tank-only abilities skip pulls the player tanked. Main role recorded so non-tanks can be compared |
 | The Janitor | Damage to raid trash, on the nights someone logged trash |
-| Cockroach | Wipes still alive at the end; Holy Priest pulls left out (Spirit of Redemption hides their deaths) |
+| Cockroach | Wipes still alive at the end; Holy Priest pulls and likely resets left out (Spirit of Redemption hides their deaths; everyone survives a reset) |
 | Jack of all trades | Specs, roles and classes played on boss pulls, ranked by roles then specs |
-| Item level | Per regular: equipped item level on each boss pull against the median of everyone in that pull, averaged; evens out gear growth, so a late joiner doesn't look geared. Plain average item level recorded too |
+| Item level | Per regular: equipped item level on each boss pull against the median of everyone in that pull, averaged; evens out gear growth, so a late joiner doesn't look geared. Pulls where under half the players had item level logged are left out, and so are regulars with fewer logged pulls than the regular threshold. Plain average item level recorded too |
 
 ### Slides (`slides.py`)
 

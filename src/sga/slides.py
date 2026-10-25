@@ -84,6 +84,20 @@ class SlideConfigError(Exception):
     pass
 
 
+class NoDataError(Exception):
+    """A slide's stat wasn't built or has no rows, e.g. no avoidable abilities approved."""
+
+
+class StatTables(dict):
+    """Gold stats by name; a missing or empty one raises NoDataError."""
+
+    def __getitem__(self, name: str) -> pl.DataFrame:
+        df = self.get(name)
+        if df is None or df.is_empty():
+            raise NoDataError(f"no {name} stat")
+        return df
+
+
 # --- Formatting ------------------------------------------------------------------------
 
 
@@ -146,6 +160,8 @@ def shown(df: pl.DataFrame, col: str, fmt: Callable) -> pl.DataFrame:
 
 def winners(df: pl.DataFrame, *by: str) -> pl.DataFrame:
     """The rows tied with the first on `by`."""
+    if df.is_empty():
+        raise NoDataError("nobody to award")
     first = df.row(0, named=True)
     return df.filter(pl.all_horizontal([pl.col(c) == first[c] for c in by]))
 
@@ -350,7 +366,7 @@ def d_floor_award(st, s) -> Values:
 
 
 def d_attendance(st, s) -> Values:
-    a = award(st["attendance"], "pulls_attended")
+    a = award(st["attendance"].filter(pl.col("regular")), "pulls_attended")
     top = row(st, "attendance")
     total = top["of_pulls"]
     return {
@@ -446,18 +462,18 @@ def d_jack_of_all_trades(st, s) -> Values:
     }
 
 
+def gap(v: float) -> str:
+    """An item level gap to the raid in words: '7.5 item levels above', 'level with'."""
+    size = f"{abs(v):.1f}"
+    if size == "0.0":
+        return "level with"
+    return f"{size} item levels {'above' if v > 0 else 'below'}"
+
+
 def _gear(t: pl.DataFrame) -> Values:
-    """An item level award on a table ordered winner first. The gap to the raid is shown
-    without its sign: the slide says above or below."""
-    t = shown(t, "vs_raid", lambda v: f"{abs(v):.1f}")
-    w, r = winners(t, "shown"), runners_up(t, "shown")
-    return {
-        "player": names(w["player"]),
-        "vs_raid": w["shown"][0],
-        "item_level": names(f"{v:.1f}" for v in w["item_level"]),
-        "next": names(r["player"]),
-        "next_vs_raid": r["shown"][0] if r.height else "",
-    }
+    """An item level award on a table ordered winner first; {vs_raid} says above or below."""
+    w = winners(shown(t, "vs_raid", gap), "shown")
+    return award(t, "vs_raid", gap) | {"item_level": names(f"{v:.1f}" for v in w["item_level"])}
 
 
 def d_most_geared(st, s) -> Values:
@@ -532,8 +548,6 @@ DATA: dict[str, Callable[[Stats, Season], Values]] = {
     "most_geared": d_most_geared,
     "least_geared": d_least_geared,
 }
-# What a data function raises when its stat is missing, e.g. no avoidable abilities approved
-NO_DATA = (KeyError, IndexError, pl.exceptions.PolarsError)
 
 
 # --- Layouts ---------------------------------------------------------------------------
@@ -568,7 +582,10 @@ def _github(url: str) -> str:
     if not url:
         return ""
     label = re.sub(r"^https?://(www\.)?", "", url).rstrip("/")
-    return f'<a class="github" href="{html.escape(url)}">{GITHUB_MARK}{esc(label)}</a>'
+    return (
+        f'<a class="github" href="{html.escape(url)}" target="_blank" rel="noopener">'
+        f"{GITHUB_MARK}{esc(label)}</a>"
+    )
 
 
 def cover(sid: str, c: dict) -> str:
@@ -847,7 +864,7 @@ def entries(
     for i, e in enumerate(sl[key], 1):
         try:
             ev = values | DATA[e["data"]](stats, season) if "data" in e else values
-        except NO_DATA as err:
+        except NoDataError as err:
             log(
                 f"Skipping {key} {i} of slide {sl['id']}: no data ({err.__class__.__name__}: {err})"
             )
@@ -861,10 +878,10 @@ def entries(
 
 
 def load_stats(season: Season) -> Stats:
-    return {
-        p.stem: pl.read_csv(p, try_parse_dates=True)
+    return StatTables(
+        (p.stem, pl.read_csv(p, try_parse_dates=True))
         for p in (season.gold_dir / "stats").glob("*.csv")
-    }
+    )
 
 
 def build(season: Season, log=print) -> list[str]:
@@ -882,7 +899,7 @@ def build(season: Season, log=print) -> list[str]:
             continue
         try:
             values = base | DATA[sl["data"]](stats, season)
-        except NO_DATA as e:
+        except NoDataError as e:
             log(f"Skipping slide {sl['id']}: no data ({e.__class__.__name__}: {e})")
             continue
         entry_values = None
@@ -968,10 +985,10 @@ h2 { font-size: 80px; line-height: 1.15; color: var(--gold); margin-bottom: 48px
 .cover h1 { font-size: 180px; }
 .cover .sub { font-size: 44px; color: var(--muted); margin-top: 24px; }
 .github { position: absolute; left: 50%; bottom: 64px; transform: translateX(-50%);
-  display: flex; align-items: center; gap: 14px; font-size: 26px; color: #8f8f8f;
-  text-decoration: none; text-shadow: none; white-space: nowrap; }
+  display: flex; align-items: center; gap: 14px; font-size: 26px; color: var(--muted);
+  opacity: .6; text-decoration: none; text-shadow: none; white-space: nowrap; }
 .github svg { width: 30px; height: 30px; flex: none; }
-.github:hover { color: #bdbdbd; }
+.github:hover { opacity: 1; }
 
 .cells { display: flex; gap: 40px; }
 .cells > div { flex: 1 1 0; min-width: 0; }

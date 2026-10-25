@@ -198,8 +198,8 @@ title = "Gear Check"
 punchline = ""
 notes = "Regulars only. Each boss pull compares a player's equipped item level with the median of everyone in that pull, then averages over their pulls, so joining late in the season doesn't count as being geared."
 cards = [
-  { data = "least_geared", kicker = "Dead Weight", winner = "{player}", stat = "{vs_raid} item levels below the raid", punchline = "Next: {next}, {next_vs_raid} below", notes = "Average item level {item_level}." },
-  { data = "most_geared", kicker = "All The Gear, No Idea", winner = "{player}", stat = "{vs_raid} item levels above the raid", punchline = "Next: {next}, {next_vs_raid} above", notes = "Average item level {item_level}." },
+  { data = "least_geared", kicker = "Dead Weight", winner = "{player}", stat = "{vs_raid} the raid", punchline = "Next: {next}, {next_vs_raid}", notes = "Average item level {item_level}." },
+  { data = "most_geared", kicker = "All The Gear, No Idea", winner = "{player}", stat = "{vs_raid} the raid", punchline = "Next: {next}, {next_vs_raid}", notes = "Average item level {item_level}." },
 ]
 
 # --- The Meters -------------------------------------------------------------------------

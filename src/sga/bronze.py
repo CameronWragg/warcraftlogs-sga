@@ -12,6 +12,7 @@ Layout under .cache/bronze/:
 
 import json
 import re
+import time
 from pathlib import Path
 
 from sga.wcl import WclClient
@@ -56,6 +57,9 @@ FIGHT_TABLES = {
     "dispels": "Dispels",
 }
 FIGHTS_PER_REQUEST = 5
+# A report that ended this recently may still be live-logging: nothing of it is cached yet,
+# since the cache is never refreshed
+LIVE_MS = 3_600_000
 
 REPORT_FIELDS = """
   code title startTime endTime
@@ -144,9 +148,11 @@ def fetch_report(client: WclClient, code: str, raid_encounters: set[int], log=pr
     rdir = report_dir(code)
     if not (rdir / "report.json").exists():
         log(f"{code}: report")
-        _write(
-            rdir / "report.json", client.query(_report(code, REPORT_FIELDS))["reportData"]["report"]
-        )
+        report = client.query(_report(code, REPORT_FIELDS))["reportData"]["report"]
+        if report["endTime"] > time.time() * 1000 - LIVE_MS:
+            log(f"{code}: skipped, it may still be logging; fetch again an hour after it ends")
+            return
+        _write(rdir / "report.json", report)
     report = read(rdir / "report.json")
     fight_ids = [f["id"] for f in report["fights"] if f["encounterID"] > 0]
     if not fight_ids:

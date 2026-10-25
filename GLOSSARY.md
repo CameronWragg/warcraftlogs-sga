@@ -45,7 +45,7 @@ One in-game character, identified by name and server. A player has one or more c
 _Avoid_: Toon, alt (except to describe a player's non-main character), actor
 
 **Regular**:
-A player who attended at least a set share of the season's pulls (10% by default) and, if the season has a roster, is on it. Only regulars are eligible for awards and rate-based leaderboards; everyone counts towards season totals.
+A player who attended at least a set share of the season's pulls (10% by default, resets left out) and, if the season has a roster, is on it. Only regulars are eligible for awards and rate-based leaderboards; everyone counts towards season totals.
 _Avoid_: Core, raider
 
 **Filler**:

@@ -82,9 +82,30 @@ def test_every_tied_winner_is_named():
 
 def test_a_card_without_data_is_dropped():
     sl = {"id": "x", "layout": "awards", "cards": [{"data": "interrupts"}, {"data": "dispels"}]}
-    stats = {"interrupts": pl.DataFrame({"player": ["A"], "interrupts": [3]})}
+    stats = slides.StatTables(interrupts=pl.DataFrame({"player": ["A"], "interrupts": [3]}))
     logged = []
     kept, values = slides.entries(sl, stats, SEASON, {}, logged.append)
     assert kept == [{"data": "interrupts"}]
     assert values[0]["player"] == "A"
     assert logged[0].startswith("Skipping cards 2 of slide x: no data")
+
+
+def test_a_broken_data_function_fails_instead_of_dropping_the_card():
+    sl = {"id": "x", "layout": "awards", "cards": [{"data": "interrupts"}]}
+    stats = slides.StatTables(interrupts=pl.DataFrame({"player": ["A"], "kicks": [3]}))
+    with pytest.raises(pl.exceptions.ColumnNotFoundError):
+        slides.entries(sl, stats, SEASON, {}, print)
+
+
+def test_item_level_gaps_keep_their_sign():
+    # +7.5 and -7.5 look alike without the sign; they mustn't tie
+    df = pl.DataFrame(
+        {"player": ["A", "B", "C"], "vs_raid": [7.5, 3.0, -7.5], "item_level": [1.0, 2.0, 3.0]}
+    )
+    out = slides.d_most_geared({"item_level": df}, SEASON)
+    assert out["player"] == "A"
+    assert out["vs_raid"] == "7.5 item levels above"
+    assert out["next"] == "B"
+    least = slides.d_least_geared({"item_level": df}, SEASON)
+    assert (least["player"], least["vs_raid"]) == ("C", "7.5 item levels below")
+    assert slides.gap(-0.04) == "level with"

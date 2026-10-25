@@ -1312,195 +1312,195 @@
  "floor_awards": [
   {
    "player": "Parasite",
-   "pulls_attended": 312,
+   "pulls_attended": 298,
    "first_deaths": 33,
    "deaths": 274,
-   "first_death_rate": 0.106,
-   "deaths_per_pull": 0.878
+   "first_death_rate": 0.111,
+   "deaths_per_pull": 0.919
   },
   {
    "player": "B\u00e5z",
-   "pulls_attended": 240,
+   "pulls_attended": 229,
    "first_deaths": 26,
    "deaths": 218,
-   "first_death_rate": 0.108,
-   "deaths_per_pull": 0.908
+   "first_death_rate": 0.114,
+   "deaths_per_pull": 0.952
   },
   {
    "player": "Phuzzy",
-   "pulls_attended": 331,
+   "pulls_attended": 316,
    "first_deaths": 26,
    "deaths": 311,
-   "first_death_rate": 0.079,
-   "deaths_per_pull": 0.94
+   "first_death_rate": 0.082,
+   "deaths_per_pull": 0.984
   },
   {
    "player": "D\u00fars",
-   "pulls_attended": 330,
+   "pulls_attended": 316,
    "first_deaths": 23,
    "deaths": 299,
-   "first_death_rate": 0.07,
-   "deaths_per_pull": 0.906
+   "first_death_rate": 0.073,
+   "deaths_per_pull": 0.946
   },
   {
    "player": "Ham\u00eatre",
-   "pulls_attended": 190,
+   "pulls_attended": 181,
    "first_deaths": 19,
    "deaths": 149,
-   "first_death_rate": 0.1,
-   "deaths_per_pull": 0.784
+   "first_death_rate": 0.105,
+   "deaths_per_pull": 0.823
   },
   {
    "player": "Frostedtips",
-   "pulls_attended": 224,
+   "pulls_attended": 217,
    "first_deaths": 15,
    "deaths": 185,
-   "first_death_rate": 0.067,
-   "deaths_per_pull": 0.826
+   "first_death_rate": 0.069,
+   "deaths_per_pull": 0.853
   },
   {
    "player": "Gyutaro",
-   "pulls_attended": 330,
+   "pulls_attended": 315,
    "first_deaths": 15,
    "deaths": 280,
-   "first_death_rate": 0.045,
-   "deaths_per_pull": 0.848
+   "first_death_rate": 0.048,
+   "deaths_per_pull": 0.889
   },
   {
    "player": "Kalvasxenflm",
-   "pulls_attended": 87,
+   "pulls_attended": 84,
    "first_deaths": 14,
    "deaths": 75,
-   "first_death_rate": 0.161,
-   "deaths_per_pull": 0.862
+   "first_death_rate": 0.167,
+   "deaths_per_pull": 0.893
   },
   {
    "player": "Larryw",
-   "pulls_attended": 297,
+   "pulls_attended": 284,
    "first_deaths": 13,
    "deaths": 248,
-   "first_death_rate": 0.044,
-   "deaths_per_pull": 0.835
+   "first_death_rate": 0.046,
+   "deaths_per_pull": 0.873
   },
   {
    "player": "Yax",
-   "pulls_attended": 288,
+   "pulls_attended": 274,
    "first_deaths": 13,
    "deaths": 235,
-   "first_death_rate": 0.045,
-   "deaths_per_pull": 0.816
+   "first_death_rate": 0.047,
+   "deaths_per_pull": 0.858
   },
   {
    "player": "Senjumaris",
-   "pulls_attended": 119,
+   "pulls_attended": 114,
    "first_deaths": 11,
    "deaths": 94,
-   "first_death_rate": 0.092,
-   "deaths_per_pull": 0.79
-  },
-  {
-   "player": "Tusgra",
-   "pulls_attended": 257,
-   "first_deaths": 11,
-   "deaths": 226,
-   "first_death_rate": 0.043,
-   "deaths_per_pull": 0.879
-  },
-  {
-   "player": "Krogars",
-   "pulls_attended": 125,
-   "first_deaths": 9,
-   "deaths": 120,
-   "first_death_rate": 0.072,
-   "deaths_per_pull": 0.96
-  },
-  {
-   "player": "Minyoongi",
-   "pulls_attended": 330,
-   "first_deaths": 9,
-   "deaths": 275,
-   "first_death_rate": 0.027,
-   "deaths_per_pull": 0.833
-  },
-  {
-   "player": "Athynna",
-   "pulls_attended": 173,
-   "first_deaths": 7,
-   "deaths": 144,
-   "first_death_rate": 0.04,
-   "deaths_per_pull": 0.832
-  },
-  {
-   "player": "Cmrn",
-   "pulls_attended": 200,
-   "first_deaths": 7,
-   "deaths": 178,
-   "first_death_rate": 0.035,
-   "deaths_per_pull": 0.89
-  },
-  {
-   "player": "Aceo",
-   "pulls_attended": 122,
-   "first_deaths": 6,
-   "deaths": 99,
-   "first_death_rate": 0.049,
-   "deaths_per_pull": 0.811
-  },
-  {
-   "player": "Birgit",
-   "pulls_attended": 294,
-   "first_deaths": 5,
-   "deaths": 235,
-   "first_death_rate": 0.017,
-   "deaths_per_pull": 0.799
-  },
-  {
-   "player": "Kalvaswis",
-   "pulls_attended": 160,
-   "first_deaths": 4,
-   "deaths": 132,
-   "first_death_rate": 0.025,
+   "first_death_rate": 0.096,
    "deaths_per_pull": 0.825
   },
   {
+   "player": "Tusgra",
+   "pulls_attended": 247,
+   "first_deaths": 11,
+   "deaths": 226,
+   "first_death_rate": 0.045,
+   "deaths_per_pull": 0.915
+  },
+  {
+   "player": "Krogars",
+   "pulls_attended": 120,
+   "first_deaths": 9,
+   "deaths": 120,
+   "first_death_rate": 0.075,
+   "deaths_per_pull": 1.0
+  },
+  {
+   "player": "Minyoongi",
+   "pulls_attended": 315,
+   "first_deaths": 9,
+   "deaths": 275,
+   "first_death_rate": 0.029,
+   "deaths_per_pull": 0.873
+  },
+  {
+   "player": "Athynna",
+   "pulls_attended": 165,
+   "first_deaths": 7,
+   "deaths": 144,
+   "first_death_rate": 0.042,
+   "deaths_per_pull": 0.873
+  },
+  {
+   "player": "Cmrn",
+   "pulls_attended": 188,
+   "first_deaths": 7,
+   "deaths": 178,
+   "first_death_rate": 0.037,
+   "deaths_per_pull": 0.947
+  },
+  {
+   "player": "Aceo",
+   "pulls_attended": 114,
+   "first_deaths": 6,
+   "deaths": 99,
+   "first_death_rate": 0.053,
+   "deaths_per_pull": 0.868
+  },
+  {
+   "player": "Birgit",
+   "pulls_attended": 282,
+   "first_deaths": 5,
+   "deaths": 235,
+   "first_death_rate": 0.018,
+   "deaths_per_pull": 0.833
+  },
+  {
+   "player": "Kalvaswis",
+   "pulls_attended": 151,
+   "first_deaths": 4,
+   "deaths": 132,
+   "first_death_rate": 0.026,
+   "deaths_per_pull": 0.874
+  },
+  {
    "player": "Ynuuri",
-   "pulls_attended": 81,
+   "pulls_attended": 79,
    "first_deaths": 4,
    "deaths": 51,
-   "first_death_rate": 0.049,
-   "deaths_per_pull": 0.63
+   "first_death_rate": 0.051,
+   "deaths_per_pull": 0.646
   },
   {
    "player": "\u00cdzanam\u00ec",
-   "pulls_attended": 65,
+   "pulls_attended": 62,
    "first_deaths": 3,
    "deaths": 55,
-   "first_death_rate": 0.046,
-   "deaths_per_pull": 0.846
+   "first_death_rate": 0.048,
+   "deaths_per_pull": 0.887
   },
   {
    "player": "Tavriel",
-   "pulls_attended": 100,
+   "pulls_attended": 94,
    "first_deaths": 2,
    "deaths": 85,
-   "first_death_rate": 0.02,
-   "deaths_per_pull": 0.85
+   "first_death_rate": 0.021,
+   "deaths_per_pull": 0.904
   },
   {
    "player": "Arjunis",
-   "pulls_attended": 298,
+   "pulls_attended": 283,
    "first_deaths": 1,
    "deaths": 69,
-   "first_death_rate": 0.003,
-   "deaths_per_pull": 0.232
+   "first_death_rate": 0.004,
+   "deaths_per_pull": 0.244
   },
   {
    "player": "Yawningpanda",
-   "pulls_attended": 59,
+   "pulls_attended": 58,
    "first_deaths": 0,
    "deaths": 52,
    "first_death_rate": 0.0,
-   "deaths_per_pull": 0.881
+   "deaths_per_pull": 0.897
   }
  ],
  "attendance": [
@@ -3099,169 +3099,169 @@
    "player": "\u00cdzanam\u00ec",
    "main_role": "dps",
    "avoidable_damage": 13556028,
-   "pulls_attended": 65,
-   "per_pull": 208554.0
+   "pulls_attended": 62,
+   "per_pull": 218646.0
   },
   {
    "player": "Gyutaro",
    "main_role": "dps",
    "avoidable_damage": 60768296,
-   "pulls_attended": 330,
-   "per_pull": 184146.0
+   "pulls_attended": 315,
+   "per_pull": 192915.0
   },
   {
    "player": "D\u00fars",
    "main_role": "healer",
    "avoidable_damage": 57977087,
-   "pulls_attended": 330,
-   "per_pull": 175688.0
+   "pulls_attended": 316,
+   "per_pull": 183472.0
   },
   {
    "player": "Parasite",
    "main_role": "dps",
    "avoidable_damage": 44429964,
-   "pulls_attended": 312,
-   "per_pull": 142404.0
+   "pulls_attended": 298,
+   "per_pull": 149094.0
   },
   {
    "player": "Arjunis",
    "main_role": "healer",
    "avoidable_damage": 38773682,
-   "pulls_attended": 298,
-   "per_pull": 130113.0
+   "pulls_attended": 283,
+   "per_pull": 137009.0
   },
   {
    "player": "Kalvasxenflm",
    "main_role": "healer",
    "avoidable_damage": 8892429,
-   "pulls_attended": 87,
-   "per_pull": 102212.0
-  },
-  {
-   "player": "Yawningpanda",
-   "main_role": "healer",
-   "avoidable_damage": 5402413,
-   "pulls_attended": 59,
-   "per_pull": 91566.0
+   "pulls_attended": 84,
+   "per_pull": 105862.0
   },
   {
    "player": "Birgit",
    "main_role": "dps",
    "avoidable_damage": 26569488,
-   "pulls_attended": 294,
-   "per_pull": 90372.0
+   "pulls_attended": 282,
+   "per_pull": 94218.0
+  },
+  {
+   "player": "Yawningpanda",
+   "main_role": "healer",
+   "avoidable_damage": 5402413,
+   "pulls_attended": 58,
+   "per_pull": 93145.0
   },
   {
    "player": "Tusgra",
    "main_role": "dps",
    "avoidable_damage": 22483842,
-   "pulls_attended": 257,
-   "per_pull": 87486.0
+   "pulls_attended": 247,
+   "per_pull": 91028.0
   },
   {
    "player": "Yax",
    "main_role": "dps",
    "avoidable_damage": 24510190,
-   "pulls_attended": 288,
-   "per_pull": 85105.0
+   "pulls_attended": 274,
+   "per_pull": 89453.0
   },
   {
    "player": "Senjumaris",
    "main_role": "dps",
    "avoidable_damage": 9743951,
-   "pulls_attended": 119,
-   "per_pull": 81882.0
+   "pulls_attended": 114,
+   "per_pull": 85473.0
   },
   {
    "player": "Minyoongi",
    "main_role": "dps",
    "avoidable_damage": 24225988,
-   "pulls_attended": 330,
-   "per_pull": 73412.0
+   "pulls_attended": 315,
+   "per_pull": 76908.0
   },
   {
    "player": "B\u00e5z",
    "main_role": "dps",
    "avoidable_damage": 14817607,
-   "pulls_attended": 240,
-   "per_pull": 61740.0
+   "pulls_attended": 229,
+   "per_pull": 64706.0
   },
   {
    "player": "Larryw",
    "main_role": "dps",
    "avoidable_damage": 15247630,
-   "pulls_attended": 297,
-   "per_pull": 51339.0
-  },
-  {
-   "player": "Frostedtips",
-   "main_role": "dps",
-   "avoidable_damage": 11346375,
-   "pulls_attended": 224,
-   "per_pull": 50653.0
+   "pulls_attended": 284,
+   "per_pull": 53689.0
   },
   {
    "player": "Tavriel",
    "main_role": "dps",
    "avoidable_damage": 5010489,
-   "pulls_attended": 100,
-   "per_pull": 50105.0
+   "pulls_attended": 94,
+   "per_pull": 53303.0
   },
   {
-   "player": "Ham\u00eatre",
+   "player": "Frostedtips",
    "main_role": "dps",
-   "avoidable_damage": 6628407,
-   "pulls_attended": 190,
-   "per_pull": 34886.0
+   "avoidable_damage": 11346375,
+   "pulls_attended": 217,
+   "per_pull": 52287.0
   },
   {
    "player": "Aceo",
    "main_role": "dps",
    "avoidable_damage": 4194102,
-   "pulls_attended": 122,
-   "per_pull": 34378.0
+   "pulls_attended": 114,
+   "per_pull": 36790.0
+  },
+  {
+   "player": "Ham\u00eatre",
+   "main_role": "dps",
+   "avoidable_damage": 6628407,
+   "pulls_attended": 181,
+   "per_pull": 36621.0
   },
   {
    "player": "Phuzzy",
    "main_role": "healer",
    "avoidable_damage": 10943679,
-   "pulls_attended": 331,
-   "per_pull": 33062.0
+   "pulls_attended": 316,
+   "per_pull": 34632.0
   },
   {
    "player": "Athynna",
    "main_role": "dps",
    "avoidable_damage": 5713051,
-   "pulls_attended": 173,
-   "per_pull": 33023.0
+   "pulls_attended": 165,
+   "per_pull": 34625.0
   },
   {
    "player": "Ynuuri",
    "main_role": "healer",
    "avoidable_damage": 2270215,
-   "pulls_attended": 81,
-   "per_pull": 28027.0
+   "pulls_attended": 79,
+   "per_pull": 28737.0
   },
   {
    "player": "Krogars",
    "main_role": "tank",
    "avoidable_damage": 2874866,
-   "pulls_attended": 125,
-   "per_pull": 22999.0
+   "pulls_attended": 120,
+   "per_pull": 23957.0
   },
   {
    "player": "Cmrn",
    "main_role": "tank",
    "avoidable_damage": 635100,
-   "pulls_attended": 200,
-   "per_pull": 3176.0
+   "pulls_attended": 188,
+   "per_pull": 3378.0
   },
   {
    "player": "Kalvaswis",
    "main_role": "tank",
    "avoidable_damage": 401383,
-   "pulls_attended": 160,
-   "per_pull": 2509.0
+   "pulls_attended": 151,
+   "per_pull": 2658.0
   }
  ],
  "avoidable_by_ability": [
@@ -3606,128 +3606,128 @@
  ],
  "cockroach": [
   {
-   "player": "Cmrn",
-   "wipes": 172,
-   "survived": 8,
-   "survival_rate": 0.047
+   "player": "Gyutaro",
+   "wipes": 248,
+   "survived": 7,
+   "survival_rate": 0.028
   },
   {
-   "player": "Gyutaro",
-   "wipes": 263,
-   "survived": 7,
-   "survival_rate": 0.027
+   "player": "Cmrn",
+   "wipes": 160,
+   "survived": 6,
+   "survival_rate": 0.038
   },
   {
    "player": "Birgit",
-   "wipes": 233,
+   "wipes": 221,
    "survived": 5,
-   "survival_rate": 0.021
+   "survival_rate": 0.023
   },
   {
    "player": "Parasite",
-   "wipes": 244,
+   "wipes": 230,
    "survived": 5,
-   "survival_rate": 0.02
-  },
-  {
-   "player": "Aceo",
-   "wipes": 98,
-   "survived": 4,
-   "survival_rate": 0.041
-  },
-  {
-   "player": "Kalvaswis",
-   "wipes": 128,
-   "survived": 4,
-   "survival_rate": 0.031
-  },
-  {
-   "player": "Larryw",
-   "wipes": 234,
-   "survived": 4,
-   "survival_rate": 0.017
-  },
-  {
-   "player": "Athynna",
-   "wipes": 139,
-   "survived": 3,
    "survival_rate": 0.022
   },
   {
+   "player": "Aceo",
+   "wipes": 90,
+   "survived": 4,
+   "survival_rate": 0.044
+  },
+  {
+   "player": "Kalvaswis",
+   "wipes": 119,
+   "survived": 4,
+   "survival_rate": 0.034
+  },
+  {
+   "player": "Larryw",
+   "wipes": 221,
+   "survived": 4,
+   "survival_rate": 0.018
+  },
+  {
+   "player": "Athynna",
+   "wipes": 131,
+   "survived": 3,
+   "survival_rate": 0.023
+  },
+  {
    "player": "B\u00e5z",
-   "wipes": 195,
+   "wipes": 184,
    "survived": 3,
-   "survival_rate": 0.015
-  },
-  {
-   "player": "Phuzzy",
-   "wipes": 263,
-   "survived": 3,
-   "survival_rate": 0.011
-  },
-  {
-   "player": "Senjumaris",
-   "wipes": 91,
-   "survived": 3,
-   "survival_rate": 0.033
-  },
-  {
-   "player": "Tusgra",
-   "wipes": 197,
-   "survived": 3,
-   "survival_rate": 0.015
+   "survival_rate": 0.016
   },
   {
    "player": "Yawningpanda",
-   "wipes": 48,
+   "wipes": 47,
    "survived": 3,
-   "survival_rate": 0.062
+   "survival_rate": 0.064
   },
   {
    "player": "Yax",
-   "wipes": 225,
+   "wipes": 211,
    "survived": 3,
-   "survival_rate": 0.013
+   "survival_rate": 0.014
   },
   {
    "player": "\u00cdzanam\u00ec",
-   "wipes": 53,
+   "wipes": 50,
    "survived": 3,
-   "survival_rate": 0.057
+   "survival_rate": 0.06
   },
   {
    "player": "D\u00fars",
-   "wipes": 262,
+   "wipes": 248,
    "survived": 2,
    "survival_rate": 0.008
   },
   {
    "player": "Frostedtips",
-   "wipes": 172,
+   "wipes": 165,
    "survived": 2,
    "survival_rate": 0.012
   },
   {
    "player": "Ham\u00eatre",
-   "wipes": 128,
+   "wipes": 123,
    "survived": 2,
    "survival_rate": 0.016
   },
   {
    "player": "Minyoongi",
-   "wipes": 263,
+   "wipes": 248,
    "survived": 2,
    "survival_rate": 0.008
   },
   {
-   "player": "Tavriel",
+   "player": "Phuzzy",
+   "wipes": 248,
+   "survived": 2,
+   "survival_rate": 0.008
+  },
+  {
+   "player": "Senjumaris",
    "wipes": 86,
    "survived": 2,
    "survival_rate": 0.023
   },
   {
+   "player": "Tavriel",
+   "wipes": 80,
+   "survived": 2,
+   "survival_rate": 0.025
+  },
+  {
+   "player": "Tusgra",
+   "wipes": 187,
+   "survived": 2,
+   "survival_rate": 0.011
+  },
+  {
    "player": "Krogars",
-   "wipes": 101,
+   "wipes": 96,
    "survived": 1,
    "survival_rate": 0.01
   },
@@ -3739,7 +3739,7 @@
   },
   {
    "player": "Kalvasxenflm",
-   "wipes": 60,
+   "wipes": 57,
    "survived": 0,
    "survival_rate": 0.0
   },
@@ -3923,13 +3923,13 @@
  "item_level": [
   {
    "player": "Parasite",
-   "vs_raid": 4.92,
+   "vs_raid": 4.9,
    "item_level": 320.2,
    "pulls": 312
   },
   {
    "player": "Gyutaro",
-   "vs_raid": 3.93,
+   "vs_raid": 3.9,
    "item_level": 319.8,
    "pulls": 330
   },
@@ -3940,38 +3940,38 @@
    "pulls": 118
   },
   {
-   "player": "Yax",
-   "vs_raid": 2.95,
-   "item_level": 317.5,
-   "pulls": 287
-  },
-  {
    "player": "Minyoongi",
-   "vs_raid": 2.85,
+   "vs_raid": 2.9,
    "item_level": 318.7,
    "pulls": 330
   },
   {
+   "player": "Yax",
+   "vs_raid": 2.9,
+   "item_level": 317.5,
+   "pulls": 287
+  },
+  {
    "player": "Arjunis",
-   "vs_raid": 2.32,
+   "vs_raid": 2.3,
    "item_level": 317.2,
    "pulls": 298
   },
   {
    "player": "Frostedtips",
-   "vs_raid": 1.63,
+   "vs_raid": 1.6,
    "item_level": 315.2,
    "pulls": 224
   },
   {
    "player": "Kalvaswis",
-   "vs_raid": 1.09,
+   "vs_raid": 1.1,
    "item_level": 320.7,
    "pulls": 160
   },
   {
    "player": "Larryw",
-   "vs_raid": -0.17,
+   "vs_raid": -0.2,
    "item_level": 314.8,
    "pulls": 297
   },
@@ -3983,85 +3983,85 @@
   },
   {
    "player": "Tusgra",
-   "vs_raid": -0.53,
+   "vs_raid": -0.5,
    "item_level": 315.4,
    "pulls": 257
   },
   {
    "player": "Aceo",
-   "vs_raid": -0.97,
+   "vs_raid": -1.0,
    "item_level": 318.9,
    "pulls": 122
   },
   {
    "player": "Kalvasxenflm",
-   "vs_raid": -1.44,
+   "vs_raid": -1.4,
    "item_level": 302.9,
    "pulls": 87
   },
   {
    "player": "Yawningpanda",
-   "vs_raid": -2.43,
+   "vs_raid": -2.4,
    "item_level": 321.3,
    "pulls": 59
   },
   {
-   "player": "B\u00e5z",
-   "vs_raid": -2.66,
-   "item_level": 310.2,
-   "pulls": 240
-  },
-  {
    "player": "Athynna",
-   "vs_raid": -2.71,
+   "vs_raid": -2.7,
    "item_level": 318.2,
    "pulls": 173
   },
   {
+   "player": "B\u00e5z",
+   "vs_raid": -2.7,
+   "item_level": 310.2,
+   "pulls": 240
+  },
+  {
    "player": "Birgit",
-   "vs_raid": -2.99,
+   "vs_raid": -3.0,
    "item_level": 311.9,
    "pulls": 294
   },
   {
    "player": "Ham\u00eatre",
-   "vs_raid": -3.81,
+   "vs_raid": -3.8,
    "item_level": 313.9,
    "pulls": 190
   },
   {
    "player": "D\u00fars",
-   "vs_raid": -4.65,
+   "vs_raid": -4.7,
    "item_level": 311.2,
    "pulls": 330
   },
   {
    "player": "\u00cdzanam\u00ec",
-   "vs_raid": -5.77,
+   "vs_raid": -5.8,
    "item_level": 314.5,
    "pulls": 64
   },
   {
    "player": "Cmrn",
-   "vs_raid": -9.15,
+   "vs_raid": -9.2,
    "item_level": 307.4,
    "pulls": 199
   },
   {
    "player": "Tavriel",
-   "vs_raid": -9.88,
+   "vs_raid": -9.9,
    "item_level": 311.0,
    "pulls": 100
   },
   {
    "player": "Ynuuri",
-   "vs_raid": -10.19,
+   "vs_raid": -10.2,
    "item_level": 306.1,
    "pulls": 80
   },
   {
    "player": "Krogars",
-   "vs_raid": -13.04,
+   "vs_raid": -13.0,
    "item_level": 304.4,
    "pulls": 125
   }

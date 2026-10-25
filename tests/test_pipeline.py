@@ -265,3 +265,15 @@ def test_hit_share_leaves_tanks_out(merged):
     puddle = out.filter(pl.col("ability_id") == PUDDLE).row(0, named=True)
     # Only the Dps is hit, of the two non-tanks
     assert puddle["hit_share"] == 0.5
+
+
+def test_cockroach_leaves_out_resets(season, merged):
+    short = pl.when(pl.col("kill")).then(pl.col("duration_ms")).otherwise(10_000)
+    reset = merged | {"pulls": merged["pulls"].with_columns(duration_ms=short)}
+    assert gold.cockroach(gold.make_ctx(season, reset))["cockroach"].is_empty()
+
+
+def test_player_names_drop_hyphenated_servers(season):
+    df = pl.DataFrame({"character": ["Ann-Azjol-Nerub", "Bob-Silvermoon"]})
+    out = df.select(gold._player_expr(season, "character"))["character"]
+    assert out.to_list() == ["Ann", "Bob"]
